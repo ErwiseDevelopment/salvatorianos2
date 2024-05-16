@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+      scroll-behavior: smooth;
+    }
+}
+
+b {
+  font-weight: 700;
+}
+
+@layer components {
+  .nav-item {
+    @apply mb-4 lg:mb-0;
+  }
+
+  .nav-item.active {
+    @apply underline;
+  }
+
+  .nav-link {
+    @apply block text-2xl lg:text-base font-bold text-center lg:text-left text-white lg:text-black py-2 px-4;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus {
+    @apply no-underline;
+  }
+
+  .nav-link.disabled {
+    @apply text-gray-300;
+  }
+
+  .dropdown {
+    @apply relative;
+  }
+
+  .dropdown:hover > .dropdown-menu {
+    @apply block;
+  }
+
+  .menu-item-has-children .menu-item-has-children .dropdown-menu {
+    @apply left-8 -translate-y-1;
+  }
+
+  .dropdown-menu {
+    @apply min-w-[10rem] top-full left-0 -translate-y-1 border border-black/20 rounded-sm absolute hidden list-none text-base text-left  text-[#212529] bg-white z-50 mt-1;
+  }
+
+  .dropdown-item {
+    @apply w-full border-0 font-normal block hover:no-underline text-[#212529] hover:text-[#16181b] whitespace-nowrap bg-transparent hover:bg-[#f8f9fa] py-1 px-6;
+  }
+
+  .custom-example {
+    @apply border border-focal-green rounded-[30px] w-full h-12 bg-white px-6 text-sm lg:text-xl text-focal-green placeholder:text-focal-green focus:outline-2 focus:outline-focal-green mb-3 tracking-wider;
+  }
+}
+
+:root {
+  --variable-example: #FFF;
+}
