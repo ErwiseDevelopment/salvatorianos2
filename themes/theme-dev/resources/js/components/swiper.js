@@ -3,7 +3,7 @@ import "swiper/css/bundle";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-new Swiper('.swiper', {
+new Swiper('.js-swiper-home-banner', {
   modules: [Navigation, Pagination],
   slidesPerView: 1,
 

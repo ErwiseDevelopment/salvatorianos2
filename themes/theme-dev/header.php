@@ -30,6 +30,10 @@
 <body <?php body_class(); ?>>
 
     <div id="page" class="site">
+        <!-- top social media -->
+        <?php echo get_template_part('template-parts/content', 'top-social-media') ?>
+        <!-- end top social media -->
+
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', ''); ?></a>
 
 
