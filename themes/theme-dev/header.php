@@ -37,7 +37,7 @@
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', ''); ?></a>
 
 
-        <header class="relative bg-purple-800 py-4" x-data="{ open: false }">
+        <header class="hidden relative bg-purple-800 py-4" x-data="{ open: false }">
 
             <div class="container">
 
@@ -105,5 +105,83 @@
                 </nav>
             </div>
         </header><!-- #masthead -->
+
+        <header>
+
+            <div class="container flex">
+
+                <div class="w-3/12 relative">
+
+                    <a class="w-[320px] h-[320px] -translate-y-32 rounded-full absolute flex justify-center items-end bg-[#E9E5DD] pb-16 z-10" href="#">
+                        <img class="w-56" src="<?php echo get_template_directory_uri() ?>/resources/images/logo-salvatorianos.png" alt="Salvatorianos" />
+                    </a>
+                </div>
+
+                <div class="w-9/12 flex flex-col">
+
+                    <div class="h-16 mb-4">
+
+                        <ul class="h-full grid grid-cols-4">
+
+                            <li class="col-span-1 flex justify-end">
+                                <a class="w-[80px] h-full transition hover:opacity-90 rounded-tl-[9999px] rounded-bl-[9999px] flex justify-center items-center bg-[#27225C] py-4 px-6" href="#">
+                                    <img class="w-full h-full" src="<?php echo get_template_directory_uri() ?>/resources/images/icon-home.png" alt="Home - Salvatoriano" />
+                                </a>
+                            </li>
+
+                            <li class="col-span-1">
+                                <a class="main-nav-link bg-[#549D2C]" href="#">
+                                    Institucional
+                                </a>
+                            </li>
+
+                            <li class="col-span-1">
+                                <a class="main-nav-link bg-[#329532]" href="#">
+                                    Pe. Jordan
+                                </a>
+                            </li>
+
+                            <li class="col-span-1">
+                                <a class="main-nav-link rounded-tr-[9999px] rounded-br-[9999px] bg-[#058E36]" href="#">
+                                    Vocacional
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="h-16 relative">
+
+                        <span class="w-[40px] h-full top-0 right-full absolute bg-[#83AB1E]"></span>
+
+                        <ul class="h-full grid grid-cols-4">
+
+                            <li class="col-span-1">
+                                <a class="main-nav-link bg-[#83AB1E]" href="#">
+                                    Paróquias
+                                </a>
+                            </li>
+
+                            <li class="col-span-1">
+                                <a class="main-nav-link bg-[#549D2C]" href="#">
+                                    Educação
+                                </a>
+                            </li>
+
+                            <li class="col-span-1">
+                                <a class="main-nav-link bg-[#3A9731]" href="#">
+                                    Obras Sociais
+                                </a>
+                            </li>
+
+                            <li class="col-span-1">
+                                <a class="main-nav-link rounded-tr-[9999px] rounded-br-[9999px] bg-[#058E36]" href="#">
+                                    Revista
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
 
         <div> <!-- #content -->

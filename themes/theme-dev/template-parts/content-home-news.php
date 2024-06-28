@@ -116,7 +116,7 @@
                             </div>
 
                             <div class="px-6">
-                                <a class="w-32 block text-xs font-bold font-red-hat-display text-center uppercase text-white bg-gradient-to-r from-[#91AC31] to-[#4D8C3F] py-2 px-8" href="#">
+                                <a class="w-32 transition hover:scale-90 block text-xs font-bold font-red-hat-display text-center uppercase text-white bg-gradient-to-r from-[#91AC31] to-[#4D8C3F] py-2 px-8" href="#">
                                     Ler mais
                                 </a>
                             </div>
@@ -130,7 +130,7 @@
 
                 <!-- loop -->
                 <?php for ($i = 0; $i < 3; $i++) : ?>
-                    <a class="block mb-4 last:mb-0" href="#">
+                    <a class="block hover:underline mb-4 last:mb-0" href="#">
                         <p class="text-2xl font-black font-red-hat-display text-[#91AC31]">
                             Institucional
                         </p>

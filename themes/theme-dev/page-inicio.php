@@ -51,6 +51,14 @@ get_header();
 			<!-- prayer -->
 			<?php echo get_template_part('template-parts/content', 'home-prayer') ?>
 			<!-- prayer -->
+
+			<!-- candle -->
+			<?php echo get_template_part('template-parts/content', 'home-candle') ?>
+			<!-- candle -->
+
+			<!-- newsletter -->
+			<?php echo get_template_part('template-parts/content', 'newsletter') ?>
+			<!-- newsletter -->
 		<?php endwhile; ?>
 
 	</main><!-- #main -->

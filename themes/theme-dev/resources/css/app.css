@@ -13,6 +13,34 @@ b {
 }
 
 @layer components {
+  .bg-gradient-green {
+    @apply bg-gradient-to-r from-[#91AC31] to-[#4D8C3F];
+  }
+
+  .bg-gradient-green-200 {
+    @apply bg-gradient-to-r from-[#83AC1A] to-[#068E36];
+  }
+
+  .bg-gradient-purple {
+    @apply bg-gradient-to-r from-[#7C33EE] to-[#2D2463];
+  }
+
+  .btn-submit {
+    @apply hover-scale-90 text-2xl font-medium text-center uppercase text-white bg-gradient-green-200 cursor-pointer py-4 px-6;
+  }
+
+  .input-field {
+    @apply w-full text-sm font-semibold font-red-hat-display uppercase text-[#2C285B] bg-white py-4 px-6;
+  }
+
+  .hover-scale-90 {
+    @apply transition hover:scale-90;
+  }
+
+  .main-nav-link {
+    @apply h-full transition hover:opacity-90 flex justify-center items-center text-xl font-medium font-red-hat-display text-center text-white px-10;
+  }
+
   .nav-item {
     @apply mb-4 lg:mb-0;
   }

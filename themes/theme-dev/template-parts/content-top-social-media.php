@@ -1,4 +1,4 @@
-<section class="bg-[#290FCB] py-5">
+<section class="relative bg-[#290FCB] z-20 py-5">
 
     <div class="container grid grid-cols-3 items-center gap-4">
 

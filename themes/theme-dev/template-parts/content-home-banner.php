@@ -1,4 +1,4 @@
-<section class="h-screen">
+<section class="h-screen mt-4">
     <!-- swiper -->
     <div class="swiper h-full js-swiper-home-banner">
 
