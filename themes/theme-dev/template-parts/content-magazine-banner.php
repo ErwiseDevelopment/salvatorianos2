@@ -1,6 +1,6 @@
 <section class="h-screen mt-4">
     <!-- swiper -->
-    <div class="swiper h-full js-swiper-magazine-banner">
+    <div class="swiper h-full js-swiper-home-banner">
 
         <div class="swiper-wrapper">
 

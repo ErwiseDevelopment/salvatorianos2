@@ -55,10 +55,6 @@ get_header();
 			<!-- candle -->
 			<?php echo get_template_part('template-parts/content', 'home-candle') ?>
 			<!-- candle -->
-
-			<!-- newsletter -->
-			<?php echo get_template_part('template-parts/content', 'newsletter') ?>
-			<!-- newsletter -->
 		<?php endwhile; ?>
 
 	</main><!-- #main -->

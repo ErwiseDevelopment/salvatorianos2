@@ -16,6 +16,10 @@
 
 </div><!-- #page -->
 
+<!-- newsletter -->
+<?php echo get_template_part('template-parts/content', 'newsletter') ?>
+<!-- newsletter -->
+
 <!-- footer -->
 <footer class="bg-gradient-green-200 pt-20 pb-12">
 
