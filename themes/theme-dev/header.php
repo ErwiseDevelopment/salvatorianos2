@@ -136,7 +136,7 @@
                             </li>
 
                             <li class="col-span-1">
-                                <a class="main-nav-link bg-[#329532]" href="#">
+                                <a class="main-nav-link bg-[#329532]" href="<?php echo get_home_url(null, '/pe-jordan') ?>">
                                     Pe. Jordan
                                 </a>
                             </li>
@@ -156,7 +156,7 @@
                         <ul class="h-full grid grid-cols-4">
 
                             <li class="col-span-1">
-                                <a class="main-nav-link bg-[#83AB1E]" href="#">
+                                <a class="main-nav-link bg-[#83AB1E]" href="<?php echo get_home_url(null, '/paroquias') ?>">
                                     Paróquias
                                 </a>
                             </li>
@@ -174,7 +174,7 @@
                             </li>
 
                             <li class="col-span-1">
-                                <a class="main-nav-link rounded-tr-[9999px] rounded-br-[9999px] bg-[#058E36]" href="#">
+                                <a class="main-nav-link rounded-tr-[9999px] rounded-br-[9999px] bg-[#058E36]" href="<?php echo get_home_url(null, '/revistas') ?>">
                                     Revista
                                 </a>
                             </li>

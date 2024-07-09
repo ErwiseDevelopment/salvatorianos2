@@ -32,3 +32,19 @@ new Swiper(".js-swiper-magazine-banner", {
     type: "bullets",
   },
 });
+
+new Swiper(".js-swiper-parishes", {
+  modules: [Navigation, Pagination],
+  slidesPerView: 3,
+  spaceBetween: 16,
+
+  navigation: {
+    nextEl: ".js-swiper-button-next-parishes",
+    prevEl: ".js-swiper-button-prev-parishes",
+  },
+
+  // pagination: {
+  //   el: ".swiper-pagination",
+  //   type: "bullets",
+  // },
+});

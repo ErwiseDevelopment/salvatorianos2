@@ -1,4 +1,4 @@
-<section class="overflow-hidden bg-[#28235C] mt-20">
+<section class="overflow-hidden bg-[#28235C]">
 
     <div class="container flex">
 

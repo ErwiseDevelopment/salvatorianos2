@@ -48,7 +48,7 @@
                 </li>
 
                 <li class="mb-1">
-                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="#">
+                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/paroquias') ?>">
                         Paróquias
                     </a>
                 </li>
@@ -60,7 +60,7 @@
                 </li>
 
                 <li>
-                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="#">
+                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/revistas') ?>">
                         Revista
                     </a>
                 </li>
@@ -80,7 +80,7 @@
                 </li>
 
                 <li class="mb-1">
-                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="#">
+                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, 'pe-jordan') ?>">
                         Pe. Jordan
                     </a>
                 </li>
