@@ -18,9 +18,12 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: "1rem",
+      padding: "4rem",
     },
     extend: {
+      fontFamily: {
+        'red-hat-display': 'Red Hat Display'
+      }
     },
   },
   plugins: [],

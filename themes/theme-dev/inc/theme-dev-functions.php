@@ -62,16 +62,21 @@ function register_assets(string $handle, string $src, $in_footer = false)
     }
 }
 
-function get_sanitize_string($str) {
+function get_sanitize_string($str)
+{
     $str = trim($str);
     $str = str_replace(array('.', '-', '/', ' '), "", $str);
 
     return $str;
 }
 
-function get_limit_words($string, $word_limit) {  
-    $words = explode(' ', $string, ($word_limit + 1));  
-    if(count($words) > $word_limit) { array_pop($words); array_push($words, "..."); }  
+function get_limit_words($string, $word_limit)
+{
+    $words = explode(' ', $string, ($word_limit + 1));
+    if (count($words) > $word_limit) {
+        array_pop($words);
+        array_push($words, "...");
+    }
     return implode(' ', $words);
 }
 
@@ -82,7 +87,7 @@ function theme_dev_scripts()
 {
     wp_enqueue_style('theme-dev-style', get_stylesheet_uri());
 
-    register_assets('theme-dev-fonts-style', 'public/fonts/stylesheet.css');
+    register_assets('theme-dev-fonts-style', 'public/fonts/fonts.css');
     register_assets('theme-dev-app-style', 'public/css/app.css');
     register_assets('theme-dev-app-scripts', 'public/js/app.js', true);
 
@@ -95,7 +100,8 @@ require get_template_directory() . '/inc/functions/register-post-types.php';
 require get_template_directory() . '/inc/functions/register-rest-fields.php';
 require get_template_directory() . '/inc/functions/register-options-page.php';
 
-function get_months() {
+function get_months()
+{
     return [
         '01' => 'Jan',
         '02' => 'Fev',
@@ -112,6 +118,7 @@ function get_months() {
     ];
 }
 
-function get_month($month) {
+function get_month($month)
+{
     return get_months()[$month];
 }

@@ -20,25 +20,24 @@ get_header();
 	<main id="main" class="site-main">
 
 		<?php while (have_posts()) : the_post(); ?>
+
 			<!-- banner -->
 			<?php echo get_template_part('template-parts/content', 'general-banner') ?>
 			<!-- end banner -->
 
 			<!-- news -->
-			<?php echo get_template_part('template-parts/content', 'home-news') ?>
-			<!-- news -->
+			<?php echo get_template_part('template-parts/content', 'parishes-jordan-news') ?>
+			<!-- end news -->
 
-			<!-- gallery -->
-			<?php echo get_template_part('template-parts/content', 'home-gallery') ?>
-			<!-- gallery -->
+			<!-- parishes carousel -->
+			<?php echo get_template_part('template-parts/content', 'parishes-carousel') ?>
+			<!-- end parishes carousel -->
 
-			<!-- videos -->
-			<?php echo get_template_part('template-parts/content', 'home-videos') ?>
-			<!-- videos -->
+			<!-- prayer -->
+			<?php echo get_template_part('template-parts/content', 'general-jordan-prayer') ?>
+			<!-- end prayer -->
 
-			<!-- banner welcome -->
-			<?php echo get_template_part('template-parts/content', 'home-banner-welcome') ?>
-			<!-- banner welcome -->
+			<div class="mt-10"></div>
 
 			<!-- blog -->
 			<?php echo get_template_part('template-parts/content', 'general-blog') ?>
@@ -47,18 +46,7 @@ get_header();
 			<!-- free materials -->
 			<?php echo get_template_part('template-parts/content', 'general-free-materials') ?>
 			<!-- free materials -->
-
-			<!-- prayer -->
-			<?php echo get_template_part('template-parts/content', 'home-prayer') ?>
-			<!-- prayer -->
-
-			<!-- candle -->
-			<?php echo get_template_part('template-parts/content', 'home-candle') ?>
-			<!-- candle -->
-
-			<div class="mt-20"></div>
 		<?php endwhile; ?>
-
 	</main><!-- #main -->
 </div><!-- #primary -->
 
