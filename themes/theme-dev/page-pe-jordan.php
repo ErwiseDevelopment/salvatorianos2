@@ -26,7 +26,7 @@ get_header();
 			<!-- end banner -->
 
 			<!-- news -->
-			<?php echo get_template_part('template-parts/content', 'jordan-news') ?>
+			<?php echo get_template_part('template-parts/content', 'parishes-jordan-news') ?>
 			<!-- end news -->
 
 			<!-- photos -->
@@ -40,7 +40,7 @@ get_header();
 			<div class="mt-10"></div>
 
 			<!-- blog -->
-			<?php echo get_template_part('template-parts/content', 'general-blog') ?>
+			<!--php echo get_template_part('template-parts/content', 'general-blog' ) -->
 			<!-- blog -->
 		<?php endwhile; ?>
 	</main><!-- #main -->

@@ -3,35 +3,22 @@ import "swiper/css/bundle";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-new Swiper(".js-swiper-home-banner", {
-  modules: [Navigation, Pagination],
-  slidesPerView: 1,
+new Swiper(".js-swiper-banner");
 
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+// new Swiper(".js-swiper-magazine-banner", {
+//   modules: [Navigation, Pagination],
+//   slidesPerView: 1,
 
-  pagination: {
-    el: ".swiper-pagination",
-    type: "bullets",
-  },
-});
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
 
-new Swiper(".js-swiper-magazine-banner", {
-  modules: [Navigation, Pagination],
-  slidesPerView: 1,
-
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-
-  pagination: {
-    el: ".swiper-pagination",
-    type: "bullets",
-  },
-});
+//   pagination: {
+//     el: ".swiper-pagination",
+//     type: "bullets",
+//   },
+// });
 
 new Swiper(".js-swiper-parishes", {
   modules: [Navigation, Pagination],

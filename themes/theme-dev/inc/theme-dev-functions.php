@@ -80,26 +80,6 @@ function get_limit_words($string, $word_limit)
     return implode(' ', $words);
 }
 
-/**
- * Enqueue scripts and styles.
- */
-function theme_dev_scripts()
-{
-    wp_enqueue_style('theme-dev-style', get_stylesheet_uri());
-
-    register_assets('theme-dev-fonts-style', 'public/fonts/fonts.css');
-    register_assets('theme-dev-app-style', 'public/css/app.css');
-    register_assets('theme-dev-app-scripts', 'public/js/app.js', true);
-
-    wp_enqueue_style('theme-dev-custom-style', get_template_directory_uri() . '/custom.css', array(), '1.0.0');
-    wp_enqueue_script('theme-dev-custom-scripts', get_template_directory_uri() . '/custom.js', array(), '1.0.0', true);
-}
-add_action('wp_enqueue_scripts', 'theme_dev_scripts');
-
-require get_template_directory() . '/inc/functions/register-post-types.php';
-require get_template_directory() . '/inc/functions/register-rest-fields.php';
-require get_template_directory() . '/inc/functions/register-options-page.php';
-
 function get_months()
 {
     return [
@@ -122,3 +102,42 @@ function get_month($month)
 {
     return get_months()[$month];
 }
+
+function get_editorials(): array {
+    return [
+        'institucional' => 'Institucional',
+        'pe-jordan'     => 'Pe. Jordan' ,
+        'vocacional'    => 'Vocacional',
+        'paroquias'     => 'Paróquias',
+        'educacao'      => 'Educação',
+        'obras-sociais' => 'Obras Sociais',
+        'revistas'      => 'Revista'
+    ]; 
+}
+
+function show_banner_title(object $page): bool {
+    if(isset(get_editorials()[$page->post_name]))
+        return false;
+
+    return true;
+}
+
+/**
+ * Enqueue scripts and styles.
+ */
+function theme_dev_scripts()
+{
+    wp_enqueue_style('theme-dev-style', get_stylesheet_uri());
+
+    register_assets('theme-dev-fonts-style', 'public/fonts/fonts.css');
+    register_assets('theme-dev-app-style', 'public/css/app.css');
+    register_assets('theme-dev-app-scripts', 'public/js/app.js', true);
+
+    wp_enqueue_style('theme-dev-custom-style', get_template_directory_uri() . '/custom.css', array(), '1.0.0');
+    wp_enqueue_script('theme-dev-custom-scripts', get_template_directory_uri() . '/custom.js', array(), '1.0.0', true);
+}
+add_action('wp_enqueue_scripts', 'theme_dev_scripts');
+
+require get_template_directory() . '/inc/functions/register-post-types.php';
+require get_template_directory() . '/inc/functions/register-rest-fields.php';
+require get_template_directory() . '/inc/functions/register-options-page.php';

@@ -80,7 +80,7 @@
                 </li>
 
                 <li class="mb-1">
-                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, 'pe-jordan') ?>">
+                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="#">
                         Pe. Jordan
                     </a>
                 </li>
