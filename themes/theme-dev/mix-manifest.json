@@ -1,6 +1,6 @@
 {
-    "/public/js/app.js": "/public/js/app.js?id=f1b452b118dde6d8d8ea5a98ae8802ea",
-    "/public/css/app.css": "/public/css/app.css?id=3da416ec7d5799365a181baefaaed490",
+    "/public/js/app.js": "/public/js/app.js?id=3f6fab0440f8b5e47a7f0ce7ee03de95",
+    "/public/css/app.css": "/public/css/app.css?id=905b57db819c122fac7cfef5a4fe5ca3",
     "/public/fonts/Degular-Bold.ttf": "/public/fonts/Degular-Bold.ttf?id=43ac94b6586effa65a899dd957e29896",
     "/public/fonts/Degular-Bold.woff": "/public/fonts/Degular-Bold.woff?id=8291438e529e1471b15921403cc273f1",
     "/public/fonts/Degular-Bold.woff2": "/public/fonts/Degular-Bold.woff2?id=940d66f452530475c226077115ef6930",
@@ -90,6 +90,7 @@
     "/public/images/logo-salvatorianosorg.png": "/public/images/logo-salvatorianosorg.png?id=8260291fb1bbee80869fd50b42a792ac",
     "/public/images/logo.jpg": "/public/images/logo.jpg?id=03a45d6668f42f9950d3fd6815769600",
     "/public/images/magazine-1.png": "/public/images/magazine-1.png?id=91ba5384e8d50c874c15d329c2be7e4f",
+    "/public/images/material-01.png": "/public/images/material-01.png?id=d5d0319bd2b770648563d152197198c0",
     "/public/images/material-1.png": "/public/images/material-1.png?id=1c77c995f1729a47f2c7715478e4dbb5",
     "/public/images/newsletter.png": "/public/images/newsletter.png?id=e23af884a89c7ef6e94e7bd13b37597b",
     "/public/images/parishes-photo-1.png": "/public/images/parishes-photo-1.png?id=7e22f81778fab1cb32b3e7ebdb80b391",
@@ -97,5 +98,6 @@
     "/public/images/revista-missao-salvatoriana.png": "/public/images/revista-missao-salvatoriana.png?id=d9d4c09745ce270cd805516b8370abb4",
     "/public/images/salvatorianos-brasileira.png": "/public/images/salvatorianos-brasileira.png?id=46cb697b909c613fc76df4e289988cd6",
     "/public/images/salvatorianos-brasiliera.png": "/public/images/salvatorianos-brasiliera.png?id=46cb697b909c613fc76df4e289988cd6",
-    "/public/images/vocacional-news-1.png": "/public/images/vocacional-news-1.png?id=16c1e926eff276f6f496dbc82fd4eb38"
+    "/public/images/vocacional-news-1.png": "/public/images/vocacional-news-1.png?id=16c1e926eff276f6f496dbc82fd4eb38",
+    "/public/images/conselho-01.png": "/public/images/conselho-01.png?id=8865f3003201d4cc30455b11d4a591c5"
 }
