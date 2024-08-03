@@ -113,7 +113,7 @@
 
                     <div class="w-3/12 relative">
 
-                        <a class="w-[320px] h-[320px] -translate-y-32 rounded-full absolute flex justify-center items-end bg-[#E9E5DD] pb-16 z-10" href="#">
+                        <a class="w-[320px] h-[320px] -translate-y-32 rounded-full absolute flex justify-center items-end bg-[#E9E5DD] pb-16 z-10" href="<?php echo get_home_url(null, '/') ?>">
                             <img class="w-56" src="<?php echo get_template_directory_uri() ?>/resources/images/logo-salvatorianos.png" alt="Salvatorianos" />
                         </a>
                     </div>
@@ -125,7 +125,7 @@
                             <ul class="h-full grid grid-cols-4">
 
                                 <li class="col-span-1 flex justify-end">
-                                    <a class="w-[80px] h-full transition hover:opacity-90 rounded-tl-[9999px] rounded-bl-[9999px] flex justify-center items-center bg-[#27225C] py-4 px-6" href="#">
+                                    <a class="w-[80px] h-full transition hover:opacity-90 rounded-tl-[9999px] rounded-bl-[9999px] flex justify-center items-center bg-[#27225C] py-4 px-6" href="<?php echo get_home_url(null, '/') ?>">
                                         <img class="w-full h-full" src="<?php echo get_template_directory_uri() ?>/resources/images/icon-home.png" alt="Home - Salvatoriano" />
                                     </a>
                                 </li>
@@ -143,7 +143,7 @@
                                 </li>
 
                                 <li class="col-span-1">
-                                    <a class="main-nav-link rounded-tr-[9999px] rounded-br-[9999px] bg-[#058E36]" href="#">
+                                    <a class="main-nav-link rounded-tr-[9999px] rounded-br-[9999px] bg-[#058E36]" href="<?php echo get_home_url(null, '/vocacional') ?>">
                                         Vocacional
                                     </a>
                                 </li>
@@ -163,7 +163,7 @@
                                 </li>
 
                                 <li class="col-span-1">
-                                    <a class="main-nav-link bg-[#549D2C]" href="#">
+                                    <a class="main-nav-link bg-[#549D2C]" href="<?php echo get_home_url(null, '/educacao') ?>">
                                         Educação
                                     </a>
                                 </li>

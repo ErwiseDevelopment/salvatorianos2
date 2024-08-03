@@ -115,6 +115,10 @@ b {
     @apply font-semibold font-red-hat-display uppercase tracking-widest hover:underline;
   }
 
+  .our-school-item {
+    @apply h-[288px] rounded-full overflow-hidden flex flex-col justify-center items-center gap-4 odd:bg-gradient-green even:bg-gradient-purple px-8;
+  }
+
   .button-cta {
     @apply transition hover:scale-90 rounded-full inline-block text-2xl font-bold font-red-hat-display text-center uppercase text-white bg-gradient-to-r from-[#7C33EE] to-[#2D2463] py-4 px-24;
   }

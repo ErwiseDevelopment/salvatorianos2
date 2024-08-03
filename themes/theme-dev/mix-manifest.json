@@ -1,6 +1,6 @@
 {
-    "/public/js/app.js": "/public/js/app.js?id=3f6fab0440f8b5e47a7f0ce7ee03de95",
-    "/public/css/app.css": "/public/css/app.css?id=905b57db819c122fac7cfef5a4fe5ca3",
+    "/public/js/app.js": "/public/js/app.js?id=f1b452b118dde6d8d8ea5a98ae8802ea",
+    "/public/css/app.css": "/public/css/app.css?id=a1df4bf7a17322a8fa7e9930d3da0d91",
     "/public/fonts/Degular-Bold.ttf": "/public/fonts/Degular-Bold.ttf?id=43ac94b6586effa65a899dd957e29896",
     "/public/fonts/Degular-Bold.woff": "/public/fonts/Degular-Bold.woff?id=8291438e529e1471b15921403cc273f1",
     "/public/fonts/Degular-Bold.woff2": "/public/fonts/Degular-Bold.woff2?id=940d66f452530475c226077115ef6930",
@@ -73,7 +73,9 @@
     "/public/images/banner-title.png": "/public/images/banner-title.png?id=875dbe4a0e6b416c088f79341f20a578",
     "/public/images/blog-image-1.png": "/public/images/blog-image-1.png?id=a2188b67e92ec1e33915c17197584b00",
     "/public/images/candle-image-1.png": "/public/images/candle-image-1.png?id=a636f4b58317072961e8861628e41575",
+    "/public/images/conselho-01.png": "/public/images/conselho-01.png?id=8865f3003201d4cc30455b11d4a591c5",
     "/public/images/contact-detail.png": "/public/images/contact-detail.png?id=607a6fef86ccf03540f02c61f7a3eb12",
+    "/public/images/ensino-pedagoga.png": "/public/images/ensino-pedagoga.png?id=f01957699538ea6881021d882f3c9cfe",
     "/public/images/footer-line.png": "/public/images/footer-line.png?id=2ec6e877a417140ec63b109f7d3aed56",
     "/public/images/footer-x.png": "/public/images/footer-x.png?id=25781bf9225367842d17944b8cfd031d",
     "/public/images/gallery-1.png": "/public/images/gallery-1.png?id=e2563c3136420a0159ec9b14012a20eb",
@@ -81,6 +83,7 @@
     "/public/images/home-news-1.png": "/public/images/home-news-1.png?id=6f343bab47eb4891b2fdee1deee03bcf",
     "/public/images/icon-arrow-left.png": "/public/images/icon-arrow-left.png?id=283ebf972663108cd989fc821c440629",
     "/public/images/icon-arrow-right.png": "/public/images/icon-arrow-right.png?id=4ed5e36dace7a58714ac31ca4212f098",
+    "/public/images/icon-capela.png": "/public/images/icon-capela.png?id=c62900d08e51b60da245dd7a430d2cb2",
     "/public/images/icon-facebook.png": "/public/images/icon-facebook.png?id=df7184f888056f97fd9908cd48e79f30",
     "/public/images/icon-home.png": "/public/images/icon-home.png?id=a4e2ff1364271f4d325726749e6ac708",
     "/public/images/icon-instagram.png": "/public/images/icon-instagram.png?id=2f864992e2a45667e7231ff2a27be6c2",
@@ -99,5 +102,5 @@
     "/public/images/salvatorianos-brasileira.png": "/public/images/salvatorianos-brasileira.png?id=46cb697b909c613fc76df4e289988cd6",
     "/public/images/salvatorianos-brasiliera.png": "/public/images/salvatorianos-brasiliera.png?id=46cb697b909c613fc76df4e289988cd6",
     "/public/images/vocacional-news-1.png": "/public/images/vocacional-news-1.png?id=16c1e926eff276f6f496dbc82fd4eb38",
-    "/public/images/conselho-01.png": "/public/images/conselho-01.png?id=8865f3003201d4cc30455b11d4a591c5"
+    "/public/images/vocacoes.png": "/public/images/vocacoes.png?id=874a4310c99643ffbe90c19f020f1c72"
 }

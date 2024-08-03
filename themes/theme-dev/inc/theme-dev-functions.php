@@ -122,6 +122,39 @@ function show_banner_title(object $page): bool {
     return true;
 }
 
+function get_general_posts_editorial_attributes(string $title, string $category_slug, string $button_title, string $button_link): array {
+    return [
+        'title'         => $title,
+        'category_slug' => $category_slug,
+        'button_title'  => $button_title,
+        'button_link'   => $button_link
+    ];
+}
+
+function get_posts_attributes(object $posts_editorial): array {
+    $category_main = '';
+
+    foreach(get_the_category(get_the_ID()) as $category) {
+        foreach(get_editorials() as $editorial) {
+            if($category->name == $editorial) {
+                $category_main = $category->name;
+            }
+        }
+    }
+
+    $thumbnail = get_the_post_thumbnail(null, 'post-thumbnail', array('class' => 'w-full h-full object-cover', 'alt' => get_the_title()));
+        
+    return [
+        'title'          => get_the_title(),
+        'category'       => $category_main,
+        'date_published' => get_the_date('d/m/Y'),
+        'content'        => get_the_content(),
+        'excerpt'        => get_the_excerpt(),
+        'thumbnail'      => $thumbnail,
+        'link'           => get_the_permalink()
+    ];
+}
+
 /**
  * Enqueue scripts and styles.
  */

@@ -29,7 +29,7 @@ get_header();
 			<!-- news -->
 
 			<!-- gallery -->
-			<?php echo get_template_part('template-parts/content', 'home-gallery') ?>
+			<?php echo get_template_part('template-parts/content', 'general-gallery') ?>
 			<!-- gallery -->
 
 			<!-- videos -->
@@ -37,7 +37,7 @@ get_header();
 			<!-- videos -->
 
 			<!-- banner welcome -->
-			<?php echo get_template_part('template-parts/content', 'home-banner-welcome') ?>
+			<?php echo get_template_part('template-parts/content', 'general-banner-welcome') ?>
 			<!-- banner welcome -->
 
 			<!-- blog -->
