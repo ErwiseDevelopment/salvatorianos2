@@ -42,7 +42,7 @@
 
             <ul>
                 <li class="mb-1">
-                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="#">
+                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/institucional') ?>">
                         Institucional
                     </a>
                 </li>
@@ -68,19 +68,19 @@
 
             <ul>
                 <li class="mb-1">
-                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="#">
+                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/vocacional') ?>">
                         Vocacional
                     </a>
                 </li>
 
                 <li class="mb-1">
-                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="#">
+                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/educacao') ?>">
                         Educação
                     </a>
                 </li>
 
                 <li class="mb-1">
-                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="#">
+                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/pe-jordan') ?>">
                         Pe. Jordan
                     </a>
                 </li>
@@ -98,7 +98,7 @@
         </div>
 
         <div class="w-full flex justify-center mt-12">
-            <a href="#">
+            <a href="<?php echo get_home_url(null, '/') ?>">
                 <img src="<?php echo get_template_directory_uri() ?>/resources/images/salvatorianos-brasileira.png" alt="Salvatorianos Brasileira" />
             </a>
         </div>

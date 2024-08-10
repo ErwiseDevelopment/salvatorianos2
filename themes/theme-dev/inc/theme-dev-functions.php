@@ -122,6 +122,33 @@ function show_banner_title(object $page): bool {
     return true;
 }
 
+function hidden_banner_title(string $type, string $page = null): bool {
+    $pages = [
+        'page' => [
+            'inicio'        => 'Início',
+            'institucional' => 'Institucional',
+            'pe-jordan'     => 'Pe. Jordan' ,
+            'vocacional'    => 'Vocacional',
+            'paroquias'     => 'Paróquias',
+            'educacao'      => 'Educação',
+            'obras-sociais' => 'Obras Sociais',
+            'revistas'      => 'Revista'
+        ]
+    ];
+
+    if($type == 'post') {
+        return true;
+    }
+
+    if($type == 'page') {
+        if(isset($pages[$type][$page])) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
 function get_general_posts_editorial_attributes(string $title, string $category_slug, string $button_title, string $button_link): array {
     return [
         'title'         => $title,
@@ -154,6 +181,35 @@ function get_posts_attributes(object $posts_editorial): array {
         'link'           => get_the_permalink()
     ];
 }
+
+// function show_category_emphasis(array $categories): string{
+//     $categories_details = [
+//         'Blog',
+//         'Notícia'
+//     ];
+
+//     $category_main = null;
+
+//     $category_editorial = null;
+
+//     foreach($categories_details as $category_detail) {
+//         foreach($categories as $category) {
+//             if(strpos($category->name, $category_detail)) {
+//                 $category_main = $category_detail;
+//             }
+//         }
+//     }
+
+//     foreach($categories as $category) {
+//         foreach(get_editorials() as $editorial) {
+//             if() {
+                
+//             }
+//         }
+//     }
+
+//     return $category_main;
+// }
 
 /**
  * Enqueue scripts and styles.

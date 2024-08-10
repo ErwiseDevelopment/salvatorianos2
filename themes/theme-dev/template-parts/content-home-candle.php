@@ -10,9 +10,9 @@
                     pedido de oração
                 </p>
 
-                <span class="transition hover:scale-90 block text-3xl font-medium font-red-hat-display uppercase text-center text-white bg-gradient-green cursor-pointer py-2">
+                <a class="transition hover:scale-90 block text-3xl font-medium font-red-hat-display uppercase text-center text-white bg-gradient-green cursor-pointer py-2" href="<?php echo get_home_url(null, '/vela-virtual') ?>">
                     Clique aqui
-                </span>
+                </a>
             </div>
         </div>
 
