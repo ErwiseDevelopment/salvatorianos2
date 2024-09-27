@@ -25,7 +25,7 @@
 
     <div class="container flex flex-wrap justify-center">
 
-        <div class="w-5/12">
+        <div class="w-full xl:w-5/12">
 
             <p class="text-xl font-bold font-red-hat-display text-white">
                 Avenida Lino de Almeida Pires, 130 <br />
@@ -38,11 +38,11 @@
             </p>
         </div>
 
-        <div class="w-4/12 grid grid-cols-2">
+        <div class="w-full xl:w-4/12 grid grid-cols-1 xl:grid-cols-2 pt-10 xl:pt-0">
 
             <ul>
                 <li class="mb-1">
-                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="#">
+                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/institucional') ?>">
                         Institucional
                     </a>
                 </li>
@@ -54,7 +54,7 @@
                 </li>
 
                 <li class="mb-1">
-                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="#">
+                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/obras-sociais') ?>">
                         Obras Sociais
                     </a>
                 </li>
@@ -68,29 +68,29 @@
 
             <ul>
                 <li class="mb-1">
-                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="#">
+                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/vocacional') ?>">
                         Vocacional
                     </a>
                 </li>
 
                 <li class="mb-1">
-                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="#">
+                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/educacao') ?>">
                         Educação
                     </a>
                 </li>
 
                 <li class="mb-1">
-                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, 'pe-jordan') ?>">
+                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/pe-jordan') ?>">
                         Pe. Jordan
                     </a>
                 </li>
 
                 <li class="flex gap-x-2 pt-3">
-                    <a class="w-4 h-4" href="#" target="_blank" rel="noreferrer noopener">
+                    <a class="w-4 h-4" href="<?php echo get_field('instagram', 'option') ?>" target="_blank" rel="noreferrer noopener">
                         <img class="w-4 h-4 object-cover" src="<?php echo get_template_directory_uri() ?>/resources/images/icon-instagram.png" alt="Instagram - Salvatoriano" />
                     </a>
 
-                    <a class="w-4 h-4" href="#" target="_blank" rel="noreferrer noopener">
+                    <a class="w-4 h-4" href="<?php echo get_field('facebook', 'option') ?>" target="_blank" rel="noreferrer noopener">
                         <img class="w-4 h-4 object-cover" src="<?php echo get_template_directory_uri() ?>/resources/images/icon-facebook.png" alt="Facebook - Salvatoriano" />
                     </a>
                 </li>
@@ -98,7 +98,7 @@
         </div>
 
         <div class="w-full flex justify-center mt-12">
-            <a href="#">
+            <a href="<?php echo get_home_url(null, '/') ?>">
                 <img src="<?php echo get_template_directory_uri() ?>/resources/images/salvatorianos-brasileira.png" alt="Salvatorianos Brasileira" />
             </a>
         </div>

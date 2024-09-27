@@ -1,17 +1,27 @@
-<section class="h-screen mt-4">
+<section class="h-[300px] xl:h-screen mt-4">
     <!-- swiper -->
-    <div class="swiper h-full js-swiper-magazine-banner">
+    <div class="swiper h-full js-swiper-banner">
 
         <div class="swiper-wrapper">
 
             <!-- slide -->
-            <?php for ($i = 0; $i < 4; $i++) : ?>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img class="w-full h-full object-cover" src="<?php echo get_template_directory_uri() ?>/resources/images/home-banner-1.png" alt="Banner - Salvatorianos" />
-                    </a>
-                </div>
-            <?php endfor; ?>
+            <?php
+            $banners = new WP_Query($args);
+
+            if ($banners->have_posts()):
+                while ($banners->have_posts()): $banners->the_post();
+            ?>
+                    <div class="swiper-slide">
+                        <a href="<?php echo get_field('link_banner') ?>" target="_blank" rel="noreferrer noopener">
+                            <img class="w-full h-full object-cover" src="<?php echo get_field('imagem_banner') ?>" alt="<?php the_title() ?> - Salvatorianos" />
+                        </a>
+                    </div>
+            <?php
+                endwhile;
+            endif;
+
+            wp_reset_query();
+            ?>
             <!-- end slide -->
         </div>
     </div>

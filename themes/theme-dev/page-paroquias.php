@@ -22,12 +22,12 @@ get_header();
 		<?php while (have_posts()) : the_post(); ?>
 
 			<!-- banner -->
-			<?php echo get_template_part('template-parts/content', 'general-banner') ?>
+			<?php echo get_template_part('template-parts/content', 'general-banner', get_general_banner('paroquias')) ?>
 			<!-- end banner -->
 
-			<!-- news -->
-			<?php echo get_template_part('template-parts/content', 'parishes-jordan-news') ?>
-			<!-- end news -->
+			<!-- posts editorial -->
+			<?php echo get_template_part('template-parts/content', 'general-posts-editorial', get_general_posts_editorial_attributes('Saiba tudo sobre nossas paróquias', 'paroquia-noticia', 'Todas as notícias das paróquias', 'https://google.com')) ?>
+			<!-- end posts editorial -->
 
 			<!-- parishes carousel -->
 			<?php echo get_template_part('template-parts/content', 'parishes-carousel') ?>
