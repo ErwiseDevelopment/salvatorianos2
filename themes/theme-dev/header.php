@@ -27,6 +27,13 @@
     </style>
 </head>
 
+<style>
+    header,
+    {
+    display: none !important;
+    }
+</style>
+
 <body <?php body_class(); ?>>
 
     <div id="page" class="site">
@@ -106,7 +113,7 @@
             </div>
         </header><!-- #masthead -->
 
-        <div class="relative">  
+        <div class="relative">
             <header class="<?php echo hidden_banner_title($post->post_type, $post->post_name) === true ? 'w-full top-0 left-0 absolute' : ''; ?>">
 
                 <div class="container flex">
@@ -186,10 +193,10 @@
             </header>
 
             <!-- general banner title -->
-            <?php 
-                if(hidden_banner_title($post->post_type, $post->post_name)) {
-                    echo get_template_part('template-parts/content', 'general-banner-title');
-                } 
+            <?php
+            if (hidden_banner_title($post->post_type, $post->post_name)) {
+                echo get_template_part('template-parts/content', 'general-banner-title');
+            }
             ?>
             <!-- end general banner title -->
         </div>

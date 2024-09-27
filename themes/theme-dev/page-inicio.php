@@ -21,7 +21,11 @@ get_header();
 
 		<?php while (have_posts()) : the_post(); ?>
 			<!-- banner -->
-			<?php echo get_template_part('template-parts/content', 'general-banner') ?>
+			<?php
+			$editorial_slug = get_editorials()['portal']['categories']['slug'];
+
+			echo get_template_part('template-parts/content', 'general-banner', get_general_custom_post('banners', $editorial_slug))
+			?>
 			<!-- end banner -->
 
 			<!-- news -->
@@ -29,11 +33,11 @@ get_header();
 			<!-- news -->
 
 			<!-- gallery -->
-			<?php echo get_template_part('template-parts/content', 'general-gallery') ?>
+			<?php echo get_template_part('template-parts/content', 'general-gallery', get_general_custom_post('galeria', $editorial_slug)) ?>
 			<!-- gallery -->
 
 			<!-- videos -->
-			<?php echo get_template_part('template-parts/content', 'home-videos') ?>
+			<?php echo get_template_part('template-parts/content', 'home-videos', get_general_custom_post('videos', $editorial_slug)) ?>
 			<!-- videos -->
 
 			<!-- banner welcome -->
@@ -45,7 +49,7 @@ get_header();
 			<!-- blog -->
 
 			<!-- free materials -->
-			<?php echo get_template_part('template-parts/content', 'general-free-materials') ?>
+			<?php echo get_template_part('template-parts/content', 'general-free-materials', get_general_custom_post('materiais', $editorial_slug)) ?>
 			<!-- free materials -->
 
 			<!-- prayer -->
@@ -56,9 +60,8 @@ get_header();
 			<?php echo get_template_part('template-parts/content', 'home-candle') ?>
 			<!-- candle -->
 
-			<div class="mt-20"></div>
+			<div class="mt-10 xl:mt-20"></div>
 		<?php endwhile; ?>
-
 	</main><!-- #main -->
 </div><!-- #primary -->
 

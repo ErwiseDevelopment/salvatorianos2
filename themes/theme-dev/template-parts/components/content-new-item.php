@@ -4,7 +4,15 @@
         <div>
             <div class="w-full h-[220px] overflow-hidden">
                 <!-- <img class="w-full h-full object-cover" src="<php echo get_template_directory_uri() ?>/resources/images/vocacional-news-1.png" alt="Salvatorianos" /> -->
-                <?php echo $args['thumbnail']; ?>
+                <?php
+                if (!empty($args['thumbnail'])) :
+                    echo $args['thumbnail'];
+                ?>
+                <?php else: ?>
+                    <div class="w-full h-[220px] bg-gray-100"></div>
+                <?php
+                endif;
+                ?>
             </div>
 
             <div class="pt-6 px-6">

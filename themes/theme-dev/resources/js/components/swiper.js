@@ -5,6 +5,14 @@ import "swiper/css/pagination";
 
 new Swiper(".js-swiper-banner");
 
+new Swiper(".js-swiper-news");
+
+new Swiper(".js-swiper-gallery");
+
+new Swiper(".js-swiper-videos");
+
+new Swiper(".js-swiper-general-posts-editorials");
+
 // new Swiper(".js-swiper-magazine-banner", {
 //   modules: [Navigation, Pagination],
 //   slidesPerView: 1,

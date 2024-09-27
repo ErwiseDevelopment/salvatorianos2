@@ -22,7 +22,7 @@ get_header();
 		<?php while (have_posts()) : the_post(); ?>
 
 			<!-- banner -->
-			<?php echo get_template_part('template-parts/content', 'general-banner') ?>
+			<?php echo get_template_part('template-parts/content', 'general-banner', get_general_banner('paroquias')) ?>
 			<!-- end banner -->
 
 			<!-- posts editorial -->

@@ -22,7 +22,7 @@ get_header();
 		<?php while (have_posts()) : the_post(); ?>
 
 			<!-- banner -->
-			<?php echo get_template_part('template-parts/content', 'general-banner') ?>
+			<?php echo get_template_part('template-parts/content', 'general-banner', get_general_banner('pe-jordan')) ?>
 			<!-- end banner -->
 
 			<!-- posts editorial -->
@@ -40,7 +40,7 @@ get_header();
 			<div class="mt-10"></div>
 
 			<!-- blog -->
-			<?php echo get_template_part('template-parts/content', 'general-blog' ) ?>
+			<?php echo get_template_part('template-parts/content', 'general-blog') ?>
 			<!-- blog -->
 
 			<div class="mt-20"></div>

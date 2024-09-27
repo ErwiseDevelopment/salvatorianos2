@@ -95,7 +95,7 @@ b {
   }
 
   .news-item {
-    @apply w-full h-full overflow-hidden relative block;
+    @apply w-full h-[280px] xl:h-full overflow-hidden relative block;
   }
 
   .news-item::before {
@@ -112,11 +112,11 @@ b {
   }
   
   .news-item-emphasis {
-    @apply font-bold font-red-hat-display uppercase text-white bg-gradient-to-r from-[#91AC31] to-[#4D8C3F] py-[2px] px-10;
+    @apply text-sm xl:text-base font-bold font-red-hat-display uppercase text-white bg-gradient-to-r from-[#91AC31] to-[#4D8C3F] py-[2px] px-10;
   }
 
   .news-item-title {
-    @apply font-black font-red-hat-display text-white mb-3;
+    @apply text-lg xl:text-2xl font-black font-red-hat-display text-white mb-3;
   }
 
   .news-item-read-more {
@@ -124,7 +124,7 @@ b {
   }
 
   .our-school-item {
-    @apply h-[288px] rounded-full overflow-hidden flex flex-col justify-center items-center gap-4 odd:bg-gradient-green even:bg-gradient-purple px-8;
+    @apply w-[280px] xl:w-full h-[280px] xl:h-[288px] rounded-full overflow-hidden flex flex-col justify-center items-center gap-4 odd:bg-gradient-green even:bg-gradient-purple px-8;
   }
 
   .post-content {
@@ -164,7 +164,7 @@ b {
   }
 
   .button-cta {
-    @apply transition hover:scale-90 rounded-full inline-block text-2xl font-bold font-red-hat-display text-center uppercase text-white bg-gradient-to-r from-[#7C33EE] to-[#2D2463] py-4 px-24;
+    @apply transition hover:scale-90 rounded-full inline-block text-lg xl:text-2xl font-bold font-red-hat-display text-center uppercase text-white bg-gradient-to-r from-[#7C33EE] to-[#2D2463] py-4 px-16 xl:px-24;
   }
 
   .swiper-button-prev-parishes {
@@ -178,6 +178,11 @@ b {
   .swiper-button-prev-parishes::after,
   .swiper-button-next-parishes::after {
     display: none !important;
+  }
+
+  .video iframe {
+    width: 100%;
+    height: 100%;
   }
 }
 

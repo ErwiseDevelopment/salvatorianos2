@@ -103,31 +103,134 @@ function get_month($month)
     return get_months()[$month];
 }
 
-function get_editorials(): array {
+function get_editorials(): array
+{
+    // return [
+    //     'institucional' => 'Institucional',
+    //     'pe-jordan'     => 'Pe. Jordan',
+    //     'vocacional'    => 'Vocacional',
+    //     'paroquias'     => 'Paróquias',
+    //     'educacao'      => 'Educação',
+    //     'obras-sociais' => 'Obras Sociais',
+    //     'revistas'      => 'Revista'
+    // ];
+
     return [
-        'institucional' => 'Institucional',
-        'pe-jordan'     => 'Pe. Jordan' ,
-        'vocacional'    => 'Vocacional',
-        'paroquias'     => 'Paróquias',
-        'educacao'      => 'Educação',
-        'obras-sociais' => 'Obras Sociais',
-        'revistas'      => 'Revista'
-    ]; 
+        'editoria-educacao' => [
+            'categories' => [
+                'blog' => 'educacao-blog',
+                'news' => 'educacao-noticia',
+                'slug' => 'educacao',
+            ],
+            'colors' => [
+                'primary'   => '#000000',
+                'secondary' => '#000000'
+            ],
+            'title' => 'Educação'
+        ],
+        'editoria-institucional' => [
+            'categories' => [
+                'blog' => 'institucional-blog',
+                'news' => 'institucional-noticia',
+                'slug' => 'institucional',
+            ],
+            'colors' => [
+                'primary'   => '#000000',
+                'secondary' => '#000000'
+            ],
+            'title' => 'Institucional'
+        ],
+        'editoria-obras-sociais' => [
+            'categories' => [
+                'blog' => 'obras-sociais-blog',
+                'news' => 'obras-sociais-noticia',
+                'slug' => 'obras-sociais',
+            ],
+            'colors' => [
+                'primary'   => '#000000',
+                'secondary' => '#000000'
+            ],
+            'title' => 'Obras Sociais'
+        ],
+        'editoria-paroquias' => [
+            'categories' => [
+                'blog' => 'paroquias-blog',
+                'news' => 'paroquias-noticia',
+                'slug' => 'paroquias',
+            ],
+            'colors' => [
+                'primary'   => '#000000',
+                'secondary' => '#000000'
+            ],
+            'title' => 'Paróquias'
+        ],
+        'editoria-pe-jordan' => [
+            'categories' => [
+                'blog' => 'pe-jordan-blog',
+                'news' => 'pe-jordan-noticia',
+                'slug' => 'pe-jordan',
+            ],
+            'colors' => [
+                'primary'   => '#000000',
+                'secondary' => '#000000'
+            ],
+            'title' => 'Pe. Jordan'
+        ],
+        'portal' => [
+            'categories' => [
+                'blog'          => 'portal-blog',
+                'news'          => 'portal-noticia',
+                'news_featured' => 'portal-noticia-destaque',
+                'slug'          => 'portal',
+            ],
+            'colors' => [
+                'primary'   => '#000000',
+                'secondary' => '#000000'
+            ],
+            'title' => 'Pe. Jordan'
+        ],
+        'editoria-revistas' => [
+            'categories' => [
+                'blog' => 'revistas-blog',
+                'news' => 'revistas-noticia',
+                'slug' => 'revistas',
+            ],
+            'colors' => [
+                'primary'   => '#000000',
+                'secondary' => '#000000'
+            ],
+            'title' => 'Revistas'
+        ],
+        'editoria-vocacional' => [
+            'categories' => [
+                'blog' => 'vocacional-blog',
+                'news' => 'vocacional-noticia',
+                'slug' => 'vocacional',
+            ],
+            'colors' => [
+                'primary'   => '#ffd000',
+                'secondary' => '#ffa300'
+            ],
+            'title' => 'Vocacional'
+        ],
+    ];
 }
 
-function show_banner_title(object $page): bool {
-    if(isset(get_editorials()[$page->post_name]))
+function show_banner_title(object $page): bool
+{
+    if (isset(get_editorials()[$page->post_name]))
         return false;
 
     return true;
 }
 
-function hidden_banner_title(string $type, string $page = null): bool {
+function hidden_banner_title(string $type, string $page = null): bool
+{
     $pages = [
         'page' => [
             'inicio'        => 'Início',
             'institucional' => 'Institucional',
-            'pe-jordan'     => 'Pe. Jordan' ,
+            'pe-jordan'     => 'Pe. Jordan',
             'vocacional'    => 'Vocacional',
             'paroquias'     => 'Paróquias',
             'educacao'      => 'Educação',
@@ -136,20 +239,67 @@ function hidden_banner_title(string $type, string $page = null): bool {
         ]
     ];
 
-    if($type == 'post') {
+    if ($type == 'post') {
         return true;
     }
 
-    if($type == 'page') {
-        if(isset($pages[$type][$page])) {
+    if ($type == 'page') {
+        if (isset($pages[$type][$page])) {
             return false;
         }
     }
-    
+
     return true;
 }
 
-function get_general_posts_editorial_attributes(string $title, string $category_slug, string $button_title, string $button_link): array {
+function get_custom_query(int $posts_per_page = -1, string $post_type = 'post', string $cat_name = '', string $order = 'DESC', array $post__not_in = [])
+{
+    if ($cat_name != '') {
+        return [
+            'posts_per_page' => $posts_per_page,
+            'post_type'      => $post_type,
+            'cat_name'       => $cat_name,
+            'order'          => $order,
+            'post__not_in'   => $post__not_in
+        ];
+    }
+
+    return [
+        'posts_per_page' => $posts_per_page,
+        'post_type'      => $post_type,
+        'order'          => $order,
+        'post__not_in'   => $post__not_in
+    ];
+}
+
+function get_thumbnail_custom(string $classe = '', string $height = '')
+{
+    $alt = get_the_title() . ' - Salvatorianos';
+
+    return the_post_thumbnail('post-thumbnail', array(
+        'class' => $classe,
+        'style' => $height != '' ? $height . 'px' : '',
+        'alt'   => $alt
+    ));
+}
+
+function get_general_custom_post(string $post_type, string $editorial)
+{
+    return $args = array(
+        'posts_per_page' => -1,
+        'post_type'      => $post_type,
+        'tax_query'      => array(
+            array(
+                'taxonomy' => 'editoria',
+                'field'    => 'slug',
+                'terms'    => array($editorial)
+            )
+        )
+    );
+}
+
+function get_general_posts_editorial_attributes(string $title, string $category_slug, string $button_title, string $button_link): array
+{
     return [
         'title'         => $title,
         'category_slug' => $category_slug,
@@ -158,19 +308,20 @@ function get_general_posts_editorial_attributes(string $title, string $category_
     ];
 }
 
-function get_posts_attributes(object $posts_editorial): array {
+function get_posts_attributes(object $posts_editorial): array
+{
     $category_main = '';
 
-    foreach(get_the_category(get_the_ID()) as $category) {
-        foreach(get_editorials() as $editorial) {
-            if($category->name == $editorial) {
+    foreach (get_the_category(get_the_ID()) as $category) {
+        foreach (get_editorials() as $editorial) {
+            if ($category->name == $editorial) {
                 $category_main = $category->name;
             }
         }
     }
 
-    $thumbnail = get_the_post_thumbnail(null, 'post-thumbnail', array('class' => 'w-full h-full object-cover', 'alt' => get_the_title()));
-        
+    $thumbnail = get_the_post_thumbnail(null, 'post-thumbnail', array('class' => 'w-full h-[220px] object-cover', 'alt' => get_the_title()));
+
     return [
         'title'          => get_the_title(),
         'category'       => $category_main,
@@ -181,35 +332,6 @@ function get_posts_attributes(object $posts_editorial): array {
         'link'           => get_the_permalink()
     ];
 }
-
-// function show_category_emphasis(array $categories): string{
-//     $categories_details = [
-//         'Blog',
-//         'Notícia'
-//     ];
-
-//     $category_main = null;
-
-//     $category_editorial = null;
-
-//     foreach($categories_details as $category_detail) {
-//         foreach($categories as $category) {
-//             if(strpos($category->name, $category_detail)) {
-//                 $category_main = $category_detail;
-//             }
-//         }
-//     }
-
-//     foreach($categories as $category) {
-//         foreach(get_editorials() as $editorial) {
-//             if() {
-                
-//             }
-//         }
-//     }
-
-//     return $category_main;
-// }
 
 /**
  * Enqueue scripts and styles.
