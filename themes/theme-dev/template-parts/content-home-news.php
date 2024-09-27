@@ -6,12 +6,12 @@
 
             <div>
                 <?php
-                $category_featured = get_editorials()['portal']['categories']['news_featured'];
+                $news_featured_category = get_editorials()['portal']['categories']['news_featured'];
 
                 $args = array(
                     'posts_per_page' => 1,
                     'post_type'      => 'post',
-                    'cat_name'       => $category_featured,
+                    'cat_name'       => $news_featured_category,
                     'order'          => 'DESC'
                 );
 
@@ -51,19 +51,21 @@
             <div class="xl:h-[560px] grid grid-cols-1 xl:grid-cols-2 xl:grid-rows-2 gap-2">
 
                 <?php
+                $blog_featured_category = get_editorials()['portal']['categories']['blog_featured'];
+
                 $args = array(
                     'posts_per_page' => 1,
                     'post_type'      => 'post',
-                    'cat_name'       => 'portal-blog',
+                    'cat_name'       => $blog_featured_category,
                     'order'          => 'DESC'
                 );
 
-                $blog = new WP_Query($args);
+                $blog_featured = new WP_Query($args);
 
                 $posts_hidden = [];
 
-                if ($blog->have_posts()) :
-                    while ($blog->have_posts()) : $blog->the_post();
+                if ($blog_featured->have_posts()) :
+                    while ($blog_featured->have_posts()) : $blog_featured->the_post();
                         array_push($posts_hidden, get_the_ID());
                 ?>
                         <a class="news-item col-span-full row-span-1" href="<?php the_permalink() ?>">
@@ -91,12 +93,12 @@
                 ?>
 
                 <?php
-                $category_slug = get_editorials()['portal']['categories']['news'];
+                $news_category = get_editorials()['portal']['categories']['news'];
 
                 $args = array(
                     'posts_per_page' => 2,
                     'post_type'      => 'post',
-                    'cat_name'       => $category_slug,
+                    'cat_name'       => $news_category,
                     'order'          => 'DESC',
                     'post__not_in'   => array($news_featured_id)
                 );

@@ -179,6 +179,7 @@ function get_editorials(): array
         'portal' => [
             'categories' => [
                 'blog'          => 'portal-blog',
+                'blog_featured' => 'portal-blog-destaque',
                 'news'          => 'portal-noticia',
                 'news_featured' => 'portal-noticia-destaque',
                 'slug'          => 'portal',

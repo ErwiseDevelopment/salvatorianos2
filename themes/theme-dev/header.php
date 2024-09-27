@@ -132,25 +132,25 @@
                             <ul class="h-full grid grid-cols-4">
 
                                 <li class="col-span-1 flex justify-end">
-                                    <a class="w-[80px] h-full transition hover:opacity-90 rounded-tl-[9999px] rounded-bl-[9999px] flex justify-center items-center bg-[#27225C] py-4 px-6" href="<?php echo get_home_url(null, '/') ?>">
+                                    <a class="w-[80px] h-full transition hover:opacity-90 rounded-tl-[9999px] rounded-bl-[9999px] flex justify-center items-center <?php echo $wp->request == '' ? 'bg-[#27225C]' : 'bg-[#8134F4]'; ?> py-4 px-6" href="<?php echo get_home_url(null, '/') ?>">
                                         <img class="w-full h-full" src="<?php echo get_template_directory_uri() ?>/resources/images/icon-home.png" alt="Home - Salvatoriano" />
                                     </a>
                                 </li>
 
                                 <li class="col-span-1">
-                                    <a class="main-nav-link bg-[#549D2C]" href="<?php echo get_home_url(null, '/institucional') ?>">
+                                    <a class="main-nav-link <?php echo $wp->request == 'institucional' ? 'is-active' : ''; ?> bg-[#549D2C]" href="<?php echo get_home_url(null, '/institucional') ?>">
                                         Institucional
                                     </a>
                                 </li>
 
                                 <li class="col-span-1">
-                                    <a class="main-nav-link bg-[#329532]" href="<?php echo get_home_url(null, '/pe-jordan') ?>">
+                                    <a class="main-nav-link <?php echo $wp->request == 'pe-jordan' ? 'is-active' : ''; ?> bg-[#329532]" href="<?php echo get_home_url(null, '/pe-jordan') ?>">
                                         Pe. Jordan
                                     </a>
                                 </li>
 
                                 <li class="col-span-1">
-                                    <a class="main-nav-link rounded-tr-[9999px] rounded-br-[9999px] bg-[#058E36]" href="<?php echo get_home_url(null, '/vocacional') ?>">
+                                    <a class="main-nav-link <?php echo $wp->request == 'vocacional' ? 'is-active' : ''; ?> rounded-tr-[9999px] rounded-br-[9999px] bg-[#058E36]" href="<?php echo get_home_url(null, '/vocacional') ?>">
                                         Vocacional
                                     </a>
                                 </li>
@@ -164,25 +164,25 @@
                             <ul class="h-full grid grid-cols-4">
 
                                 <li class="col-span-1">
-                                    <a class="main-nav-link bg-[#83AB1E]" href="<?php echo get_home_url(null, '/paroquias') ?>">
+                                    <a class="main-nav-link <?php echo $wp->request == 'paroquias' ? 'is-active' : ''; ?> bg-[#83AB1E]" href="<?php echo get_home_url(null, '/paroquias') ?>">
                                         Paróquias
                                     </a>
                                 </li>
 
                                 <li class="col-span-1">
-                                    <a class="main-nav-link bg-[#549D2C]" href="<?php echo get_home_url(null, '/educacao') ?>">
+                                    <a class="main-nav-link <?php echo $wp->request == 'educacao' ? 'is-active' : ''; ?> bg-[#549D2C]" href="<?php echo get_home_url(null, '/educacao') ?>">
                                         Educação
                                     </a>
                                 </li>
 
                                 <li class="col-span-1">
-                                    <a class="main-nav-link bg-[#3A9731]" href="#">
+                                    <a class="main-nav-link <?php echo $wp->request == 'obras-sociais' ? 'is-active' : ''; ?> bg-[#3A9731]" href="<?php echo get_home_url(null, '/obras-sociais') ?>">
                                         Obras Sociais
                                     </a>
                                 </li>
 
                                 <li class="col-span-1">
-                                    <a class="main-nav-link rounded-tr-[9999px] rounded-br-[9999px] bg-[#058E36]" href="<?php echo get_home_url(null, '/revistas') ?>">
+                                    <a class="main-nav-link <?php echo $wp->request == 'revistas' ? 'is-active' : ''; ?> rounded-tr-[9999px] rounded-br-[9999px] bg-[#058E36]" href="<?php echo get_home_url(null, '/revistas') ?>">
                                         Revista
                                     </a>
                                 </li>

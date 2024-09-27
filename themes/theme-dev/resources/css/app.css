@@ -33,6 +33,14 @@ b {
     @apply hover-scale-90 text-2xl font-medium text-center uppercase text-white bg-gradient-green-200 cursor-pointer py-4 px-6;
   }
 
+  .content h2 {
+    @apply text-2xl xl:text-4xl font-bold font-red-hat-display text-[#7137F0] mb-4;
+  }
+
+  .content p {
+    @apply text-sm xl:text-xl font-red-hat-display text-[#1C1C1C] mb-4;
+  }
+
   .input-field {
     @apply w-full text-sm font-semibold font-red-hat-display uppercase text-[#2C285B] placeholder:text-[#2C285B] bg-white py-4 px-6;
   }
@@ -43,6 +51,10 @@ b {
 
   .main-nav-link {
     @apply h-full transition hover:opacity-90 flex justify-center items-center text-xl font-medium font-red-hat-display text-center text-white px-10;
+  }
+
+  .main-nav-link.is-active {
+    @apply bg-[#26245C];
   }
 
   .nav-item {
