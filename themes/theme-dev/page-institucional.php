@@ -29,9 +29,12 @@ get_header();
 			?>
 			<!-- end banner -->
 
-			<!-- posts editorial -->
-			<?php echo get_template_part('template-parts/content', 'general-posts-editorial', get_general_posts_editorial_attributes('Confira o que está acontecendo em nossa Província', 'institucional-noticia', 'Todas as notícias institucionais', 'https://google.com')) ?>
-			<!-- end posts editorial -->
+			<!-- news editorial -->
+			<?php
+			$news_category = get_editorials()['editoria-institucional']['categories']['news'];
+
+			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Confira o que está acontecendo em nossa Província', $news_category, 'Todas as notícias institucionais', 'https://google.com')) ?>
+			<!-- end news editorial -->
 
 			<!-- our pedagogue -->
 			<section class="py-32">
@@ -74,11 +77,15 @@ get_header();
 			<!-- end our pedagogue -->
 
 			<!-- blog -->
-			<?php echo get_template_part('template-parts/content', 'general-blog') ?>
+			<?php
+			$blog_category = get_editorials()['editoria-institucional']['categories']['blog'];
+
+			echo get_template_part('template-parts/content', 'general-blog', get_blog_setting($blog_category))
+			?>
 			<!-- blog -->
 
 			<!-- jordan prayer -->
-			<?php echo get_template_part('template-parts/content', 'general-jordan-prayer') ?>
+			<!-- echo get_template_part('template-parts/content', 'general-jordan-prayer') -->
 			<!-- jordan prayer -->
 
 			<div class="mt-10"></div>

@@ -16,7 +16,7 @@
         </div>
 
         <!-- desktop -->
-        <div class="hidden">
+        <div class="col-span-full grid grid-cols-4 gap-4">
             <?php
             $posts_args = array(
                 'post_type'      => 'post',
@@ -29,7 +29,7 @@
 
             if ($posts_editorial->have_posts()) :
                 while ($posts_editorial->have_posts()) : $posts_editorial->the_post();
-                    echo get_template_part('template-parts/components/content', 'new-item', get_posts_attributes($posts_editorial));
+                    echo get_template_part('template-parts/components/content', 'new-item', get_new_item_setting());
                 endwhile;
             endif;
 
@@ -61,7 +61,7 @@
                         while ($posts_editorial->have_posts()) : $posts_editorial->the_post();
                     ?>
                             <div class="swiper-slide">
-                                <?php echo get_template_part('template-parts/components/content', 'new-item', get_posts_attributes($posts_editorial)); ?>
+                                <?php echo get_template_part('template-parts/components/content', 'new-item', get_new_item_setting()); ?>
                             </div>
                     <?php
                         endwhile;

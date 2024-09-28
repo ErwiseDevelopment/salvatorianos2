@@ -65,7 +65,7 @@
                 $args = array(
                     'posts_per_page' => 4,
                     'post_type'      => 'post',
-                    'cat_name'       => 'blog',
+                    'cat_name'       => $args['category'],
                     'order'          => 'DESC'
                 );
 
@@ -77,7 +77,7 @@
                         <a class="col-span-1 block" href="<?php the_permalink() ?>">
                             <!-- <img class="w-full h-[280px] block" src="<php echo ?>" alt="Salvatoriano" /> -->
 
-                            <?php echo get_thumbnail_custom('w-full block', '280'); ?>
+                            <?php echo get_post_thumbnail_custom('w-full block', '280'); ?>
 
                             <h5 class="text-2xl font-black font-red-hat-display text-[#2C285B] my-6">
                                 <!-- 5 livros para descobrir o

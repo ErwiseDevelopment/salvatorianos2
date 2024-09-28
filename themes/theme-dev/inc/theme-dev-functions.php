@@ -273,15 +273,24 @@ function get_custom_query(int $posts_per_page = -1, string $post_type = 'post', 
     ];
 }
 
-function get_thumbnail_custom(string $classe = '', string $height = '')
+function get_post_thumbnail_empty_custom(string $height = ''): string
 {
-    $alt = get_the_title() . ' - Salvatorianos';
+    return '<div class="w-full bg-gray-100" style="height: ' . $height . 'px"></div>';
+}
 
-    return the_post_thumbnail('post-thumbnail', array(
-        'class' => $classe,
-        'style' => $height != '' ? $height . 'px' : '',
-        'alt'   => $alt
-    ));
+function get_post_thumbnail_custom(string $classe = '', string $height = '')
+{
+    if (the_post_thumbnail()) {
+        $alt = get_the_title() . ' - Salvatorianos';
+
+        return the_post_thumbnail('post-thumbnail', array(
+            'class' => $classe,
+            'style' => $height != '' ? $height . 'px' : '',
+            'alt'   => $alt
+        ));
+    }
+
+    return get_post_thumbnail_empty_custom($height);
 }
 
 function get_general_custom_post(string $post_type, string $editorial)
@@ -299,7 +308,7 @@ function get_general_custom_post(string $post_type, string $editorial)
     );
 }
 
-function get_general_posts_editorial_attributes(string $title, string $category_slug, string $button_title, string $button_link): array
+function get_general_news_editorial_setting(string $title, string $category_slug, string $button_title, string $button_link): array
 {
     return [
         'title'         => $title,
@@ -309,7 +318,14 @@ function get_general_posts_editorial_attributes(string $title, string $category_
     ];
 }
 
-function get_posts_attributes(object $posts_editorial): array
+function get_blog_setting(string $category): array
+{
+
+    return [
+        'category' => $category
+    ];
+}
+function get_new_item_setting(): array
 {
     $category_main = '';
 
