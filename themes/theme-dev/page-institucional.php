@@ -25,7 +25,7 @@ get_header();
 			<?php
 			$editorial_slug = get_editorials()['editoria-institucional']['categories']['slug'];
 
-			echo get_template_part('template-parts/content', 'general-banner', get_general_custom_post('banners', $editorial_slug))
+			echo get_template_part('template-parts/content', 'general-banner', get_query_custom('banners', $editorial_slug))
 			?>
 			<!-- end banner -->
 
@@ -33,7 +33,8 @@ get_header();
 			<?php
 			$news_category = get_editorials()['editoria-institucional']['categories']['news'];
 
-			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Confira o que está acontecendo em nossa Província', $news_category, 'Todas as notícias institucionais', 'https://google.com')) ?>
+			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Confira o que está acontecendo em nossa Província', $news_category, 'Todas as notícias institucionais', 'noticias'))
+			?>
 			<!-- end news editorial -->
 
 			<!-- our pedagogue -->
@@ -80,12 +81,12 @@ get_header();
 			<?php
 			$blog_category = get_editorials()['editoria-institucional']['categories']['blog'];
 
-			echo get_template_part('template-parts/content', 'general-blog', get_blog_setting($blog_category))
+			echo get_template_part('template-parts/content', 'general-blog', get_general_blog_setting($blog_category))
 			?>
 			<!-- blog -->
 
 			<!-- jordan prayer -->
-			<!-- echo get_template_part('template-parts/content', 'general-jordan-prayer') -->
+			<?php echo get_template_part('template-parts/content', 'general-jordan-prayer') ?>
 			<!-- jordan prayer -->
 
 			<div class="mt-10"></div>

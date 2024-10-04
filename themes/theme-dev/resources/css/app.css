@@ -45,6 +45,10 @@ b {
     @apply w-full text-sm font-semibold font-red-hat-display uppercase text-[#2C285B] placeholder:text-[#2C285B] bg-white py-4 px-6;
   }
 
+  .header-background {
+    @apply bg-cover bg-no-repeat pb-4;
+  }
+
   .hover-scale-90 {
     @apply transition hover:scale-90;
   }
@@ -55,6 +59,51 @@ b {
 
   .main-nav-link.is-active {
     @apply bg-[#26245C];
+  }
+
+  .menu-secondary .menu {
+    @apply flex justify-between;
+  }
+
+  .menu-secondary .menu-item {
+    @apply relative;
+  }
+
+  .menu-secondary .menu-item .sub-menu {
+    @apply w-[200px] top-full left-0 absolute hidden bg-white py-4 z-10;
+  }
+
+  .menu-secondary .menu-item:hover > .sub-menu,
+  .menu-secondary .menu-item .menu-item-has-children:hover .sub-menu{
+    @apply block;
+  }
+
+  .menu-secondary .menu-item .sub-menu .menu-item-has-children {
+    @apply relative;
+  }
+
+  .menu-secondary .menu-item .sub-menu .menu-item:hover {
+    @apply bg-[#83AB1E];
+  }
+
+  .menu-secondary .menu-item .sub-menu .menu-item-has-children .sub-menu {
+    @apply top-2 left-full;
+  }
+
+  .menu-secondary .menu-item .sub-menu .menu-item-has-children {
+    @apply relative;
+  }
+
+  .menu-secondary .menu-item .sub-menu a {
+    @apply text-sm uppercase text-[#123294];
+  }
+
+  .menu-secondary .menu-item .sub-menu .menu-item:hover > a {
+    @apply text-white;
+  }
+
+  .menu-secondary .menu-item a {
+    @apply block text-xl font-medium font-red-hat-display text-white p-2;
   }
 
   .nav-item {

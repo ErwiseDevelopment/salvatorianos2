@@ -17,23 +17,44 @@
                 </div>
             </div>
 
-            <div class="flex flex-col items-center mt-8">
-                <img class="h-[420px] object-cover" src="<?php echo get_template_directory_uri() ?>/resources/images/magazine-1.png" alt="Missão Salvatoriana - Salvatoriano" />
+            <?php
+            $args = array(
+                'posts_per_page' => 1,
+                'post_type'      => '3d-flip-book',
+            );
 
-                <p class="text-sm font-bold font-red-hat-display text-center text-[#2C285B] mt-8 mb-4">
-                    Jan/Fev/Mar - 2024
-                </p>
+            $book = new WP_Query($args);
 
-                <div class="flex flex-col items-center gap-y-4">
-                    <a class="transition hover:scale-90 rounded-full inline-block text-xl font-bold font-red-hat-display text-center uppercase text-white bg-gradient-to-r from-[#91AC31] to-[#4D8C3F] py-2 px-8" href="#">
-                        Acesse agora
-                    </a>
+            if ($book->have_posts()):
+                while ($book->have_posts()): $book->the_post();
+                    $thumbnail_id = get_field('3dfb_thumbnail', 243)['data']['post_ID'];
 
-                    <a class="transition hover:scale-90 rounded-full inline-block text-xl font-bold font-red-hat-display text-center uppercase text-white bg-gradient-to-r from-[#7C33EE] to-[#2D2463] py-2 px-8" href="#">
-                        Edições anteriores
-                    </a>
-                </div>
-            </div>
+                    $thumbnail_post = get_post((int) $thumbnail_id);
+            ?>
+                    <div class="flex flex-col items-center mt-8">
+                        <img class="h-[420px] object-cover" src="<?php echo $thumbnail_post->guid; ?>" alt="Missão Salvatoriana - Salvatoriano" />
+
+                        <p class="text-sm font-bold font-red-hat-display text-center text-[#2C285B] mt-8 mb-4">
+                            Jan/Fev/Mar - 2024
+                        </p>
+
+                        <div class="flex flex-col items-center gap-y-4">
+                            <a class="transition hover:scale-90 rounded-full inline-block text-xl font-bold font-red-hat-display text-center uppercase text-white bg-gradient-to-r from-[#91AC31] to-[#4D8C3F] py-2 px-8" href="#">
+                                Acesse agora
+                            </a>
+
+                            <a class="transition hover:scale-90 rounded-full inline-block text-xl font-bold font-red-hat-display text-center uppercase text-white bg-gradient-to-r from-[#7C33EE] to-[#2D2463] py-2 px-8" href="#">
+                                Edições anteriores
+                            </a>
+                        </div>
+                    </div>
+            <?php
+                endwhile;
+            endif;
+
+            wp_reset_query();
+
+            ?>
         </div>
 
         <div class="w-full xl:w-7/12 pt-10 xl:pt-0">
@@ -52,7 +73,7 @@
                 </div>
 
                 <div class="hidden xl:flex justify-end items-end">
-                    <a class="translate-y-2 transition hover:opacity-90 rounded-full relative inline-block text-xl font-bold font-red-hat-display text-center uppercase text-white bg-[#27225C] py-2 px-8" href="<?php echo get_home_url(null, '/blog') ?>">
+                    <a class="translate-y-2 transition hover:opacity-90 rounded-full relative inline-block text-xl font-bold font-red-hat-display text-center uppercase text-white bg-[#27225C] py-2 px-8" href="<?php echo get_home_url(null, $args['filter']) ?>">
                         Ver tudo
                     </a>
                 </div>
@@ -65,7 +86,7 @@
                 $args = array(
                     'posts_per_page' => 4,
                     'post_type'      => 'post',
-                    'cat_name'       => $args['category'],
+                    'category_name'  => $args['category'],
                     'order'          => 'DESC'
                 );
 

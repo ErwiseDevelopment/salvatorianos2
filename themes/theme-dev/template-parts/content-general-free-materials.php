@@ -16,7 +16,7 @@
             </div>
 
             <div class="hidden xl:flex justify-end items-end">
-                <a class="translate-y-2 transition hover:opacity-90 rounded-full relative inline-block text-xl font-bold font-red-hat-display text-center uppercase text-white bg-[#27225C] py-2 px-8" href="#">
+                <a class="translate-y-2 transition hover:opacity-90 rounded-full relative inline-block text-xl font-bold font-red-hat-display text-center uppercase text-white bg-[#27225C] py-2 px-8" href="<?php echo get_home_url(null, '/materiais-exclusivos?categoria=' . $wp->request) ?>">
                     Ver tudo
                 </a>
             </div>

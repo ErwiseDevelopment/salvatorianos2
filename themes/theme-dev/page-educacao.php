@@ -22,12 +22,18 @@ get_header();
 		<?php while (have_posts()) : the_post(); ?>
 
 			<!-- banner -->
-			<?php echo get_template_part('template-parts/content', 'general-banner', get_general_banner('educacao')) ?>
-			<!-- end banner -->
+			<?php
+			$editorial_slug = get_editorials()['editoria-educacao']['categories']['slug'];
 
-			<!-- posts editorial -->
-			<?php echo get_template_part('template-parts/content', 'general-posts-editorial', get_general_posts_editorial_attributes('Saiba tudo sobre nossas escolas', 'educacao-noticia', 'Todas as notícias das escolas', 'https://google.com')) ?>
-			<!-- end posts editorial -->
+			echo get_template_part('template-parts/content', 'general-banner', get_query_custom('banners', $editorial_slug));
+			?> <!-- end banner -->
+
+			<!-- news editorial -->
+			<?php
+			$news_category = get_editorials()['editoria-educacao']['categories']['news'];
+
+			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Saiba tudo sobre nossas escolas', $news_category, 'Todas as notícias das escolas', 'noticias?categoria=vocacional')) ?>
+			<!-- end news editorial -->
 
 			<div class="my-5"></div>
 
@@ -57,7 +63,7 @@ get_header();
 			<!-- end our school -->
 
 			<!-- gallery -->
-			<?php echo get_template_part('template-parts/content', 'general-gallery') ?>
+			<?php echo get_template_part('template-parts/content', 'general-gallery', get_query_custom('galeria', $editorial_slug)) ?>
 			<!-- gallery -->
 
 			<!-- our pedagogue -->
@@ -101,11 +107,14 @@ get_header();
 			<!-- end our pedagogue -->
 
 			<!-- blog -->
-			<?php echo get_template_part('template-parts/content', 'general-blog') ?>
+			<?php
+			$blog_category = get_editorials()['editoria-educacao']['categories']['blog'];
+
+			echo get_template_part('template-parts/content', 'general-blog', get_general_blog_setting($blog_category, $editorial_slug)) ?>
 			<!-- blog -->
 
 			<!-- free materials -->
-			<?php echo get_template_part('template-parts/content', 'general-free-materials') ?>
+			<?php echo get_template_part('template-parts/content', 'general-free-materials', get_query_custom('materiais', $editorial_slug, 4)) ?>
 			<!-- free materials -->
 		<?php endwhile; ?>
 
