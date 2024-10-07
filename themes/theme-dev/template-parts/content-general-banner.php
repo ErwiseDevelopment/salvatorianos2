@@ -1,6 +1,6 @@
-<section class="h-[300px] xl:h-screen mt-4">
+<section class="h-[120px] xl:h-[300px] xl:h-screen mt-4">
     <!-- swiper -->
-    <div class="swiper h-full js-swiper-banner">
+    <div class="swiper swiper-banner h-full js-swiper-banner">
 
         <div class="swiper-wrapper">
 
@@ -13,7 +13,7 @@
             ?>
                     <div class="swiper-slide">
                         <a href="<?php echo get_field('link_banner') ?>" target="_blank" rel="noreferrer noopener">
-                            <img class="w-full h-full object-cover" src="<?php echo get_field('imagem_banner') ?>" alt="<?php the_title() ?> - Salvatorianos" />
+                            <img class="w-full h-[120px] xl:h-full object-cover" src="<?php echo get_field('imagem_banner') ?>" alt="<?php the_title() ?> - Salvatorianos" />
                         </a>
                     </div>
             <?php

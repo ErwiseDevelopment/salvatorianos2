@@ -225,7 +225,7 @@ function show_banner_title(object $page): bool
     return true;
 }
 
-function hidden_banner_title(string $type, string $page = null): bool
+function get_hidden_banner_title(string $type, string $page = null): bool
 {
     $pages = [
         'page' => [
@@ -259,7 +259,7 @@ function get_custom_query(int $posts_per_page = -1, string $post_type = 'post', 
         return [
             'posts_per_page' => $posts_per_page,
             'post_type'      => $post_type,
-            'cat_name'       => $cat_name,
+            'category_name'  => $cat_name,
             'order'          => $order,
             'post__not_in'   => $post__not_in
         ];
@@ -273,21 +273,30 @@ function get_custom_query(int $posts_per_page = -1, string $post_type = 'post', 
     ];
 }
 
-function get_thumbnail_custom(string $classe = '', string $height = '')
+function get_post_thumbnail_empty_custom(string $height = ''): string
 {
-    $alt = get_the_title() . ' - Salvatorianos';
-
-    return the_post_thumbnail('post-thumbnail', array(
-        'class' => $classe,
-        'style' => $height != '' ? $height . 'px' : '',
-        'alt'   => $alt
-    ));
+    return '<div class="w-full bg-gray-100" style="height: ' . $height . 'px"></div>';
 }
 
-function get_general_custom_post(string $post_type, string $editorial)
+function get_post_thumbnail_custom(string $classe = '', string $height = '')
 {
-    return $args = array(
-        'posts_per_page' => -1,
+    if (the_post_thumbnail()) {
+        $alt = get_the_title() . ' - Salvatorianos';
+
+        return the_post_thumbnail('post-thumbnail', array(
+            'class' => $classe,
+            'style' => $height != '' ? $height . 'px' : '',
+            'alt'   => $alt
+        ));
+    }
+
+    return get_post_thumbnail_empty_custom($height);
+}
+
+function get_query_custom(string $post_type, string $editorial, int $posts_per_page = -1): array
+{
+    return array(
+        'posts_per_page' => $posts_per_page,
         'post_type'      => $post_type,
         'tax_query'      => array(
             array(
@@ -299,17 +308,36 @@ function get_general_custom_post(string $post_type, string $editorial)
     );
 }
 
-function get_general_posts_editorial_attributes(string $title, string $category_slug, string $button_title, string $button_link): array
+function get_general_news_editorial_setting(string $title, string $category_slug, string $button_title, string $button_link): array
 {
     return [
         'title'         => $title,
         'category_slug' => $category_slug,
         'button_title'  => $button_title,
-        'button_link'   => $button_link
+        'button_link'   => get_home_url(null, $button_link)
     ];
 }
 
-function get_posts_attributes(object $posts_editorial): array
+function get_general_blog_setting(string $category, string $filter = ''): array
+{
+    if (!empty($filter)) {
+        $filter = '?categoria=' . $filter;
+
+        return [
+            'category' => $category,
+            'filter'   => $filter
+        ];
+    }
+
+    $filter = 'blog';
+
+    return [
+        'category' => $category,
+        'filter'   => $filter
+    ];
+}
+
+function get_new_item_setting(): array
 {
     $category_main = '';
 
@@ -333,6 +361,57 @@ function get_posts_attributes(object $posts_editorial): array
         'link'           => get_the_permalink()
     ];
 }
+
+function get_pages_editorials_settings()
+{
+    return [
+        'institucional' => [
+            'header_background' => true,
+            'menu'              => 'menu-institucional'
+        ],
+
+        'pe-jordan' => [
+            'header_background' => true,
+            'menu'              => 'menu-pe-jordan'
+        ],
+
+        'vocacional' => [
+            'header_background' => true,
+            'menu'              => 'menu-vocacional'
+        ],
+
+        'paroquias' => [
+            'header_background' => true,
+            'menu'              => 'menu-paroquias'
+        ],
+
+        'educacao' => [
+            'header_background' => true,
+            'menu'              => 'menu-educacao'
+        ],
+
+        'obras-sociais' => [
+            'header_background' => true,
+            'menu'              => 'menu-obras-sociais'
+        ],
+
+        'revista' => [
+            'header_background' => true,
+            'menu'              => 'menu-revista'
+        ],
+    ];
+}
+
+register_nav_menus(array(
+    'primary'            => __('Primary Menu', 'yourtheme'),
+    'menu-institucional' => __('Menu Institucional', 'yourtheme'),
+    'menu-pe-jordan'     => __('Menu Pe. Jordan', 'yourtheme'),
+    'menu-vocacional'    => __('Menu Vocacional', 'yourtheme'),
+    'menu-paroquias'     => __('Menu Paróquias', 'yourtheme'),
+    'menu-educacao'      => __('Menu Educação', 'yourtheme'),
+    'menu-obras-sociais' => __('Menu Obras Sociais', 'yourtheme'),
+    'menu-revista'       => __('Menu Revista', 'yourtheme'),
+));
 
 /**
  * Enqueue scripts and styles.

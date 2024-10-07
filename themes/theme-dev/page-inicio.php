@@ -24,7 +24,7 @@ get_header();
 			<?php
 			$editorial_slug = get_editorials()['portal']['categories']['slug'];
 
-			echo get_template_part('template-parts/content', 'general-banner', get_general_custom_post('banners', $editorial_slug))
+			echo get_template_part('template-parts/content', 'general-banner', get_query_custom('banners', $editorial_slug))
 			?>
 			<!-- end banner -->
 
@@ -33,11 +33,11 @@ get_header();
 			<!-- news -->
 
 			<!-- gallery -->
-			<?php echo get_template_part('template-parts/content', 'general-gallery', get_general_custom_post('galeria', $editorial_slug)) ?>
+			<?php echo get_template_part('template-parts/content', 'general-gallery', get_query_custom('galeria', $editorial_slug)) ?>
 			<!-- gallery -->
 
 			<!-- videos -->
-			<?php echo get_template_part('template-parts/content', 'home-videos', get_general_custom_post('videos', $editorial_slug)) ?>
+			<?php echo get_template_part('template-parts/content', 'home-videos', get_query_custom('videos', $editorial_slug)) ?>
 			<!-- videos -->
 
 			<!-- banner welcome -->
@@ -45,11 +45,15 @@ get_header();
 			<!-- banner welcome -->
 
 			<!-- blog -->
-			<?php echo get_template_part('template-parts/content', 'general-blog') ?>
+			<?php
+			$blog_category = get_editorials()['portal']['categories']['blog'];
+
+			echo get_template_part('template-parts/content', 'general-blog', get_general_blog_setting($blog_category));
+			?>
 			<!-- blog -->
 
 			<!-- free materials -->
-			<?php echo get_template_part('template-parts/content', 'general-free-materials', get_general_custom_post('materiais', $editorial_slug)) ?>
+			<?php echo get_template_part('template-parts/content', 'general-free-materials', get_query_custom('materiais', $editorial_slug, 4)) ?>
 			<!-- free materials -->
 
 			<!-- prayer -->

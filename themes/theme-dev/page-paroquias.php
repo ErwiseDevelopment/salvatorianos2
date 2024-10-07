@@ -22,11 +22,18 @@ get_header();
 		<?php while (have_posts()) : the_post(); ?>
 
 			<!-- banner -->
-			<?php echo get_template_part('template-parts/content', 'general-banner', get_general_banner('paroquias')) ?>
+			<?php
+			$editorial_slug = get_editorials()['editoria-paroquias']['categories']['slug'];
+
+			echo get_template_part('template-parts/content', 'general-banner', get_query_custom('banners', $editorial_slug))
+			?>
 			<!-- end banner -->
 
 			<!-- posts editorial -->
-			<?php echo get_template_part('template-parts/content', 'general-posts-editorial', get_general_posts_editorial_attributes('Saiba tudo sobre nossas paróquias', 'paroquia-noticia', 'Todas as notícias das paróquias', 'https://google.com')) ?>
+			<?php
+			$news_category = get_editorials()['editoria-paroquias']['categories']['news'];
+
+			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Saiba tudo sobre nossas paróquias', $news_category, 'Todas as notícias das paróquias', 'noticias?categoria=paroquias')) ?>
 			<!-- end posts editorial -->
 
 			<!-- parishes carousel -->
@@ -40,11 +47,15 @@ get_header();
 			<div class="mt-10"></div>
 
 			<!-- blog -->
-			<?php echo get_template_part('template-parts/content', 'general-blog') ?>
+			<?php
+			$blog_category = get_editorials()['editoria-paroquias']['categories']['blog'];
+
+			echo get_template_part('template-parts/content', 'general-blog', get_general_blog_setting($blog_category, $editorial_slug));
+			?>
 			<!-- blog -->
 
 			<!-- free materials -->
-			<?php echo get_template_part('template-parts/content', 'general-free-materials') ?>
+			<?php echo get_template_part('template-parts/content', 'general-free-materials', get_query_custom('materiais', $editorial_slug, 4)) ?>
 			<!-- free materials -->
 		<?php endwhile; ?>
 	</main><!-- #main -->

@@ -11,7 +11,18 @@ new Swiper(".js-swiper-gallery");
 
 new Swiper(".js-swiper-videos");
 
-new Swiper(".js-swiper-general-posts-editorials");
+new Swiper(".js-swiper-general-news-editorial", {
+  breakpoints: {
+    320: {
+      slidesPerView: 1.2,
+      spaceBetween: 16,
+    },
+
+    992: {
+      slidesPerView: 1,
+    },
+  },
+});
 
 // new Swiper(".js-swiper-magazine-banner", {
 //   modules: [Navigation, Pagination],

@@ -4,6 +4,7 @@
 
         <div class="grid grid-cols-1 xl:grid-cols-2 gap-2">
 
+            <!-- news main featured -->
             <div>
                 <?php
                 $news_featured_category = get_editorials()['portal']['categories']['news_featured'];
@@ -11,20 +12,20 @@
                 $args = array(
                     'posts_per_page' => 1,
                     'post_type'      => 'post',
-                    'cat_name'       => $news_featured_category,
+                    'category_name'  => $news_featured_category,
                     'order'          => 'DESC'
                 );
 
-                $news_featured = new WP_Query($args);
+                $news_main_featured = new WP_Query($args);
 
-                $news_featured_id = 0;
+                $news_hidden = [];
 
-                if ($news_featured->have_posts()) :
-                    while ($news_featured->have_posts()) : $news_featured->the_post();
-                        $news_featured_id = get_the_ID();
+                if ($news_main_featured->have_posts()) :
+                    while ($news_main_featured->have_posts()) : $news_main_featured->the_post();
+                        array_push($news_hidden, get_the_ID());
                 ?>
                         <a class="news-item" href="<?php the_permalink() ?>">
-                            <?php echo get_thumbnail_custom('news-item-thumbnail') ?>
+                            <?php echo get_post_thumbnail_custom('news-item-thumbnail') ?>
 
                             <div class="bottom-0 left-0 absolute z-10 p-8">
                                 <span class="news-item-emphasis">
@@ -47,33 +48,32 @@
                 wp_reset_query();
                 ?>
             </div>
+            <!-- end news main featured -->
 
             <div class="xl:h-[560px] grid grid-cols-1 xl:grid-cols-2 xl:grid-rows-2 gap-2">
 
+                <!-- news featured -->
                 <?php
-                $blog_featured_category = get_editorials()['portal']['categories']['blog_featured'];
-
-                $args = array(
+                $news_featured_args = array(
                     'posts_per_page' => 1,
                     'post_type'      => 'post',
-                    'cat_name'       => $blog_featured_category,
-                    'order'          => 'DESC'
+                    'category_name'  => $news_featured_category,
+                    'order'          => 'DESC',
+                    'post__not_in'   => $news_hidden
                 );
 
-                $blog_featured = new WP_Query($args);
+                $news_featured = new WP_Query($news_featured_args);
 
-                $posts_hidden = [];
-
-                if ($blog_featured->have_posts()) :
-                    while ($blog_featured->have_posts()) : $blog_featured->the_post();
-                        array_push($posts_hidden, get_the_ID());
+                if ($news_featured->have_posts()) :
+                    while ($news_featured->have_posts()) : $news_featured->the_post();
+                        array_push($news_hidden, get_the_ID());
                 ?>
                         <a class="news-item col-span-full row-span-1" href="<?php the_permalink() ?>">
-                            <?php echo get_thumbnail_custom('news-item-thumbnail') ?>
+                            <?php echo get_post_thumbnail_custom('news-item-thumbnail') ?>
 
                             <div class="bottom-0 left-0 absolute z-10 p-5">
                                 <span class="news-item-emphasis text-xs" style="background-image: linear-gradient(to right, #8335fa, #2c2460)">
-                                    Blog
+                                    Notícia
                                 </span>
 
                                 <h2 class="news-item-title text-xl">
@@ -91,23 +91,22 @@
 
                 wp_reset_query();
                 ?>
+                <!-- end news featured -->
 
                 <?php
-                $news_category = get_editorials()['portal']['categories']['news'];
-
-                $args = array(
+                $news_args = array(
                     'posts_per_page' => 2,
                     'post_type'      => 'post',
-                    'cat_name'       => $news_category,
+                    'category_name'  => $news_featured_category,
                     'order'          => 'DESC',
-                    'post__not_in'   => array($news_featured_id)
+                    'post__not_in'   => $news_hidden
                 );
 
-                $news = new WP_Query($args);
+                $news = new WP_Query($news_args);
 
                 if ($news->have_posts()):
                     while ($news->have_posts()): $news->the_post();
-                        array_push($posts_hidden, get_the_ID());
+                        array_push($news_hidden, get_the_ID());
 
                         $terms = get_the_terms(get_the_ID(), 'category');
 
@@ -123,7 +122,7 @@
                         }
                 ?>
                         <a class="news-item col-span-1 row-span-1" href="<?php the_permalink() ?>">
-                            <?php echo get_thumbnail_custom('news-item-thumbnail') ?>
+                            <?php echo get_post_thumbnail_custom('news-item-thumbnail') ?>
 
                             <div class="bottom-0 left-0 absolute z-10 p-5">
                                 <span class="news-item-emphasis text-xs" style="background-image: linear-gradient(to right, <?php echo $news_category['colors']['primary']; ?>, <?php echo $news_category['colors']['secondary']; ?>)">
@@ -155,18 +154,19 @@
 
                 <!-- loop -->
                 <?php
-                $posts_args = array(
+                $news_args = array(
                     'posts_per_page' => 3,
                     'post_type'      => 'post',
+                    'category_name'  => $news_featured_category,
                     'order'          => 'DESC',
-                    'post__not_in'   => $posts_hidden,
+                    'post__not_in'   => $news_hidden,
                 );
 
-                $posts_editorial = new WP_Query($posts_args);
+                $news = new WP_Query($news_args);
 
-                if ($posts_editorial->have_posts()) :
-                    while ($posts_editorial->have_posts()) : $posts_editorial->the_post();
-                        echo get_template_part('template-parts/components/content', 'new-item', get_posts_attributes($posts_editorial));
+                if ($news->have_posts()) :
+                    while ($news->have_posts()) : $news->the_post();
+                        echo get_template_part('template-parts/components/content', 'new-item', get_new_item_setting());
                     endwhile;
                 endif;
 
@@ -186,20 +186,21 @@
 
                         <!-- slide -->
                         <?php
-                        $posts_args = array(
+                        $news_args = array(
                             'post_type'      => 'post',
                             'posts_per_page' => 3,
+                            'category_name'  => $news_featured_category,
                             'order'          => 'DESC',
-                            'post__not_in'   => $posts_hidden,
+                            'post__not_in'   => $news_hidden,
                         );
 
-                        $posts_editorial = new WP_Query($posts_args);
+                        $news = new WP_Query($news_args);
 
-                        if ($posts_editorial->have_posts()) :
-                            while ($posts_editorial->have_posts()) : $posts_editorial->the_post();
+                        if ($news->have_posts()) :
+                            while ($news->have_posts()) : $news->the_post();
                         ?>
                                 <div class="swiper-slide">
-                                    <?php echo get_template_part('template-parts/components/content', 'new-item', get_posts_attributes($posts_editorial)); ?>
+                                    <?php echo get_template_part('template-parts/components/content', 'new-item', get_new_item_setting()); ?>
                                 </div>
                         <?php
                             endwhile;
@@ -227,7 +228,15 @@
                 $posts_loop = 0;
 
                 foreach ($editorials_categories as $editorial_category) :
-                    $posts_editorials = new WP_Query(get_custom_query(1, 'post', $editorial_category, 'DESC', []));
+                    $posts_editorials_args = array(
+                        'posts_per_page' => 1,
+                        'post_type'      => 'post',
+                        'category_name'  => $news_featured_category,
+                        'order'          => 'DESC',
+                        'post__not_in'   => $news_hidden,
+                    );
+
+                    $posts_editorials = new WP_Query($posts_editorials_args);
 
                     if ($posts_editorials->have_posts()):
                         while ($posts_editorials->have_posts()): $posts_editorials->the_post();

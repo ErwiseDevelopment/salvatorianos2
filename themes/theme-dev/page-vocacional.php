@@ -22,15 +22,23 @@ get_header();
 		<?php while (have_posts()) : the_post(); ?>
 
 			<!-- banner -->
-			<?php echo get_template_part('template-parts/content', 'general-banner', get_general_banner('vocacional')) ?>
+			<?php
+			$editorial_slug = get_editorials()['editoria-vocacional']['categories']['slug'];
+
+			echo get_template_part('template-parts/content', 'general-banner', get_query_custom('banners', $editorial_slug));
+			?>
 			<!-- end banner -->
 
-			<!-- posts editorial -->
-			<?php echo get_template_part('template-parts/content', 'general-posts-editorial', get_general_posts_editorial_attributes('Saiba tudo sobre nossas vocações', 'vocacional-noticia', 'Todas as notícias vocacionais', 'https://google.com')) ?>
-			<!-- end posts editorial -->
+			<!-- news editorial -->
+			<?php
+			$news_category = get_editorials()['editoria-vocacional']['categories']['news'];
+
+			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Saiba tudo sobre nossas vocações', $news_category, 'Todas as notícias vocacionais', 'noticias?categoria=vocacional'))
+			?>
+			<!-- end news editorial -->
 
 			<!-- gallery -->
-			<?php echo get_template_part('template-parts/content', 'general-gallery') ?>
+			<?php echo get_template_part('template-parts/content', 'general-gallery', get_query_custom('galeria', $editorial_slug)) ?>
 			<!-- gallery -->
 
 			<!-- banner welcome -->
@@ -85,11 +93,14 @@ get_header();
 			<!-- end our pedagogue -->
 
 			<!-- blog -->
-			<?php echo get_template_part('template-parts/content', 'general-blog') ?>
+			<?php
+			$blog_category = get_editorials()['editoria-vocacional']['categories']['blog'];
+
+			echo get_template_part('template-parts/content', 'general-blog', get_general_blog_setting($blog_category, $editorial_slug)) ?>
 			<!-- blog -->
 
 			<!-- free materials -->
-			<?php echo get_template_part('template-parts/content', 'general-free-materials') ?>
+			<?php echo get_template_part('template-parts/content', 'general-free-materials', get_query_custom('materiais', $editorial_slug, 4)) ?>
 			<!-- free materials -->
 		<?php endwhile; ?>
 
