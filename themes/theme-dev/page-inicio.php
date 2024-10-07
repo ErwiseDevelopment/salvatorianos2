@@ -20,8 +20,52 @@ get_header();
 	<main id="main" class="site-main">
 
 		<?php while (have_posts()) : the_post(); ?>
-		<?php endwhile; ?>
+			<!-- banner -->
+			<?php
+			$editorial_slug = get_editorials()['portal']['categories']['slug'];
 
+			echo get_template_part('template-parts/content', 'general-banner', get_query_custom('banners', $editorial_slug))
+			?>
+			<!-- end banner -->
+
+			<!-- news -->
+			<?php echo get_template_part('template-parts/content', 'home-news') ?>
+			<!-- news -->
+
+			<!-- gallery -->
+			<?php echo get_template_part('template-parts/content', 'general-gallery', get_query_custom('galeria', $editorial_slug)) ?>
+			<!-- gallery -->
+
+			<!-- videos -->
+			<?php echo get_template_part('template-parts/content', 'home-videos', get_query_custom('videos', $editorial_slug)) ?>
+			<!-- videos -->
+
+			<!-- banner welcome -->
+			<?php echo get_template_part('template-parts/content', 'general-banner-welcome') ?>
+			<!-- banner welcome -->
+
+			<!-- blog -->
+			<?php
+			$blog_category = get_editorials()['portal']['categories']['blog'];
+
+			echo get_template_part('template-parts/content', 'general-blog', get_general_blog_setting($blog_category));
+			?>
+			<!-- blog -->
+
+			<!-- free materials -->
+			<?php echo get_template_part('template-parts/content', 'general-free-materials', get_query_custom('materiais', $editorial_slug, 4)) ?>
+			<!-- free materials -->
+
+			<!-- prayer -->
+			<?php echo get_template_part('template-parts/content', 'home-prayer') ?>
+			<!-- prayer -->
+
+			<!-- candle -->
+			<?php echo get_template_part('template-parts/content', 'home-candle') ?>
+			<!-- candle -->
+
+			<div class="mt-10 xl:mt-20"></div>
+		<?php endwhile; ?>
 	</main><!-- #main -->
 </div><!-- #primary -->
 
