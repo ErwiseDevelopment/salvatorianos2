@@ -228,6 +228,12 @@ b {
     @apply transition hover:scale-90 rounded-full inline-block text-lg xl:text-2xl font-bold font-red-hat-display text-center uppercase text-white bg-gradient-to-r from-[#7C33EE] to-[#2D2463] py-4 px-16 xl:px-24;
   }
 
+  @media screen and (max-width: 991px) {
+    .swiper-banner {
+      height: 120px !important;
+    }
+  } 
+
   .swiper-button-prev-parishes {
     left: -3rem !important;
   }

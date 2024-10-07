@@ -1,4 +1,4 @@
-<section class="pt-20">
+<section class="pt-10 xl:pt-20">
 
     <div class="container grid grid-cols-4 gap-4">
 
@@ -16,19 +16,19 @@
         </div>
 
         <!-- desktop -->
-        <div class="col-span-full grid grid-cols-4 gap-4">
+        <div class="col-span-full hidden xl:grid grid-cols-4 gap-4">
             <?php
-            $posts_args = array(
+            $news_args = array(
                 'post_type'      => 'post',
                 'posts_per_page' => 4,
                 'category_name'  => $args['category_slug'],
                 'order'          => 'DESC'
             );
 
-            $posts_editorial = new WP_Query($posts_args);
+            $news_editorial = new WP_Query($news_args);
 
-            if ($posts_editorial->have_posts()) :
-                while ($posts_editorial->have_posts()) : $posts_editorial->the_post();
+            if ($news_editorial->have_posts()) :
+                while ($news_editorial->have_posts()) : $news_editorial->the_post();
                     echo get_template_part('template-parts/components/content', 'new-item', get_new_item_setting());
                 endwhile;
             endif;
@@ -42,23 +42,23 @@
         <div class="col-span-full xl:hidden">
 
             <!-- swiper -->
-            <div class="swiper js-swiper-general-posts-editorial">
+            <div class="swiper js-swiper-general-news-editorial">
 
                 <div class="swiper-wrapper">
 
                     <!-- slide -->
                     <?php
-                    $posts_args = array(
+                    $news_args = array(
                         'post_type'      => 'post',
                         'posts_per_page' => 4,
                         'category_name'  => $args['category_slug'],
                         'order'          => 'DESC'
                     );
 
-                    $posts_editorial = new WP_Query($posts_args);
+                    $news_editorial = new WP_Query($news_args);
 
-                    if ($posts_editorial->have_posts()) :
-                        while ($posts_editorial->have_posts()) : $posts_editorial->the_post();
+                    if ($news_editorial->have_posts()) :
+                        while ($news_editorial->have_posts()) : $news_editorial->the_post();
                     ?>
                             <div class="swiper-slide">
                                 <?php echo get_template_part('template-parts/components/content', 'new-item', get_new_item_setting()); ?>

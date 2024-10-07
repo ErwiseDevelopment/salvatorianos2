@@ -320,7 +320,6 @@ function get_general_news_editorial_setting(string $title, string $category_slug
 
 function get_general_blog_setting(string $category, string $filter = ''): array
 {
-
     if (!empty($filter)) {
         $filter = '?categoria=' . $filter;
 
@@ -337,6 +336,7 @@ function get_general_blog_setting(string $category, string $filter = ''): array
         'filter'   => $filter
     ];
 }
+
 function get_new_item_setting(): array
 {
     $category_main = '';

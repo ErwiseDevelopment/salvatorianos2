@@ -54,7 +54,7 @@
 
                 <!-- news featured -->
                 <?php
-                $args = array(
+                $news_featured_args = array(
                     'posts_per_page' => 1,
                     'post_type'      => 'post',
                     'category_name'  => $news_featured_category,
@@ -62,7 +62,7 @@
                     'post__not_in'   => $news_hidden
                 );
 
-                $news_featured = new WP_Query($args);
+                $news_featured = new WP_Query($news_featured_args);
 
                 if ($news_featured->have_posts()) :
                     while ($news_featured->have_posts()) : $news_featured->the_post();
@@ -94,7 +94,7 @@
                 <!-- end news featured -->
 
                 <?php
-                $args = array(
+                $news_args = array(
                     'posts_per_page' => 2,
                     'post_type'      => 'post',
                     'category_name'  => $news_featured_category,
@@ -102,7 +102,7 @@
                     'post__not_in'   => $news_hidden
                 );
 
-                $news = new WP_Query($args);
+                $news = new WP_Query($news_args);
 
                 if ($news->have_posts()):
                     while ($news->have_posts()): $news->the_post();
@@ -154,7 +154,7 @@
 
                 <!-- loop -->
                 <?php
-                $args = array(
+                $news_args = array(
                     'posts_per_page' => 3,
                     'post_type'      => 'post',
                     'category_name'  => $news_featured_category,
@@ -162,7 +162,7 @@
                     'post__not_in'   => $news_hidden,
                 );
 
-                $news = new WP_Query($args);
+                $news = new WP_Query($news_args);
 
                 if ($news->have_posts()) :
                     while ($news->have_posts()) : $news->the_post();
@@ -186,7 +186,7 @@
 
                         <!-- slide -->
                         <?php
-                        $args = array(
+                        $news_args = array(
                             'post_type'      => 'post',
                             'posts_per_page' => 3,
                             'category_name'  => $news_featured_category,
@@ -194,7 +194,7 @@
                             'post__not_in'   => $news_hidden,
                         );
 
-                        $news = new WP_Query($posts_args);
+                        $news = new WP_Query($news_args);
 
                         if ($news->have_posts()) :
                             while ($news->have_posts()) : $news->the_post();
@@ -228,7 +228,7 @@
                 $posts_loop = 0;
 
                 foreach ($editorials_categories as $editorial_category) :
-                    $args = array(
+                    $posts_editorials_args = array(
                         'posts_per_page' => 1,
                         'post_type'      => 'post',
                         'category_name'  => $news_featured_category,
@@ -236,7 +236,7 @@
                         'post__not_in'   => $news_hidden,
                     );
 
-                    $posts_editorials = new WP_Query($args);
+                    $posts_editorials = new WP_Query($posts_editorials_args);
 
                     if ($posts_editorials->have_posts()):
                         while ($posts_editorials->have_posts()): $posts_editorials->the_post();

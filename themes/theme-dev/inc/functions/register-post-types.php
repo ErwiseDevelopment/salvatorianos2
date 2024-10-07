@@ -73,12 +73,12 @@ function scalabrinianos_create_post_type()
         'supports'         => array('title',  'author', 'thumbnail')
     ));
 
-    register_post_type('videos', array(
-        'labels'         => array('name' => 'Videos', 'singular_name' => 'Videos', 'all_items' => 'Todos'),
+    register_post_type('paroquia', array(
+        'labels'         => array('name' => 'Paróquias', 'singular_name' => 'Paróquia', 'all_items' => 'Todas'),
         'public'         => true,
-        'has_archive'     => true,
-        'menu_icon'     => 'dashicons-book',
-        'supports'         => array('title',  'author', 'thumbnail')
+        'has_archive'    => true,
+        'menu_icon'      => 'dashicons-admin-home',
+        'supports'       => array('title',  'author', 'thumbnail')
     ));
 
     register_post_type('videos', array(

@@ -18,12 +18,12 @@
             </div>
 
             <?php
-            $args = array(
+            $book_args = array(
                 'posts_per_page' => 1,
                 'post_type'      => '3d-flip-book',
             );
 
-            $book = new WP_Query($args);
+            $book = new WP_Query($book_args);
 
             if ($book->have_posts()):
                 while ($book->have_posts()): $book->the_post();
@@ -83,14 +83,14 @@
 
                 <!-- loop -->
                 <?php
-                $args = array(
+                $blogs_args = array(
                     'posts_per_page' => 4,
                     'post_type'      => 'post',
                     'category_name'  => $args['category'],
                     'order'          => 'DESC'
                 );
 
-                $blogs = new WP_Query($args);
+                $blogs = new WP_Query($blogs_args);
 
                 if ($blogs->have_posts()) :
                     while ($blogs->have_posts()) : $blogs->the_post();

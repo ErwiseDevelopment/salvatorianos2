@@ -120,6 +120,7 @@
             $has_header_background = false;
         }
         ?>
+
         <div class="relative">
             <header class="<?php echo get_hidden_banner_title($post->post_type, $post->post_name) === true ? 'w-full top-0 left-0 absolute' : ''; ?> <?php echo $has_header_background ? 'header-background' : ''; ?>"
                 style="<?php echo $has_header_background ? 'background-image: url(' . get_template_directory_uri() . '/resources/images/header-background.png)' : '' ?>">
@@ -198,20 +199,22 @@
                         </div>
                     </div>
 
-                    <div class="w-full mt-16">
-                        <nav>
-                            <?php
-                            $menu = get_pages_editorials_settings()[$post->post_name]['menu'];
+                    <?php if (isset(get_pages_editorials_settings()[$post->post_name]['menu'])) : ?>
+                        <div class="w-full mt-16">
+                            <nav>
+                                <?php
+                                $menu = get_pages_editorials_settings()[$post->post_name]['menu'];
 
-                            if (isset($menu)) {
-                                wp_nav_menu(array(
-                                    'container_class' => 'menu-secondary',
-                                    'theme_location'  => $menu
-                                ));
-                            }
-                            ?>
-                        </nav>
-                    </div>
+                                if (isset($menu)) {
+                                    wp_nav_menu(array(
+                                        'container_class' => 'menu-secondary',
+                                        'theme_location'  => $menu
+                                    ));
+                                }
+                                ?>
+                            </nav>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </header>
 
