@@ -23,7 +23,7 @@ get_header();
 
 			<!-- banner -->
 			<?php
-			$editorial_slug = get_editorials()['editoria-institucional']['categories']['slug'];
+			$editorial_slug = get_categories_setting()['editorials']['institucional']['name'];
 
 			echo get_template_part('template-parts/content', 'general-banner', get_query_custom('banners', $editorial_slug))
 			?>
@@ -31,50 +31,24 @@ get_header();
 
 			<!-- news editorial -->
 			<?php
-			$news_category = get_editorials()['editoria-institucional']['categories']['news'];
+			$editorial_category = get_categories_setting()['editorials']['institucional']['slug'];
 
-			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Confira o que está acontecendo em nossa Província', $news_category, 'Todas as notícias institucionais', 'noticias'))
+			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Confira o que está acontecendo em nossa Província', $editorial_category, 'Todas as notícias institucionais', 'noticias'))
 			?>
 			<!-- end news editorial -->
 
 			<!-- our pedagogue -->
-			<section class="pt-10 xl:py-32">
+			<?php
+			$pedagogue_image = get_template_directory_uri()  . '/resources/images/carisma.png';
 
-				<div class="container flex flex-wrap justify-center xl:px-0">
+			$pedagogue_title = 'Os Salvatorianos são o resultado do amor e do sonho do Pe. Francisco Maria da Cruz Jordan.';
 
-					<div class="w-5/12 translate-x-10 relative hidden xl:flex justify-end items-end z-10">
-						<div class="w-full h-[560px]">
-							<img class="w-full h-full translate-x-16 scale-[1.2] object-contain" src="<?php echo get_template_directory_uri() ?>/resources/images/carisma.png" alt="Institucional - Salvatorianos" />
-						</div>
-					</div>
+			$pedagogue_description = 'Somos uma congregação religiosa que busca que Jesus seja conhecido e amado como o Salvador do Mundo. Queremos envolver a todos neste sonho, nesta forma de vida. Estamos presentes em muitos países, mais de 30, e queremos crescer ainda mais. Venha nos conhecer!';
 
-					<div class="w-full xl:w-7/12 xl:-translate-x-10 flex items-end">
-						<div class="rounded-tl-[250px] rounded-tr-[250px] rounded-br-[250px] bg-gradient-purple py-24 px-8 xl:px-32">
-							<h4 class="text-3xl font-bold font-red-hat-display text-[#AFDF0F]" style="line-height:140%">
-								Os Salvatorianos são o resultado do
-								amor e do sonho do Pe. Francisco
-								Maria da Cruz Jordan.
-							</h4>
+			$pedagogue_button_title = 'Conheça nossa carisma';
 
-							<p class="text-2xl font-medium font-red-hat-display text-white" style="line-height:140%">
-								Somos uma congregação religiosa que busca
-								que Jesus seja conhecido e amado como o
-								Salvador do Mundo. Queremos envolver a
-								todos neste sonho, nesta forma de vida.
-								Estamos presentes em muitos países, mais de
-								30, e queremos crescer ainda mais. Venha nos
-								conhecer!
-							</p>
-						</div>
-					</div>
-
-					<div class="w-full xl:w-8/12 -translate-y-10 relative flex justify-center z-20">
-						<p class="inline-block text-xl xl:text-3xl font-bold font-red-hat-display text-center uppercase text-white bg-gradient-green p-4">
-							conheça nosso carisma
-						</p>
-					</div>
-				</div>
-			</section>
+			echo get_template_part('template-parts/content', 'general-pedagogue', get_general_pedagogue_setting($pedagogue_image, $pedagogue_title, $pedagogue_description, $pedagogue_button_title))
+			?>
 			<!-- end our pedagogue -->
 
 			<!-- blog -->

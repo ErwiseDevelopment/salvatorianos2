@@ -16,7 +16,7 @@ mix
   .postCss("resources/css/app.css", "public/css", [require("tailwindcss")])
   .copyDirectory("resources/fonts", "public/fonts")
   .copyDirectory("resources/images", "public/images")
-  // .version()
+  .version()
   .setResourceRoot("./resources")
   .setPublicPath(".")
   .disableNotifications();

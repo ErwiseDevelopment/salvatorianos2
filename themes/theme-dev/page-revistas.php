@@ -23,12 +23,12 @@ get_header();
 		while (have_posts()) :
 			the_post(); ?>
 			<!-- banner -->
-			<?php echo get_template_part('template-parts/content', 'magazine-banner') ?>
-			<!-- end banner -->
+			<?php
+			$editorial_slug = get_categories_setting()['editorials']['revistas']['single_name'];
 
-			<!-- last edition -->
-			<?php echo get_template_part('template-parts/content', 'magazine-last-edition') ?>
-			<!-- end last edition -->
+			echo get_template_part('template-parts/content', 'general-banner', get_query_custom('banners', $editorial_slug));
+			?>
+			<!-- end banner -->
 
 			<!-- last edition -->
 			<?php echo get_template_part('template-parts/content', 'magazine-editions') ?>

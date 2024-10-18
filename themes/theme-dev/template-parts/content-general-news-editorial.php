@@ -19,10 +19,21 @@
         <div class="col-span-full hidden xl:grid grid-cols-4 gap-4">
             <?php
             $news_args = array(
-                'post_type'      => 'post',
                 'posts_per_page' => 4,
-                'category_name'  => $args['category_slug'],
-                'order'          => 'DESC'
+                'post_type'      => 'post',
+                'tax_query'      => array(
+                    'relation' => 'AND',
+                    array(
+                        'taxonomy' => 'category',
+                        'field'    => 'term_id',
+                        'terms'    => $args['news_category']
+                    ),
+                    array(
+                        'taxonomy' => 'category',
+                        'field'    => 'term_id',
+                        'terms'    => $args['editorial_category']
+                    ),
+                )
             );
 
             $news_editorial = new WP_Query($news_args);
@@ -49,10 +60,21 @@
                     <!-- slide -->
                     <?php
                     $news_args = array(
-                        'post_type'      => 'post',
                         'posts_per_page' => 4,
-                        'category_name'  => $args['category_slug'],
-                        'order'          => 'DESC'
+                        'post_type'      => 'post',
+                        'tax_query'      => array(
+                            'relation' => 'AND',
+                            array(
+                                'taxonomy' => 'category',
+                                'field'    => 'term_id',
+                                'terms'    => $args['news_category']
+                            ),
+                            array(
+                                'taxonomy' => 'category',
+                                'field'    => 'term_id',
+                                'terms'    => $args['editorial_category']
+                            ),
+                        )
                     );
 
                     $news_editorial = new WP_Query($news_args);

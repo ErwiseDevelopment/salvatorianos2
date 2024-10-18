@@ -23,7 +23,7 @@ get_header();
 
 			<!-- banner -->
 			<?php
-			$editorial_slug = get_editorials()['editoria-paroquias']['categories']['slug'];
+			$editorial_slug = get_categories_setting()['editorials']['paroquias']['name'];
 
 			echo get_template_part('template-parts/content', 'general-banner', get_query_custom('banners', $editorial_slug))
 			?>
@@ -31,9 +31,9 @@ get_header();
 
 			<!-- posts editorial -->
 			<?php
-			$news_category = get_editorials()['editoria-paroquias']['categories']['news'];
+			$editorial_category = get_categories_setting()['editorials']['paroquias']['slug'];
 
-			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Saiba tudo sobre nossas paróquias', $news_category, 'Todas as notícias das paróquias', 'noticias?categoria=paroquias')) ?>
+			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Saiba tudo sobre nossas paróquias', $editorial_category, 'Todas as notícias das paróquias', 'noticias?categoria=paroquias')) ?>
 			<!-- end posts editorial -->
 
 			<!-- parishes carousel -->

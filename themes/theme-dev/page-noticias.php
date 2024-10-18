@@ -21,46 +21,67 @@ get_header();
 
 		<?php while (have_posts()) : the_post(); ?>
 			<!-- news detail -->
-			<section class="pt-24">
+			<section class="pt-10 xl:pt-24">
 
-				<div class="container flex gap-4 px-24">
+				<div class="container flex flex-wrap xl:px-24">
 
-					<div class="w-8/12">
-						<a class="news-item" href="#">
-							<img class="news-item-thumbnail" src="<?php echo get_template_directory_uri() ?>/resources/images/home-news-1.png" alt="News - Salvatorianos" />
+					<div class="w-full xl:w-8/12 pr-4">
+						<?php
+						$news_featured_args = array(
+							'posts_per_page' => 1,
+							'post_type'      => 'post',
+							'category_name'  => 'noticia',
+							'order'          => 'DESC'
+						);
 
-							<div class="bottom-0 left-0 absolute z-10 p-8">
-								<span class="news-item-emphasis text-base">
-									Destaque
-								</span>
+						$news_featured = new WP_Query($news_featured_args);
 
-								<h2 class="news-item-title text-2xl">
-									O Papa: como Jesus, aproximar-se de quem sofre com compaixão e inclusão
-								</h2>
+						if ($news_featured->have_posts()):
+							while ($news_featured->have_posts()): $news_featured->the_post();
+						?>
+								<a class="news-item" href="<?php the_permalink() ?>">
+									<div class="w-full h-full">
+										<?php echo get_post_thumbnail_custom('news-item-thumbnail') ?>
+									</div>
 
-								<p class="news-item-read-more text-sm text-[#8DAA32]">
-									Leia mais >
-								</p>
-							</div>
-						</a>
+									<div class="bottom-0 left-0 absolute z-10 p-8">
+										<span class="inline-block text-lg xl:text-xl 2xl:text-[26px] font-bold font-red-hat-display text-white bg-gradient-to-r from-[#91AC31] to-[#4D8C3F] py-[2px] px-10">
+											Destaque
+										</span>
+
+										<h2 class="text-2xl xl:text-3xl 2xl:text-[46px] font-black font-red-hat-display text-white mt-2">
+											<?php the_title() ?>
+										</h2>
+
+										<p class="text-base sxl:text-lg 2xl:text-xl font-semibold font-red-hat-display uppercase tracking-widest hover:underline text-[#8DAA32]">
+											Leia mais >
+										</p>
+									</div>
+								</a>
+						<?php
+							endwhile;
+						endif;
+
+						wp_reset_query();
+						?>
 					</div>
 
-					<div class="w-4/12">
+					<div class="w-full xl:w-4/12">
 
 						<div class="border border-black bg-[#EDEDED] py-8 px-4">
-							<h3 class="text-4xl font-black font-red-hat-display text-center text-[#7137F0]">
+							<h3 class="text-2xl xl:text-4xl 2xl:text-[56px] font-black font-red-hat-display text-center text-[#7137F0]">
 								Categorias
 							</h3>
 
 							<ul class="mt-6">
 
-								<?php for ($i = 0; $i < 7; $i++) : ?>
+								<?php foreach (get_editorials_categories_setting() as $key => $value) : ?>
 									<li class="mb-2 last:mb-0">
-										<a class="block text-xl font-medium font-red-hat-display text-center text-white bg-red-500 py-3" href="#">
-											Institucional
+										<a class="block text-base xl:text-xl 2xl:text-[26px] font-medium font-red-hat-display text-center text-white py-3" style="background-color: <?php echo $value['color']; ?>" href="<?php echo get_home_url(null, 'noticias?categoria=' . $key); ?>">
+											<?php echo $value['title']; ?>
 										</a>
 									</li>
-								<?php endfor; ?>
+								<?php endforeach; ?>
 							</ul>
 						</div>
 					</div>
@@ -69,15 +90,56 @@ get_header();
 			<!-- end news detail -->
 
 			<!-- news -->
-			<section class="pt-24 pb-16">
+			<section class="py-10 xl:pt-20 xl:pb-28">
 
 				<div class="container grid grid-cols-4 gap-4">
 
-					<!-- loop -->
-					<?php for ($i = 0; $i < 12; $i++) : ?>
-						<?php echo get_template_part('components/new-item') ?>
-					<?php endfor; ?>
-					<!-- end loop -->
+					<div class="col-span-full grid grid-cols-1 xl:grid-cols-4 gap-4">
+						<?php
+						$news_category_slug = get_categories_setting()['categories']['news']['slug'];
+
+						$news_category = get_category_by_slug($news_category_slug);
+
+						if (isset($_GET['categoria'])) {
+							$editorial_category = get_category_by_slug($_GET['categoria']);
+
+							$news_args = array(
+								'posts_per_page' => -1,
+								'post_type'      => 'post',
+								'tax_query'      => array(
+									'relation' => 'AND',
+									array(
+										'taxonomy' => 'category',
+										'field'    => 'term_id',
+										'terms'    => $news_category->term_id
+									),
+									array(
+										'taxonomy' => 'category',
+										'field'    => 'term_id',
+										'terms'    => $editorial_category->term_id
+									),
+								)
+							);
+						} else {
+							$news_args = array(
+								'posts_per_page' => -1,
+								'post_type'      => 'post',
+								'category_name'  => $news_category->slug,
+								'order'          => 'DESC'
+							);
+						}
+
+						$news_editorial = new WP_Query($news_args);
+
+						if ($news_editorial->have_posts()) :
+							while ($news_editorial->have_posts()) : $news_editorial->the_post();
+								echo get_template_part('template-parts/components/content', 'new-item', get_new_item_setting(true));
+							endwhile;
+						endif;
+
+						wp_reset_query();
+						?>
+					</div>
 				</div>
 			</section>
 			<!-- end news -->

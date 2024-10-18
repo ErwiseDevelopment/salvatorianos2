@@ -98,7 +98,9 @@
                         <a class="col-span-1 block" href="<?php the_permalink() ?>">
                             <!-- <img class="w-full h-[280px] block" src="<php echo ?>" alt="Salvatoriano" /> -->
 
-                            <?php echo get_post_thumbnail_custom('w-full block', '280'); ?>
+                            <div class="w-full h-[280px]">
+                                <?php echo get_post_thumbnail_custom('w-full block'); ?>
+                            </div>
 
                             <h5 class="text-2xl font-black font-red-hat-display text-[#2C285B] my-6">
                                 <!-- 5 livros para descobrir o

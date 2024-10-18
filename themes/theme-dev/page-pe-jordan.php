@@ -23,14 +23,18 @@ get_header();
 
 			<!-- banner -->
 			<?php
-			$editorial_slug = get_editorials()['editoria-pe-jordan']['categories']['slug'];
+			$editorial_slug = get_categories_setting()['editorials']['pe-jordan']['name'];
 
-			echo get_template_part('template-parts/content', 'general-banner', get_query_custom('pe-jordan', $editorial_slug))
+			echo get_template_part('template-parts/content', 'general-banner', get_query_custom('banners', $editorial_slug))
 			?>
 			<!-- end banner -->
 
 			<!-- posts editorial -->
-			<?php echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Saiba tudo sobre nossas paróquias', 'paroquia-noticia', 'Todas as notícias das paróquias', 'https://google.com')) ?>
+			<?php
+			$editorial_category = get_categories_setting()['editorials']['pe-jordan']['slug'];
+
+			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Saiba tudo sobre nossas paróquias', $editorial_category, 'Todas as notícias das paróquias', 'https://google.com'))
+			?>
 			<!-- end posts editorial -->
 
 			<!-- photos -->

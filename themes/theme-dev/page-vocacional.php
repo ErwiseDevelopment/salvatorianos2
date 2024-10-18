@@ -23,7 +23,7 @@ get_header();
 
 			<!-- banner -->
 			<?php
-			$editorial_slug = get_editorials()['editoria-vocacional']['categories']['slug'];
+			$editorial_slug = get_categories_setting()['editorials']['vocacional']['name'];
 
 			echo get_template_part('template-parts/content', 'general-banner', get_query_custom('banners', $editorial_slug));
 			?>
@@ -31,9 +31,9 @@ get_header();
 
 			<!-- news editorial -->
 			<?php
-			$news_category = get_editorials()['editoria-vocacional']['categories']['news'];
+			$editorial_category = get_categories_setting()['editorials']['vocacional']['slug'];
 
-			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Saiba tudo sobre nossas vocações', $news_category, 'Todas as notícias vocacionais', 'noticias?categoria=vocacional'))
+			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Saiba tudo sobre nossas vocações', $editorial_category, 'Todas as notícias vocacionais', 'noticias?categoria=vocacional'))
 			?>
 			<!-- end news editorial -->
 
@@ -46,19 +46,19 @@ get_header();
 			<!-- banner welcome -->
 
 			<!-- our pedagogue -->
-			<section class="py-32">
+			<section class="pt-10 xl:py-32">
 
-				<div class="container flex flex-wrap justify-center px-0">
+				<div class="container flex flex-wrap justify-center xl:px-0">
 
-					<div class="w-5/12 translate-x-10 relative flex justify-end items-end z-10">
+					<div class="w-5/12 translate-x-10 relative hidden xl:flex justify-end items-end z-10">
 						<div class="w-full h-[560px]">
 							<img class="w-full h-full object-contain" src="<?php echo get_template_directory_uri() ?>/resources/images/vocacoes.png" alt="Vocações - Salvatorianos" />
 						</div>
 					</div>
 
-					<div class="w-7/12 -translate-x-10 flex items-end">
-						<div class="rounded-tl-[250px] rounded-tr-[250px] rounded-br-[250px] bg-gradient-purple py-24 px-32">
-							<p class="text-2xl font-medium font-red-hat-display text-white" style="line-height:140%">
+					<div class="w-full xl:w-7/12 xl:-translate-x-10 flex items-end">
+						<div class="xl:rounded-tl-[250px] xl:rounded-tr-[250px] xl:rounded-br-[250px] bg-gradient-purple py-16 xl:py-24 px-8 xl:px-32">
+							<p class="text-lg xl:text-2xl font-medium font-red-hat-display text-white" style="line-height:140%">
 								A vida religiosa Salvatoriana é uma maneira de
 								viver o seguimento de Jesus como Salvador
 								do mundo.
@@ -83,8 +83,8 @@ get_header();
 						</div>
 					</div>
 
-					<div class="w-8/12 -translate-y-10 relative flex justify-center z-20">
-						<p class="inline-block text-3xl font-bold font-red-hat-display text-center uppercase text-white bg-gradient-green p-4">
+					<div class="w-11/12 xl:w-8/12 -translate-y-4 xl:-translate-y-10 relative flex justify-center z-20">
+						<p class="inline-block text-xl xl:text-3xl font-bold font-red-hat-display text-center uppercase text-white bg-gradient-green p-4">
 							saiba mais sobre nossas vocações
 						</p>
 					</div>
