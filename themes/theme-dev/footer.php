@@ -27,7 +27,7 @@
 
         <div class="w-full xl:w-5/12">
 
-            <p class="text-xl font-bold font-red-hat-display text-white">
+            <p class="text-xl 2xl:text-[28px] font-bold font-red-hat-display text-white">
                 Avenida Lino de Almeida Pires, 130 <br />
                 Vila Guarani, São Paulo/SP
 
@@ -42,25 +42,25 @@
 
             <ul>
                 <li class="mb-1">
-                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/institucional') ?>">
+                    <a class="text-xl 2xl:text-[26px] font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/institucional') ?>">
                         Institucional
                     </a>
                 </li>
 
                 <li class="mb-1">
-                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/paroquias') ?>">
+                    <a class="text-xl 2xl:text-[26px] font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/paroquias') ?>">
                         Paróquias
                     </a>
                 </li>
 
                 <li class="mb-1">
-                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/obras-sociais') ?>">
+                    <a class="text-xl 2xl:text-[26px] font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/obras-sociais') ?>">
                         Obras Sociais
                     </a>
                 </li>
 
                 <li>
-                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/revistas') ?>">
+                    <a class="text-xl 2xl:text-[26px] font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/revistas') ?>">
                         Revista
                     </a>
                 </li>
@@ -68,19 +68,19 @@
 
             <ul>
                 <li class="mb-1">
-                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/vocacional') ?>">
+                    <a class="text-xl 2xl:text-[26px] font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/vocacional') ?>">
                         Vocacional
                     </a>
                 </li>
 
                 <li class="mb-1">
-                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/educacao') ?>">
+                    <a class="text-xl 2xl:text-[26px] font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/educacao') ?>">
                         Educação
                     </a>
                 </li>
 
                 <li class="mb-1">
-                    <a class="text-xl font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/pe-jordan') ?>">
+                    <a class="text-xl 2xl:text-[26px] font-medium font-red-hat-display hover:underline text-white" href="<?php echo get_home_url(null, '/pe-jordan') ?>">
                         Pe. Jordan
                     </a>
                 </li>

@@ -22,9 +22,9 @@ get_header();
 		<?php while (have_posts()) : the_post(); ?>
 			<!-- banner -->
 			<?php
-			$editorial_slug = get_editorials()['portal']['categories']['slug'];
+			$editorial_category_name = get_categories_setting()['editorials']['portal']['name'];
 
-			echo get_template_part('template-parts/content', 'general-banner', get_query_custom('banners', $editorial_slug))
+			echo get_template_part('template-parts/content', 'general-banner', get_query_custom('banners', $editorial_category_name))
 			?>
 			<!-- end banner -->
 
@@ -33,11 +33,11 @@ get_header();
 			<!-- news -->
 
 			<!-- gallery -->
-			<?php echo get_template_part('template-parts/content', 'general-gallery', get_query_custom('galeria', $editorial_slug)) ?>
+			<?php echo get_template_part('template-parts/content', 'general-gallery', get_query_custom('galeria', $editorial_category_name)) ?>
 			<!-- gallery -->
 
 			<!-- videos -->
-			<?php echo get_template_part('template-parts/content', 'home-videos', get_query_custom('videos', $editorial_slug)) ?>
+			<?php echo get_template_part('template-parts/content', 'home-videos', get_query_custom('videos', $editorial_category_name)) ?>
 			<!-- videos -->
 
 			<!-- banner welcome -->
@@ -46,14 +46,14 @@ get_header();
 
 			<!-- blog -->
 			<?php
-			$blog_category = get_editorials()['portal']['categories']['blog'];
+			$editorial_category_slug = get_categories_setting()['editorials']['portal']['slug'];
 
-			echo get_template_part('template-parts/content', 'general-blog', get_general_blog_setting($blog_category));
+			echo get_template_part('template-parts/content', 'general-blog', get_general_blog_setting($editorial_category_slug));
 			?>
 			<!-- blog -->
 
 			<!-- free materials -->
-			<?php echo get_template_part('template-parts/content', 'general-free-materials', get_query_custom('materiais', $editorial_slug, 4)) ?>
+			<?php echo get_template_part('template-parts/content', 'general-free-materials', get_query_custom('materiais', $editorial_category_name, 4)) ?>
 			<!-- free materials -->
 
 			<!-- prayer -->

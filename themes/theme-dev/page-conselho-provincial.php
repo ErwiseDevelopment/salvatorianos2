@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying all pages
  *
@@ -16,40 +17,55 @@ get_header();
 ?>
 
 <div id="primary" class="content-area">
-<main id="main" class="site-main">
+	<main id="main" class="site-main">
 
-<?php while ( have_posts() ) : the_post(); ?>
+		<?php while (have_posts()) : the_post(); ?>
 
-	<section class="py-24">
+			<section class="py-16 xl:py-24">
 
-		<div class="container grid grid-cols-3 gap-y-16 gap-x-10">
+				<div class="container grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-16 gap-x-10">
 
-			<?php for($i = 0; $i < 6; $i++) : ?>
-				<div>
-					<div class="w-full h-[340px]">
-						<img class="w-full h-full object-cover" src="<?php echo get_template_directory_uri() ?>/resources/images/conselho-01.png" alt="Conselho - Salvatorianos" />
-					</div>
+					<?php
+					$args = array(
+						'posts_per_page' => -1,
+						'post_type'      => 'conselho',
+						'order'          => 'DESC'
+					);
 
-					<h6 class="text-3xl font-black font-red-hat-display text-center text-[#2C295C] mt-2">
-						Pe. Francisco Sydney de Macêdo Gonçalves
-					</h6>
+					$directors = new WP_Query($args);
 
-					<div class="my-4 px-10">
-						<div class="w-full h-[14px] bg-[#94C901]"></div>
-					</div>
+					if ($directors->have_posts()):
+						while ($directors->have_posts()): $directors->the_post();
+					?>
+							<div>
+								<div class="w-full h-[340px] 2xl:w-[428px] 2xl:h-[428px] flex justify-center items-center">
+									<img class="w-full h-full object-cover" src="<?php echo get_field('imagem_conselho') ?>" alt="<?php the_title() ?> - Salvatorianos" />
+								</div>
 
-					<p class="text-xl font-medium font-red-hat-display text-center text-[#4D8D3F]">
-						Diretor Provincial <br />
-						e Diretor Presidente da ABEA <br />
-						Nasc. 21/01/1969 - Fortaleza, CE.
-					</p>
+								<h6 class="text-xl xl:text-3xl 2xl:text-[44px] font-black font-red-hat-display text-center text-[#2C295C] mt-2">
+									<?php the_title() ?>
+								</h6>
+
+								<div class="my-4 px-10">
+									<div class="w-full h-[14px] bg-[#94C901]"></div>
+								</div>
+
+								<span class="block text-base xl:text-xl 2xl:text-[26px] font-medium font-red-hat-display text-center text-[#4D8D3F]">
+									<?php echo get_field('cargo') ?> <br />
+									<?php echo get_field('descricao_conselho') ?>
+								</span>
+							</div>
+					<?php
+						endwhile;
+					endif;
+
+					wp_reset_query();
+					?>
 				</div>
-			<?php endfor; ?>
-		</div>
-	</section>
-<?php endwhile; ?>
+			</section>
+		<?php endwhile; ?>
 
-</main><!-- #main -->
+	</main><!-- #main -->
 </div><!-- #primary -->
 
 <?php

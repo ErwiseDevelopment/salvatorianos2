@@ -7,12 +7,12 @@
             <!-- news main featured -->
             <div>
                 <?php
-                $news_featured_category = get_editorials()['portal']['categories']['news_featured'];
+                $news_category_featured_slug = get_categories_setting()['categories']['featured']['slug'];
 
                 $args = array(
                     'posts_per_page' => 1,
                     'post_type'      => 'post',
-                    'category_name'  => $news_featured_category,
+                    'category_name'  => $news_category_featured_slug,
                     'order'          => 'DESC'
                 );
 
@@ -28,15 +28,15 @@
                             <?php echo get_post_thumbnail_custom('news-item-thumbnail') ?>
 
                             <div class="bottom-0 left-0 absolute z-10 p-8">
-                                <span class="news-item-emphasis">
+                                <span class="news-item-emphasis 2xl:text-xl">
                                     Destaque
                                 </span>
 
-                                <h2 class="news-item-title">
+                                <h2 class="news-item-title 2xl:text-4xl">
                                     <?php the_title() ?>
                                 </h2>
 
-                                <p class="news-item-read-more text-sm text-[#8DAA32]">
+                                <p class="news-item-read-more text-sm 2xl:text-base text-[#8DAA32]">
                                     Leia mais >
                                 </p>
                             </div>
@@ -57,7 +57,7 @@
                 $news_featured_args = array(
                     'posts_per_page' => 1,
                     'post_type'      => 'post',
-                    'category_name'  => $news_featured_category,
+                    'category_name'  => $news_category_featured_slug,
                     'order'          => 'DESC',
                     'post__not_in'   => $news_hidden
                 );
@@ -72,15 +72,15 @@
                             <?php echo get_post_thumbnail_custom('news-item-thumbnail') ?>
 
                             <div class="bottom-0 left-0 absolute z-10 p-5">
-                                <span class="news-item-emphasis text-xs" style="background-image: linear-gradient(to right, #8335fa, #2c2460)">
+                                <span class="news-item-emphasis text-xs 2xl:text-sm" style="background-image: linear-gradient(to right, #8335fa, #2c2460)">
                                     Notícia
                                 </span>
 
-                                <h2 class="news-item-title text-xl">
+                                <h2 class="news-item-title text-xl 2xl:text-[26px]">
                                     <?php the_title() ?>
                                 </h2>
 
-                                <p class="news-item-read-more text-[8px] text-white">
+                                <p class="news-item-read-more text-[8px] 2xl:text-xs text-white">
                                     Leia mais >
                                 </p>
                             </div>
@@ -97,7 +97,7 @@
                 $news_args = array(
                     'posts_per_page' => 2,
                     'post_type'      => 'post',
-                    'category_name'  => $news_featured_category,
+                    'category_name'  => $news_category_featured_slug,
                     'order'          => 'DESC',
                     'post__not_in'   => $news_hidden
                 );
@@ -129,7 +129,7 @@
                                     <?php echo $news_category['title']; ?>
                                 </span>
 
-                                <h2 class="news-item-title text-xl">
+                                <h2 class="news-item-title text-base 2xl:text-[17px]">
                                     <?php the_title() ?>
                                 </h2>
 
@@ -157,7 +157,7 @@
                 $news_args = array(
                     'posts_per_page' => 3,
                     'post_type'      => 'post',
-                    'category_name'  => $news_featured_category,
+                    'category_name'  => $news_category_featured_slug,
                     'order'          => 'DESC',
                     'post__not_in'   => $news_hidden,
                 );
@@ -189,7 +189,7 @@
                         $news_args = array(
                             'post_type'      => 'post',
                             'posts_per_page' => 3,
-                            'category_name'  => $news_featured_category,
+                            'category_name'  => $news_category_featured_slug,
                             'order'          => 'DESC',
                             'post__not_in'   => $news_hidden,
                         );
@@ -231,7 +231,7 @@
                     $posts_editorials_args = array(
                         'posts_per_page' => 1,
                         'post_type'      => 'post',
-                        'category_name'  => $news_featured_category,
+                        'category_name'  => $news_category_featured_slug,
                         'order'          => 'DESC',
                         'post__not_in'   => $news_hidden,
                     );
@@ -243,20 +243,16 @@
                             $posts_loop++;
                 ?>
                             <a class="block hover:underline mb-4 last:mb-0" href="<?php the_permalink() ?>">
-                                <p class="text-2xl font-black font-red-hat-display <?php echo $posts_loop % 2 == 0 ? 'text-[#91AC31]' : 'text-[#8335fa]'; ?>">
-                                    <?php
-                                    $category = get_category_by_slug($editorial_category);
-
-                                    echo $category->name;
-                                    ?>
+                                <p class="text-2xl 2xl:text-[34px] font-black font-red-hat-display <?php echo $posts_loop % 2 == 0 ? 'text-[#91AC31]' : 'text-[#8335fa]'; ?>">
+                                    <?php echo get_category_by_slug($editorial_category)->name; ?>
                                 </p>
 
-                                <p class="text-sm font-black font-red-hat-display text-[#2D2D2D] mb-2">
+                                <p class="text-sm 2xl:text-[17px] font-black font-red-hat-display text-[#2D2D2D] mb-2">
                                     <!-- Salvatorianos celebram 127 anos de ação missionária no Brasil -->
                                     <?php the_title() ?>
                                 </p>
 
-                                <p class="tracking-[2px] text-lg font-semibold font-red-hat-display uppercase text-[#8DAA32]">
+                                <p class="tracking-[2px] text-lg 2xl:text-xl font-semibold font-red-hat-display uppercase text-[#8DAA32]">
                                     Confira >
                                 </p>
                             </a>

@@ -24,6 +24,11 @@ new Swiper(".js-swiper-general-news-editorial", {
   },
 });
 
+new Swiper(".js-swiper-values", {
+  slidesPerView: 1.5,
+  spaceBetween: 16,
+});
+
 // new Swiper(".js-swiper-magazine-banner", {
 //   modules: [Navigation, Pagination],
 //   slidesPerView: 1,
