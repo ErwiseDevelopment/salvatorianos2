@@ -24,9 +24,9 @@ get_header();
 			the_post(); ?>
 			<!-- banner -->
 			<?php
-			$editorial_slug = get_categories_setting()['editorials']['revistas']['single_name'];
+			$editorial_category_name = get_categories_setting()['editorials']['revistas']['single_name'];
 
-			echo get_template_part('template-parts/content', 'general-banner', get_query_custom('banners', $editorial_slug));
+			echo get_template_part('template-parts/content', 'general-banner', get_query_custom('banners', $editorial_category_name));
 			?>
 			<!-- end banner -->
 

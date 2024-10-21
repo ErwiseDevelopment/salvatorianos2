@@ -45,7 +45,7 @@ get_header();
 								x-data="{ hoverImage: false }"
 								x-on:mouseover="hoverImage = true"
 								x-on:mouseout="hoverImage = false">
-								<div class="w-[270px] h-[270px] rounded-full shadow-2xl overflow-hidden">
+								<div class="w-[270px] 2xl:w-[470px] h-[270px] 2xl:h-[470px] rounded-full shadow-2xl overflow-hidden">
 									<img
 										class="w-full h-full transition duration-200 object-cover"
 										x-bind:class="hoverImage == true ? 'scale-[1.1]' : 'scale-[1.0]'"
@@ -53,11 +53,11 @@ get_header();
 										alt="<?php the_title() ?> - Salvatorianos" />
 								</div>
 
-								<h6 class="text-xl xl:text-3xl font-black font-red-hat-display text-center text-[#4E8C3F] mt-4">
+								<h6 class="text-xl xl:text-3xl 2xl:text-[40px] font-black font-red-hat-display text-center text-[#4E8C3F] mt-4">
 									<?php the_title() ?>
 								</h6>
 
-								<p class="text-2xl font-medium font-red-hat-display text-center tracking-[6px] uppercase text-[#2C285B] mt-4">
+								<p class="text-2xl 2xl:text-3xl font-medium font-red-hat-display text-center tracking-[6px] uppercase text-[#2C285B] mt-4">
 									Baixar
 								</p>
 							</a>

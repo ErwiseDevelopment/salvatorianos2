@@ -38,11 +38,11 @@ get_header();
 						while ($directors->have_posts()): $directors->the_post();
 					?>
 							<div>
-								<div class="w-full h-[340px]">
+								<div class="w-full h-[340px] 2xl:w-[428px] 2xl:h-[428px] flex justify-center items-center">
 									<img class="w-full h-full object-cover" src="<?php echo get_field('imagem_conselho') ?>" alt="<?php the_title() ?> - Salvatorianos" />
 								</div>
 
-								<h6 class="text-xl xl:text-3xl font-black font-red-hat-display text-center text-[#2C295C] mt-2">
+								<h6 class="text-xl xl:text-3xl 2xl:text-[44px] font-black font-red-hat-display text-center text-[#2C295C] mt-2">
 									<?php the_title() ?>
 								</h6>
 
@@ -50,7 +50,7 @@ get_header();
 									<div class="w-full h-[14px] bg-[#94C901]"></div>
 								</div>
 
-								<span class="block text-base xl:text-xl font-medium font-red-hat-display text-center text-[#4D8D3F]">
+								<span class="block text-base xl:text-xl 2xl:text-[26px] font-medium font-red-hat-display text-center text-[#4D8D3F]">
 									<?php echo get_field('cargo') ?> <br />
 									<?php echo get_field('descricao_conselho') ?>
 								</span>

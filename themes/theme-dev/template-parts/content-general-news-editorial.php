@@ -7,7 +7,7 @@
             <div class="w-full xl:w-[424px] h-[2px] bottom-2 left-0 absolute bg-[#E0E0E0]"></div>
 
             <div class="relative pb-2">
-                <h4 class="text-2xl xl:text-4xl font-black font-red-hat-display text-[#7137F0]">
+                <h4 class="text-2xl xl:text-4xl 2xl:text-[42px] font-black font-red-hat-display text-[#7137F0]">
                     <?php echo $args['title'] ?>
                 </h4>
 

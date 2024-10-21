@@ -204,7 +204,7 @@ function get_categories_setting()
             'portal' => [
                 'title' => 'Portal',
                 'name'  => 'portal',
-                'slug' => 'editoria-portal',
+                'slug' => 'portal',
             ],
             'revistas' => [
                 'title'       => 'Revistas',
@@ -439,16 +439,6 @@ function get_hidden_banner_title(string $type, string $page = null): bool
     return true;
 }
 
-function get_general_pedagogue_setting(string $image, string $title, string $description, string $button_title): array
-{
-    return [
-        'image'        => $image,
-        'title'        => $title,
-        'description'  => $description,
-        'button_title' => $button_title
-    ];
-}
-
 function get_custom_query(int $posts_per_page = -1, string $post_type = 'post', string $cat_name = '', string $order = 'DESC', array $post__not_in = [])
 {
     if ($cat_name != '') {
@@ -476,7 +466,7 @@ function get_post_thumbnail_empty_custom(): string
 
 function get_post_thumbnail_custom(string $classe = '')
 {
-    if (empty(get_post_thumbnail_empty_custom())) {
+    if (!empty(get_post_thumbnail_empty_custom())) {
         return get_post_thumbnail_empty_custom();
     }
 
@@ -520,6 +510,7 @@ function get_general_news_editorial_setting(string $title, string $category_slug
     ];
 }
 
+
 function get_general_banner_title_setting($post): array
 {
     if ($post->post_type == 'post') {
@@ -536,22 +527,28 @@ function get_general_banner_title_setting($post): array
     ];
 }
 
-function get_general_blog_setting(string $category, string $filter = ''): array
+function get_general_blog_setting(string $editorial_category_slug, string $filter = ''): array
 {
+    $blog_category_id = get_category_by_slug('blog')->term_id;
+
+    $editorial_category_id = get_category_by_slug($editorial_category_slug)->term_id;
+
     if (!empty($filter)) {
         $filter = '?categoria=' . $filter;
 
         return [
-            'category' => $category,
-            'filter'   => $filter
+            'blog_category_id'      => $blog_category_id,
+            'editorial_category_id' => $editorial_category_id,
+            'filter'                => $filter
         ];
     }
 
     $filter = 'blog';
 
     return [
-        'category' => $category,
-        'filter'   => $filter
+        'blog_category_id'      => $blog_category_id,
+        'editorial_category_id' => $editorial_category_id,
+        'filter'                => $filter
     ];
 }
 

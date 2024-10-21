@@ -32,7 +32,7 @@ get_header();
 					</div>
 
 					<div class="flex flex-col justify-center xl:px-10">
-						<h4 class="text-2xl xl:text-5xl font-black font-red-hat-display text-white mb-6">
+						<h4 class="text-2xl xl:text-5xl 2xl:text-[52px] font-black font-red-hat-display text-white mb-6">
 							Acenda sua vela!
 						</h4>
 
@@ -60,11 +60,11 @@ get_header();
 
 					<?php for ($i = 0; $i < 9; $i++) : ?>
 						<div class="flex flex-col items-center">
-							<div class="w-[180px] xl:w-[230px] h-[180px] xl:h-[230px] rounded-full overflow-hidden flex justify-center items-center bg-gradient-b-green-200">
+							<div class="w-[180px] xl:w-[230px] 2xl:w-[286px] h-[180px] xl:h-[230px] 2xl:h-[286px] rounded-full overflow-hidden flex justify-center items-center bg-gradient-b-green-200">
 								<img class="" src="<?php echo get_template_directory_uri() ?>/resources/images/icon-candle.png" alt="Vela Virtual - Salvatorianos" />
 							</div>
 
-							<h5 class="text-xl md:text-2xl xl:text-4xl font-medium font-red-hat-display text-center text-[#4B837B] mt-4">
+							<h5 class="text-xl md:text-2xl xl:text-4xl 2xl:text-5xl font-medium font-red-hat-display text-center text-[#4B837B] mt-4">
 								Acesa por <br />
 								<span class="font-extrabold text-[#7137F0]">
 									Maria

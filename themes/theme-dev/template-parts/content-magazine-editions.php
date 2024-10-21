@@ -34,7 +34,7 @@
                             </div>
 
                             <div class="relative pb-2">
-                                <h4 class="text-3xl xl:text-6xl font-black font-red-hat-display text-[#7137F0]">
+                                <h4 class="text-3xl xl:text-6xl 2xl:text-[77px] font-black font-red-hat-display text-[#7137F0]">
                                     Última edição
                                 </h4>
 
@@ -44,15 +44,15 @@
                             </div>
                         </div>
 
-                        <p class="font-bold font-red-hat-display text-center text-[#2C285B] mt-6">
+                        <p class="2xl:text-xl font-bold font-red-hat-display text-center text-[#2C285B] mt-6">
                             Jan/Fev/Mar - 2024
                         </p>
 
-                        <span class="block text-lg font-medium font-red-hat-display text-[#7137F0] mt-4">
+                        <span class="block text-lg 2xl:text-[26px] font-medium font-red-hat-display text-[#7137F0] mt-4">
                             <?php echo get_field('resumo_edicao') ?>
                         </span>
 
-                        <a class="transition hover:scale-90 rounded-full inline-block text-xl font-bold font-red-hat-display text-center uppercase text-white bg-gradient-to-r from-[#91AC31] to-[#4D8C3F] mt-6 py-3 px-8" href="<?php the_permalink() ?>" target="_blank" rel="noreferrer noopener">
+                        <a class="transition hover:scale-90 rounded-full inline-block text-xl 2xl:text-3xl   font-bold font-red-hat-display text-center uppercase text-white bg-gradient-to-r from-[#91AC31] to-[#4D8C3F] mt-6 py-3 px-8" href="<?php the_permalink() ?>" target="_blank" rel="noreferrer noopener">
                             Acesse agora
                         </a>
                     </div>
@@ -89,12 +89,12 @@
                 <a href="<?php the_permalink() ?>" target="_blank" rel="noreferrer noopener">
                     <img class="w-full object-cover" src="<?php echo $thumbnail_post->guid; ?>" alt="<?php the_title() ?> - Salvatorianos" />
 
-                    <p class="font-bold font-red-hat-display text-center text-[#2C285B] mt-6">
+                    <p class="2xl:text-xl font-bold font-red-hat-display text-center text-[#2C285B] mt-6">
                         Jan/Fev/Mar - 2024
                     </p>
 
                     <div class="flex justify-center">
-                        <span class="transition hover:scale-90 rounded-full inline-block text-xl font-bold font-red-hat-display text-center uppercase text-white bg-gradient-to-r from-[#91AC31] to-[#4D8C3F] mt-6 py-3 px-8">
+                        <span class="transition hover:scale-90 rounded-full inline-block text-xl 2xl:text-3xl font-bold font-red-hat-display text-center uppercase text-white bg-gradient-to-r from-[#91AC31] to-[#4D8C3F] mt-6 py-3 2xl:py-4 px-8">
                             Acesse agora
                         </span>
                     </div>
@@ -107,7 +107,7 @@
         ?>
 
         <div class="col-span-full flex justify-center mt-10">
-            <a class="transition hover:scale-90 rounded-full inline-block text-xl font-bold font-red-hat-display text-center uppercase text-white bg-gradient-to-r from-[#7C33EE] to-[#2D2463] py-2 px-8" href="#">
+            <a class="transition hover:scale-90 rounded-full inline-block text-xl 2xl:text-2xl font-bold font-red-hat-display text-center uppercase text-white bg-gradient-to-r from-[#7C33EE] to-[#2D2463] py-2 px-8" href="#">
                 Edições anteriores
             </a>
         </div>
