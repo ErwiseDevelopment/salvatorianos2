@@ -80,21 +80,38 @@ function get_limit_words($string, $word_limit)
     return implode(' ', $words);
 }
 
-function get_months()
+function get_months($abbr = true)
 {
+    if ($abbr) {
+        return [
+            '01' => 'Jan',
+            '02' => 'Fev',
+            '03' => 'Mar',
+            '04' => 'Abr',
+            '05' => 'Mai',
+            '06' => 'Jun',
+            '07' => 'Jul',
+            '08' => 'Ago',
+            '09' => 'Set',
+            '10' => 'Out',
+            '11' => 'Nov',
+            '12' => 'Dez'
+        ];
+    }
+
     return [
-        '01' => 'Jan',
-        '02' => 'Fev',
-        '03' => 'Mar',
-        '04' => 'Abr',
-        '05' => 'Mai',
-        '06' => 'Jun',
-        '07' => 'Jul',
-        '08' => 'Ago',
-        '09' => 'Set',
-        '10' => 'Out',
-        '11' => 'Nov',
-        '12' => 'Dez'
+        '01' => 'Janeiro',
+        '02' => 'Fevereiro',
+        '03' => 'Março',
+        '04' => 'Abril',
+        '05' => 'Maio',
+        '06' => 'Junho',
+        '07' => 'Julho',
+        '08' => 'Agosto',
+        '09' => 'Setembro',
+        '10' => 'Outubro',
+        '11' => 'Novembro',
+        '12' => 'Dezembro'
     ];
 }
 
@@ -103,24 +120,116 @@ function get_month($month)
     return get_months()[$month];
 }
 
+function get_editorials_categories_setting(): array
+{
+    return [
+        'editoria-educacao' => [
+            'title' => 'Educação',
+            'color' => '#048F35'
+        ],
+        'editoria-institucional' => [
+            'title' => 'Institucional',
+            'color' => '#1B9333'
+        ],
+        'editoria-obras-sociais' => [
+            'title' => 'Obras Sociais',
+            'color' => '#389731'
+        ],
+        'editoria-paroquias' => [
+            'title' => 'Paróquias',
+            'color' => '#4E9B2E'
+        ],
+        'editoria-pe-jordan' => [
+            'title' => 'Pe. Joradan',
+            'color' => '#63A02B'
+        ],
+        'editoria-portal' => [
+            'title' => 'Portal',
+            'color' => '#72A625'
+        ],
+        'editoria-revistas' => [
+            'title' => 'Revistas',
+            'color' => '#72A625'
+        ],
+        'editoria-vocacional' => [
+            'title' => 'Vocacional',
+            'color' => '#83AB1E'
+        ]
+    ];
+}
+
+function get_categories_setting()
+{
+    return [
+        'categories' => [
+            'blog' => [
+                'title' => 'Blog',
+                'slug'  => 'blog'
+            ],
+            'featured' => [
+                'title' => 'Destaque',
+                'slug'  => 'destaque'
+            ],
+            'news' => [
+                'title' => 'Notícia',
+                'slug'  => 'noticia'
+            ]
+        ],
+        'editorials' => [
+            'educacao' => [
+                'title'   => 'Educação',
+                'name'    => 'educacao',
+                'slug'    => 'editoria-educacao',
+            ],
+            'institucional' => [
+                'title'   => 'Institucional',
+                'name'    => 'institucional',
+                'slug'    => 'editoria-institucional',
+            ],
+            'obras-sociais' => [
+                'title' => 'Obras Sociais',
+                'name'  => 'obras-sociais',
+                'slug'  => 'editoria-obras-sociais',
+            ],
+            'paroquias' => [
+                'title' => 'Paróquias',
+                'name'  => 'paroquias',
+                'slug'  => 'editoria-paroquias',
+            ],
+            'pe-jordan' => [
+                'title' => 'Pe. Jordan',
+                'name'  => 'pe-jordan',
+                'slug'  => 'editoria-pe-jordan',
+            ],
+            'portal' => [
+                'title' => 'Portal',
+                'name'  => 'portal',
+                'slug' => 'portal',
+            ],
+            'revistas' => [
+                'title'       => 'Revistas',
+                'name'        => 'revistas',
+                'single_name' => 'revista',
+                'slug'        => 'editoria-revistas',
+            ],
+            'vocacional' => [
+                'title' => 'Vocacional',
+                'name'  => 'vocacional',
+                'slug'  => 'editoria-vocacional',
+            ],
+        ]
+    ];
+}
+
 function get_editorials(): array
 {
-    // return [
-    //     'institucional' => 'Institucional',
-    //     'pe-jordan'     => 'Pe. Jordan',
-    //     'vocacional'    => 'Vocacional',
-    //     'paroquias'     => 'Paróquias',
-    //     'educacao'      => 'Educação',
-    //     'obras-sociais' => 'Obras Sociais',
-    //     'revistas'      => 'Revista'
-    // ];
-
     return [
         'editoria-educacao' => [
             'categories' => [
-                'blog' => 'educacao-blog',
-                'news' => 'educacao-noticia',
-                'slug' => 'educacao',
+                'blog'    => 'educacao-blog',
+                'news'    => 'educacao-noticia',
+                'slug'    => 'educacao',
+                'pattern' => 'editoria-educacao'
             ],
             'colors' => [
                 'primary'   => '#000000',
@@ -130,9 +239,10 @@ function get_editorials(): array
         ],
         'editoria-institucional' => [
             'categories' => [
-                'blog' => 'institucional-blog',
-                'news' => 'institucional-noticia',
-                'slug' => 'institucional',
+                'blog'    => 'institucional-blog',
+                'news'    => 'institucional-noticia',
+                'slug'    => 'institucional',
+                'pattern' => 'editoria-institucional'
             ],
             'colors' => [
                 'primary'   => '#000000',
@@ -154,9 +264,10 @@ function get_editorials(): array
         ],
         'editoria-paroquias' => [
             'categories' => [
-                'blog' => 'paroquias-blog',
-                'news' => 'paroquias-noticia',
-                'slug' => 'paroquias',
+                'blog'    => 'paroquias-blog',
+                'news'    => 'paroquias-noticia',
+                'slug'    => 'paroquias',
+                'pattern' => 'editoria-paroquias'
             ],
             'colors' => [
                 'primary'   => '#000000',
@@ -166,9 +277,10 @@ function get_editorials(): array
         ],
         'editoria-pe-jordan' => [
             'categories' => [
-                'blog' => 'pe-jordan-blog',
-                'news' => 'pe-jordan-noticia',
-                'slug' => 'pe-jordan',
+                'blog'    => 'pe-jordan-blog',
+                'news'    => 'pe-jordan-noticia',
+                'slug'    => 'pe-jordan',
+                'pattern' => 'editoria-pe-jordan'
             ],
             'colors' => [
                 'primary'   => '#000000',
@@ -204,9 +316,10 @@ function get_editorials(): array
         ],
         'editoria-vocacional' => [
             'categories' => [
-                'blog' => 'vocacional-blog',
-                'news' => 'vocacional-noticia',
-                'slug' => 'vocacional',
+                'blog'    => 'vocacional-blog',
+                'news'    => 'vocacional-noticia',
+                'slug'    => 'vocacional',
+                'pattern' => 'editoria-vocacional'
             ],
             'colors' => [
                 'primary'   => '#ffd000',
@@ -215,6 +328,79 @@ function get_editorials(): array
             'title' => 'Vocacional'
         ],
     ];
+}
+
+function get_format_date(string $date)
+{
+    list($day, $month, $year) = explode('/', $date);
+
+    $month = get_months(false)[$month];
+
+    return $day . ' de ' . $month . ' de ' . $year;
+}
+
+/**
+ * 
+ * Functions Single Post
+ */
+
+function get_single_post_setting(): array
+{
+    return [
+        'blog' => [
+            'banner_title' => 'Blog',
+            'button_title' => 'Todos os blogs',
+            'button_link'  => get_home_url(null, '/blog')
+        ],
+
+        'noticia' => [
+            'banner_title' => 'Notícias',
+            'button_title' => 'Todas as notícias',
+            'button_link'  => get_home_url(null, '/noticias')
+        ],
+    ];
+}
+
+function get_single_post_editorial()
+{
+    $post_categories = get_the_category(get_the_ID());
+
+    foreach ($post_categories as $post_category) {
+        foreach (get_categories_setting()['editorials'] as $editorial) {
+            if ($post_category->slug == $editorial['slug']) {
+                return $post_category;
+            }
+        }
+    }
+}
+
+function get_single_post_category()
+{
+    $post_categories = get_the_category(get_the_ID());
+
+    $categories_main = [
+        'blog',
+        'noticia'
+    ];
+
+    foreach ($post_categories as $post_category) {
+        foreach ($categories_main as $category_main) {
+            if ($post_category->slug == $category_main) {
+                return $post_category;
+            }
+        }
+    }
+}
+
+function get_single_post_categories(): array
+{
+    $categories = [];
+
+    array_push($categories, get_single_post_category());
+
+    array_push($categories, get_single_post_editorial());
+
+    return $categories;
 }
 
 function show_banner_title(object $page): bool
@@ -273,24 +459,23 @@ function get_custom_query(int $posts_per_page = -1, string $post_type = 'post', 
     ];
 }
 
-function get_post_thumbnail_empty_custom(string $height = ''): string
+function get_post_thumbnail_empty_custom(): string
 {
-    return '<div class="w-full bg-gray-100" style="height: ' . $height . 'px"></div>';
+    return '<div class="w-full h-full bg-gray-100"></div>';
 }
 
-function get_post_thumbnail_custom(string $classe = '', string $height = '')
+function get_post_thumbnail_custom(string $classe = '')
 {
-    if (the_post_thumbnail()) {
-        $alt = get_the_title() . ' - Salvatorianos';
-
-        return the_post_thumbnail('post-thumbnail', array(
-            'class' => $classe,
-            'style' => $height != '' ? $height . 'px' : '',
-            'alt'   => $alt
-        ));
+    if (!empty(get_post_thumbnail_empty_custom())) {
+        return get_post_thumbnail_empty_custom();
     }
 
-    return get_post_thumbnail_empty_custom($height);
+    $alt = get_the_title() . ' - Salvatorianos';
+
+    the_post_thumbnail('post-thumbnail', array(
+        'class' => $classe,
+        'alt'   => $alt
+    ));
 }
 
 function get_query_custom(string $post_type, string $editorial, int $posts_per_page = -1): array
@@ -310,53 +495,102 @@ function get_query_custom(string $post_type, string $editorial, int $posts_per_p
 
 function get_general_news_editorial_setting(string $title, string $category_slug, string $button_title, string $button_link): array
 {
+    $news_category_slug = get_categories_setting()['categories']['news']['slug'];
+
+    $news_category = get_category_by_slug($news_category_slug);
+
+    $editorial_category = get_category_by_slug($category_slug);
+
     return [
-        'title'         => $title,
-        'category_slug' => $category_slug,
-        'button_title'  => $button_title,
-        'button_link'   => get_home_url(null, $button_link)
+        'title'              => $title,
+        'news_category'      => $news_category,
+        'editorial_category' => $editorial_category,
+        'button_title'       => $button_title,
+        'button_link'        => get_home_url(null, $button_link)
     ];
 }
 
-function get_general_blog_setting(string $category, string $filter = ''): array
+
+function get_general_banner_title_setting($post): array
 {
+    if ($post->post_type == 'post') {
+        $title = get_single_post_category()->slug == 'blog' ? 'Blog' : 'Notícia';
+        $classe = 'banner-post';
+    } else {
+        $title = get_the_title();
+        $classe = 'banner-page';
+    }
+
+    return [
+        'title' => $title,
+        'class' => $classe
+    ];
+}
+
+function get_general_blog_setting(string $editorial_category_slug, string $filter = ''): array
+{
+    $blog_category_id = get_category_by_slug('blog')->term_id;
+
+    $editorial_category_id = get_category_by_slug($editorial_category_slug)->term_id;
+
     if (!empty($filter)) {
         $filter = '?categoria=' . $filter;
 
         return [
-            'category' => $category,
-            'filter'   => $filter
+            'blog_category_id'      => $blog_category_id,
+            'editorial_category_id' => $editorial_category_id,
+            'filter'                => $filter
         ];
     }
 
     $filter = 'blog';
 
     return [
-        'category' => $category,
-        'filter'   => $filter
+        'blog_category_id'      => $blog_category_id,
+        'editorial_category_id' => $editorial_category_id,
+        'filter'                => $filter
     ];
 }
 
-function get_new_item_setting(): array
+function get_new_item_setting(bool $show_details = true): array
 {
-    $category_main = '';
+    $excerpt = null;
 
-    foreach (get_the_category(get_the_ID()) as $category) {
-        foreach (get_editorials() as $editorial) {
-            if ($category->name == $editorial) {
-                $category_main = $category->name;
+    $category_name = null;
+
+    if ($show_details) {
+        foreach (get_the_category(get_the_ID()) as $category) {
+            foreach (get_editorials_categories_setting() as $slug => $title) {
+                if ($category->slug == $slug) {
+                    $category_name = $category->name;
+                }
+            }
+        }
+    } else {
+
+        foreach (get_the_category(get_the_ID()) as $category) {
+            foreach (get_editorials() as $editorial) {
+                if ($category->name == $editorial) {
+                    $category_name = $category->name;
+                }
             }
         }
     }
 
     $thumbnail = get_the_post_thumbnail(null, 'post-thumbnail', array('class' => 'w-full h-[220px] object-cover', 'alt' => get_the_title()));
 
+    if (!empty(get_the_excerpt())) {
+        $excerpt = get_the_excerpt();
+    } else {
+        $excerpt = get_limit_words(get_the_content(), 20);
+    }
+
     return [
         'title'          => get_the_title(),
-        'category'       => $category_main,
+        'category_name'  => $category_name,
         'date_published' => get_the_date('d/m/Y'),
         'content'        => get_the_content(),
-        'excerpt'        => get_the_excerpt(),
+        'excerpt'        => $excerpt,
         'thumbnail'      => $thumbnail,
         'link'           => get_the_permalink()
     ];

@@ -7,7 +7,7 @@
             <div class="w-full h-[2px] bottom-2 left-0 absolute bg-[#E0E0E0]"></div>
 
             <div class="relative pb-2">
-                <h4 class="text-2xl xl:text-4xl font-black font-red-hat-display text-white">
+                <h4 class="text-2xl xl:text-4xl 2xl:text-[42px] font-black font-red-hat-display text-white">
                     Materiais exclusivos <br />
                     e gratuitos
                 </h4>
@@ -16,7 +16,7 @@
             </div>
 
             <div class="hidden xl:flex justify-end items-end">
-                <a class="translate-y-2 transition hover:opacity-90 rounded-full relative inline-block text-xl font-bold font-red-hat-display text-center uppercase text-white bg-[#27225C] py-2 px-8" href="<?php echo get_home_url(null, '/materiais-exclusivos?categoria=' . $wp->request) ?>">
+                <a class="translate-y-2 transition hover:opacity-90 rounded-full relative inline-block text-xl 2xl:text-2xl font-bold font-red-hat-display text-center uppercase text-white bg-[#27225C] py-2 px-8" href="<?php echo get_home_url(null, '/materiais-exclusivos?categoria=' . $wp->request) ?>">
                     Ver tudo
                 </a>
             </div>
@@ -37,12 +37,11 @@
                             <img class="w-full h-full object-cover" src="<?php echo get_field('imagem_banner_materiais') ?>" alt="<?php the_title() ?> - Salvatoriano" />
                         </div>
 
-                        <h6 class="text-xl font-black font-red-hat-display text-center text-white mb-2" style="line-height:110%">
-                            <!-- Planilha para definir seu propósito de vida -->
+                        <h6 class="text-xl 2xl:text-2xl font-black font-red-hat-display text-center text-white mb-2" style="line-height:110%">
                             <?php the_title() ?>
                         </h6>
 
-                        <span class="tracking-[2px] inline-block text-sm font-medium font-red-hat-display text-center uppercase hover:underline text-[#2C285B]">
+                        <span class="tracking-[2px] inline-block text-sm 2xl:text-base font-medium font-red-hat-display text-center uppercase hover:underline text-[#2C285B]">
                             Baixar
                         </span>
                     </a>

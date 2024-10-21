@@ -23,17 +23,17 @@ get_header();
 
 			<!-- banner -->
 			<?php
-			$editorial_slug = get_editorials()['editoria-paroquias']['categories']['slug'];
+			$editorial_category_name = get_categories_setting()['editorials']['paroquias']['name'];
 
-			echo get_template_part('template-parts/content', 'general-banner', get_query_custom('banners', $editorial_slug))
+			echo get_template_part('template-parts/content', 'general-banner', get_query_custom('banners', $editorial_category_name))
 			?>
 			<!-- end banner -->
 
 			<!-- posts editorial -->
 			<?php
-			$news_category = get_editorials()['editoria-paroquias']['categories']['news'];
+			$editorial_category_slug = get_categories_setting()['editorials']['paroquias']['slug'];
 
-			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Saiba tudo sobre nossas paróquias', $news_category, 'Todas as notícias das paróquias', 'noticias?categoria=paroquias')) ?>
+			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Saiba tudo sobre nossas paróquias', $editorial_category_slug, 'Todas as notícias das paróquias', 'noticias?categoria=paroquias')) ?>
 			<!-- end posts editorial -->
 
 			<!-- parishes carousel -->
@@ -47,15 +47,11 @@ get_header();
 			<div class="mt-10"></div>
 
 			<!-- blog -->
-			<?php
-			$blog_category = get_editorials()['editoria-paroquias']['categories']['blog'];
-
-			echo get_template_part('template-parts/content', 'general-blog', get_general_blog_setting($blog_category, $editorial_slug));
-			?>
+			<?php echo get_template_part('template-parts/content', 'general-blog', get_general_blog_setting($editorial_category_slug)) ?>
 			<!-- blog -->
 
 			<!-- free materials -->
-			<?php echo get_template_part('template-parts/content', 'general-free-materials', get_query_custom('materiais', $editorial_slug, 4)) ?>
+			<?php echo get_template_part('template-parts/content', 'general-free-materials', get_query_custom('materiais', $editorial_category_name, 4)) ?>
 			<!-- free materials -->
 		<?php endwhile; ?>
 	</main><!-- #main -->

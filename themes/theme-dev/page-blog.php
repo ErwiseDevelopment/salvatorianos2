@@ -30,7 +30,7 @@ get_header();
 						$news_featured_args = array(
 							'posts_per_page' => 1,
 							'post_type'      => 'post',
-							'category_name'  => 'noticia',
+							'category_name'  => 'blog',
 							'order'          => 'DESC'
 						);
 
@@ -77,7 +77,7 @@ get_header();
 
 								<?php foreach (get_editorials_categories_setting() as $key => $value) : ?>
 									<li class="mb-2 last:mb-0">
-										<a class="block text-base xl:text-xl 2xl:text-[26px] font-medium font-red-hat-display text-center text-white py-3" style="background-color: <?php echo $value['color']; ?>" href="<?php echo get_home_url(null, 'noticias?categoria=' . $key); ?>">
+										<a class="block text-base xl:text-xl 2xl:text-[26px] font-medium font-red-hat-display text-center text-white py-3" style="background-color: <?php echo $value['color']; ?>" href="<?php echo get_home_url(null, 'blog?categoria=' . $key); ?>">
 											<?php echo $value['title']; ?>
 										</a>
 									</li>
@@ -96,7 +96,7 @@ get_header();
 
 					<div class="col-span-full grid grid-cols-1 xl:grid-cols-4 gap-4">
 						<?php
-						$news_category_slug = get_categories_setting()['categories']['news']['slug'];
+						$news_category_slug = get_categories_setting()['categories']['blog']['slug'];
 
 						$news_category = get_category_by_slug($news_category_slug);
 
