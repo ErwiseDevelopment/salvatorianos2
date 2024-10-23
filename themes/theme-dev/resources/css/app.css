@@ -257,6 +257,22 @@ b {
     @apply bg-gradient-purple;
   }
 
+  .parishes-modal {
+    @apply w-full h-full top-0 left-0 transition duration-500 fixed opacity-0 invisible flex justify-center items-center bg-black/50 z-50 p-4;
+  } 
+
+  .parishes-modal.is-active {
+    @apply opacity-100 visible;
+  }
+
+  .parishes-modal-box {
+    @apply w-full h-[100vh] xl:h-[80vh] rounded-xl hidden bg-white;
+  }
+
+  .parishes-modal-box.is-active {
+    @apply block;
+  }
+
   .photo-item {
     @apply h-[276px] relative;
   }
@@ -351,6 +367,21 @@ b {
 
   .swiper-button-next-parishes {
     right: -3rem !important;
+  }
+
+  @media screen and (max-width: 991px) {
+    .swiper-button-prev-parishes,
+    .swiper-button-next-parishes {
+      top: 110% !important;
+    }
+
+    .swiper-button-prev-parishes {
+      left: 5rem !important;
+    }
+
+    .swiper-button-next-parishes {
+      right: 5rem !important;
+    }
   }
 
   .swiper-button-prev-parishes::after,
