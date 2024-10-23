@@ -33,7 +33,7 @@ get_header();
 			<?php
 			$editorial_category_slug = get_categories_setting()['editorials']['institucional']['slug'];
 
-			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Confira o que está acontecendo em nossa Província', $editorial_category_slug, 'Todas as notícias institucionais', 'noticias'))
+			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Confira o que está acontecendo em nossa Província', $editorial_category_slug, 'Todas as notícias institucionais', 'noticias?categoria=institucional'))
 			?>
 			<!-- end news editorial -->
 
