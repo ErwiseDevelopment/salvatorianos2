@@ -101,7 +101,9 @@ get_header();
 						$news_category = get_category_by_slug($news_category_slug);
 
 						if (isset($_GET['categoria'])) {
-							$editorial_category = get_category_by_slug($_GET['categoria']);
+							$editorial_category_slug = get_categories_setting()['editorials'][$_GET['categoria']]['slug'];
+
+							$editorial_category = get_category_by_slug($editorial_category_slug);
 
 							$news_args = array(
 								'posts_per_page' => -1,
