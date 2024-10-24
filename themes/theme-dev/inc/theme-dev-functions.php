@@ -534,7 +534,7 @@ function get_general_blog_setting(string $editorial_category_slug, string $filte
     $editorial_category_id = get_category_by_slug($editorial_category_slug)->term_id;
 
     if (!empty($filter)) {
-        $filter = '?categoria=' . $filter;
+        $filter = 'blog?categoria=' . $filter;
 
         return [
             'blog_category_id'      => $blog_category_id,

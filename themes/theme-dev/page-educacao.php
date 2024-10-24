@@ -150,7 +150,7 @@ get_header();
 			<!-- end our pedagogue -->
 
 			<!-- blog -->
-			<?php echo get_template_part('template-parts/content', 'general-blog', get_general_blog_setting($editorial_category_slug)) ?>
+			<?php echo get_template_part('template-parts/content', 'general-blog', get_general_blog_setting($editorial_category_slug, 'educacao')) ?>
 			<!-- blog -->
 
 			<!-- free materials -->
