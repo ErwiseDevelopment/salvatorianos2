@@ -180,42 +180,50 @@ function get_categories_setting()
                 'title'   => 'Educação',
                 'name'    => 'educacao',
                 'slug'    => 'educacao',
+                'color'   => '#048F35'
             ],
             'institucional' => [
                 'title'   => 'Institucional',
                 'name'    => 'institucional',
                 'slug'    => 'institucional',
+                'color'   => '#1B9333'
             ],
             'obras-sociais' => [
                 'title' => 'Obras Sociais',
                 'name'  => 'obras-sociais',
                 'slug'  => 'obras-sociais',
+                'color' => '#389731'
             ],
             'paroquias' => [
                 'title' => 'Paróquias',
                 'name'  => 'paroquias',
                 'slug'  => 'paroquias',
+                'color' => '#4E9B2E'
             ],
             'pe-jordan' => [
                 'title' => 'Pe. Jordan',
                 'name'  => 'pe-jordan',
                 'slug'  => 'pe-jordan',
+                'color' => '#63A02B'
             ],
             'portal' => [
                 'title' => 'Portal',
                 'name'  => 'portal',
-                'slug' => 'portal',
+                'slug'  => 'portal',
+                'color' => '#72A625'
             ],
             'revistas' => [
                 'title'       => 'Revistas',
                 'name'        => 'revistas',
                 'single_name' => 'revista',
                 'slug'        => 'revistas',
+                'color'       => '#72A625'
             ],
             'vocacional' => [
                 'title' => 'Vocacional',
                 'name'  => 'vocacional',
                 'slug'  => 'vocacional',
+                'color' => '#83AB1E'
             ],
         ]
     ];
