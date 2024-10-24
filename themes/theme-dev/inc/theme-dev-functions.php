@@ -180,42 +180,50 @@ function get_categories_setting()
                 'title'   => 'Educação',
                 'name'    => 'educacao',
                 'slug'    => 'educacao',
+                'color'   => '#048F35'
             ],
             'institucional' => [
                 'title'   => 'Institucional',
                 'name'    => 'institucional',
                 'slug'    => 'institucional',
+                'color'   => '#1B9333'
             ],
             'obras-sociais' => [
                 'title' => 'Obras Sociais',
                 'name'  => 'obras-sociais',
                 'slug'  => 'obras-sociais',
+                'color' => '#389731'
             ],
             'paroquias' => [
                 'title' => 'Paróquias',
                 'name'  => 'paroquias',
                 'slug'  => 'paroquias',
+                'color' => '#4E9B2E'
             ],
             'pe-jordan' => [
                 'title' => 'Pe. Jordan',
                 'name'  => 'pe-jordan',
                 'slug'  => 'pe-jordan',
+                'color' => '#63A02B'
             ],
             'portal' => [
                 'title' => 'Portal',
                 'name'  => 'portal',
-                'slug' => 'portal',
+                'slug'  => 'portal',
+                'color' => '#72A625'
             ],
             'revistas' => [
                 'title'       => 'Revistas',
                 'name'        => 'revistas',
                 'single_name' => 'revista',
                 'slug'        => 'revistas',
+                'color'       => '#72A625'
             ],
             'vocacional' => [
                 'title' => 'Vocacional',
                 'name'  => 'vocacional',
                 'slug'  => 'vocacional',
+                'color' => '#83AB1E'
             ],
         ]
     ];
@@ -224,7 +232,7 @@ function get_categories_setting()
 function get_editorials(): array
 {
     return [
-        'editoria-educacao' => [
+        'educacao' => [
             'categories' => [
                 'blog'    => 'educacao-blog',
                 'news'    => 'educacao-noticia',
@@ -237,7 +245,7 @@ function get_editorials(): array
             ],
             'title' => 'Educação'
         ],
-        'editoria-institucional' => [
+        'institucional' => [
             'categories' => [
                 'blog'    => 'institucional-blog',
                 'news'    => 'institucional-noticia',
@@ -250,7 +258,7 @@ function get_editorials(): array
             ],
             'title' => 'Institucional'
         ],
-        'editoria-obras-sociais' => [
+        'obras-sociais' => [
             'categories' => [
                 'blog' => 'obras-sociais-blog',
                 'news' => 'obras-sociais-noticia',
@@ -262,7 +270,7 @@ function get_editorials(): array
             ],
             'title' => 'Obras Sociais'
         ],
-        'editoria-paroquias' => [
+        'paroquias' => [
             'categories' => [
                 'blog'    => 'paroquias-blog',
                 'news'    => 'paroquias-noticia',
@@ -275,7 +283,7 @@ function get_editorials(): array
             ],
             'title' => 'Paróquias'
         ],
-        'editoria-pe-jordan' => [
+        'pe-jordan' => [
             'categories' => [
                 'blog'    => 'pe-jordan-blog',
                 'news'    => 'pe-jordan-noticia',
@@ -302,7 +310,7 @@ function get_editorials(): array
             ],
             'title' => 'Pe. Jordan'
         ],
-        'editoria-revistas' => [
+        'revistas' => [
             'categories' => [
                 'blog' => 'revistas-blog',
                 'news' => 'revistas-noticia',
@@ -314,7 +322,7 @@ function get_editorials(): array
             ],
             'title' => 'Revistas'
         ],
-        'editoria-vocacional' => [
+        'vocacional' => [
             'categories' => [
                 'blog'    => 'vocacional-blog',
                 'news'    => 'vocacional-noticia',
@@ -534,7 +542,7 @@ function get_general_blog_setting(string $editorial_category_slug, string $filte
     $editorial_category_id = get_category_by_slug($editorial_category_slug)->term_id;
 
     if (!empty($filter)) {
-        $filter = '?categoria=' . $filter;
+        $filter = 'blog?categoria=' . $filter;
 
         return [
             'blog_category_id'      => $blog_category_id,

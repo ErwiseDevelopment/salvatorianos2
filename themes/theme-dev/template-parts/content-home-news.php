@@ -220,9 +220,9 @@
                 <!-- loop -->
                 <?php
                 $editorials_categories = [
-                    'editoria-educacao',
-                    'editoria-institucional',
-                    'editoria-vocacional'
+                    'educacao',
+                    'institucional',
+                    'vocacional'
                 ];
 
                 $posts_loop = 0;
