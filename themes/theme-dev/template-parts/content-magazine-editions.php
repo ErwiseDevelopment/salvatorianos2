@@ -16,7 +16,7 @@
             while ($book->have_posts()): $book->the_post();
                 $book_first_id = get_the_ID();
 
-                $thumbnail_id = get_field('3dfb_thumbnail', 243)['data']['post_ID'];
+                $thumbnail_id = get_field('3dfb_thumbnail', get_the_ID())['data']['post_ID'];
 
                 $thumbnail_post = get_post((int) $thumbnail_id);
         ?>
