@@ -224,7 +224,7 @@ function get_categories_setting()
 function get_editorials(): array
 {
     return [
-        'editoria-educacao' => [
+        'educacao' => [
             'categories' => [
                 'blog'    => 'educacao-blog',
                 'news'    => 'educacao-noticia',
@@ -237,7 +237,7 @@ function get_editorials(): array
             ],
             'title' => 'Educação'
         ],
-        'editoria-institucional' => [
+        'institucional' => [
             'categories' => [
                 'blog'    => 'institucional-blog',
                 'news'    => 'institucional-noticia',
@@ -250,7 +250,7 @@ function get_editorials(): array
             ],
             'title' => 'Institucional'
         ],
-        'editoria-obras-sociais' => [
+        'obras-sociais' => [
             'categories' => [
                 'blog' => 'obras-sociais-blog',
                 'news' => 'obras-sociais-noticia',
@@ -262,7 +262,7 @@ function get_editorials(): array
             ],
             'title' => 'Obras Sociais'
         ],
-        'editoria-paroquias' => [
+        'paroquias' => [
             'categories' => [
                 'blog'    => 'paroquias-blog',
                 'news'    => 'paroquias-noticia',
@@ -275,7 +275,7 @@ function get_editorials(): array
             ],
             'title' => 'Paróquias'
         ],
-        'editoria-pe-jordan' => [
+        'pe-jordan' => [
             'categories' => [
                 'blog'    => 'pe-jordan-blog',
                 'news'    => 'pe-jordan-noticia',
@@ -302,7 +302,7 @@ function get_editorials(): array
             ],
             'title' => 'Pe. Jordan'
         ],
-        'editoria-revistas' => [
+        'revistas' => [
             'categories' => [
                 'blog' => 'revistas-blog',
                 'news' => 'revistas-noticia',
@@ -314,7 +314,7 @@ function get_editorials(): array
             ],
             'title' => 'Revistas'
         ],
-        'editoria-vocacional' => [
+        'vocacional' => [
             'categories' => [
                 'blog'    => 'vocacional-blog',
                 'news'    => 'vocacional-noticia',
