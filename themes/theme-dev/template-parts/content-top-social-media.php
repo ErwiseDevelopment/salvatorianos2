@@ -15,7 +15,7 @@
         </div>
 
         <div class="flex justify-center xl:justify-end items-center gap-x-4">
-            <a class="w-9 h-9 relative block" href="#" title="Instagram" target="_blank" rel="noreferrer noopener">
+            <a class="w-9 h-9 relative block" href="<?php echo get_field('instagram', 'option') ?>" title="Instagram" target="_blank" rel="noreferrer noopener">
                 <span class="text-[0px]">
                     Instagram
                 </span>
@@ -34,7 +34,7 @@
                 </svg>
             </a>
 
-            <a class="w-9 h-9 relative block" href="#" title="Facebook" target="_blank" rel="noreferrer noopener">
+            <a class="w-9 h-9 relative block" href="<?php echo get_field('facebook', 'option') ?>" title="Facebook" target="_blank" rel="noreferrer noopener">
                 <span class="text-[0px]">
                     Facebook
                 </span>

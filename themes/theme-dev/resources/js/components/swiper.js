@@ -54,6 +54,18 @@ new Swiper(".js-swiper-parishes", {
     prevEl: ".js-swiper-button-prev-parishes",
   },
 
+  breakpoints: {
+    320: {
+      slidesPerView: 1.2,
+      spaceBetween: 16,
+    },
+
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 16,
+    },
+  },
+
   // pagination: {
   //   el: ".swiper-pagination",
   //   type: "bullets",

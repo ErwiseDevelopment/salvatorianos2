@@ -75,12 +75,14 @@ get_header();
 
 							<ul class="mt-6">
 
-								<?php foreach (get_editorials_categories_setting() as $key => $value) : ?>
-									<li class="mb-2 last:mb-0">
-										<a class="block text-base xl:text-xl 2xl:text-[26px] font-medium font-red-hat-display text-center text-white py-3" style="background-color: <?php echo $value['color']; ?>" href="<?php echo get_home_url(null, 'noticias?categoria=' . $key); ?>">
-											<?php echo $value['title']; ?>
-										</a>
-									</li>
+								<?php foreach (get_categories_setting()['editorials'] as $key => $value) : ?>
+									<?php if ($value['title'] != 'Portal'): ?>
+										<li class="mb-2 last:mb-0">
+											<a class="block text-base xl:text-xl 2xl:text-[26px] font-medium font-red-hat-display text-center text-white py-3" style="background-color: <?php echo $value['color']; ?>" href="<?php echo get_home_url(null, 'noticias?categoria=' . $value['slug']); ?>">
+												<?php echo $value['title']; ?>
+											</a>
+										</li>
+									<?php endif; ?>
 								<?php endforeach; ?>
 							</ul>
 						</div>
@@ -101,7 +103,9 @@ get_header();
 						$news_category = get_category_by_slug($news_category_slug);
 
 						if (isset($_GET['categoria'])) {
-							$editorial_category = get_category_by_slug($_GET['categoria']);
+							$editorial_category_slug = get_categories_setting()['editorials'][$_GET['categoria']]['slug'];
+
+							$editorial_category = get_category_by_slug($editorial_category_slug);
 
 							$news_args = array(
 								'posts_per_page' => -1,

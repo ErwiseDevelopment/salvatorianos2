@@ -48,7 +48,7 @@ get_header();
 			<div class="mt-10"></div>
 
 			<!-- blog -->
-			<?php echo get_template_part('template-parts/content', 'general-blog', get_general_blog_setting($editorial_category_slug)) ?>
+			<?php echo get_template_part('template-parts/content', 'general-blog', get_general_blog_setting($editorial_category_slug, 'pe-jordan')) ?>
 			<!-- blog -->
 
 			<div class="mt-20"></div>
