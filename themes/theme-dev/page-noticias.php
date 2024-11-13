@@ -25,7 +25,7 @@ get_header();
 
 				<div class="container flex flex-wrap xl:px-24">
 
-					<div class="w-full xl:w-8/12 pr-4">
+					<div class="w-full lg:w-7/12 xl:w-8/12 pr-4">
 						<?php
 						$news_featured_args = array(
 							'posts_per_page' => 1,
@@ -66,7 +66,7 @@ get_header();
 						?>
 					</div>
 
-					<div class="w-full xl:w-4/12">
+					<div class="w-full lg:w-5/12 xl:w-4/12">
 
 						<div class="border border-black bg-[#EDEDED] py-8 px-4">
 							<h3 class="text-2xl xl:text-4xl 2xl:text-[56px] font-black font-red-hat-display text-center text-[#7137F0]">
@@ -96,7 +96,7 @@ get_header();
 
 				<div class="container grid grid-cols-4 gap-4">
 
-					<div class="col-span-full grid grid-cols-1 xl:grid-cols-4 gap-4">
+					<div class="col-span-full grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4">
 						<?php
 						$news_category_slug = get_categories_setting()['categories']['news']['slug'];
 

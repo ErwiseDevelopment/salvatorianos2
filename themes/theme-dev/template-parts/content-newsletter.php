@@ -6,7 +6,7 @@
             <img class="w-full h-full object-cover" src="<?php echo get_template_directory_uri() ?>/resources/images/newsletter.png" alt="Newsletter - Salvatoriano" />
         </div>
 
-        <div class="w-full xl:w-5/12 flex flex-col justify-end mt-6 xl:mt-0 pb-12 xl:pl-12">
+        <div class="w-full lg:w-9/12 xl:w-5/12 flex flex-col justify-end mt-6 xl:mt-0 pb-12 xl:pl-12">
 
             <h6 class="text-2xl xl:text-4xl font-black font-red-hat-display text-center xl:text-start text-white mb-4">
                 Inscreva-se e receba <br />

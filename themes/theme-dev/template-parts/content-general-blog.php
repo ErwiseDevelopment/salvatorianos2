@@ -80,7 +80,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 xl:grid-cols-2 gap-y-8 gap-x-4 mt-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-8 gap-x-4 mt-8">
 
                 <!-- loop -->
                 <?php

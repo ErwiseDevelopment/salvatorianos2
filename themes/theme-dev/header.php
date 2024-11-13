@@ -50,21 +50,21 @@
 
                 <div class="container flex flex-wrap px-2 xl:px-4">
 
-                    <div class="w-3/12 relative hidden xl:block">
+                    <div class="w-3/12 relative hidden lg:block">
 
-                        <a class="w-[320px] 2xl:w-[450px] h-[320px] 2xl:h-[450px] -translate-y-32 2xl:-translate-y-56 translate-x-12 2xl:translate-x-0 rounded-full absolute flex justify-center items-end bg-[#E9E5DD] pb-16 z-10" href="<?php echo get_home_url(null, '/') ?>">
+                        <a class="lg:w-[300px] xl:w-[320px] 2xl:w-[450px] lg:h-[300px] xl:h-[320px] 2xl:h-[450px] -translate-y-32 2xl:-translate-y-56 translate-x-12 2xl:translate-x-0 rounded-full absolute flex justify-center items-end bg-[#E9E5DD] pb-16 z-10" href="<?php echo get_home_url(null, '/') ?>">
                             <img class="w-56" src="<?php echo get_template_directory_uri() ?>/resources/images/logo-salvatorianos.png" alt="Salvatorianos" />
                         </a>
                     </div>
 
-                    <div class="w-full xl:w-9/12 flex flex-col py-4">
+                    <div class="w-full lg:w-9/12 flex flex-col py-4">
 
                         <div class="h-16 mb-4">
 
                             <ul class="h-full grid grid-cols-4">
 
                                 <li class="col-span-1 flex justify-end">
-                                    <a class="w-full xl:w-[80px] h-full transition hover:opacity-90 rounded-tl-[9999px] rounded-bl-[9999px] flex justify-center items-center <?php echo $wp->request == '' ? 'bg-[#27225C]' : 'bg-[#8134F4]'; ?> py-6 xl:py-4 px-8 xl:px-6" href="<?php echo get_home_url(null, '/') ?>">
+                                    <a class="w-full lg:w-[90px] xl:w-[80px] h-full transition hover:opacity-90 rounded-tl-[9999px] rounded-bl-[9999px] flex justify-center items-center <?php echo $wp->request == '' ? 'bg-[#27225C]' : 'bg-[#8134F4]'; ?> py-6 xl:py-4 px-8 xl:px-6" href="<?php echo get_home_url(null, '/') ?>">
                                         <img class="w-full h-full" src="<?php echo get_template_directory_uri() ?>/resources/images/icon-home.png" alt="Home - Salvatoriano" />
                                     </a>
                                 </li>
@@ -91,7 +91,7 @@
 
                         <div class="h-16 relative">
 
-                            <span class="w-[60px] h-full top-0 right-full absolute hidden xl:block <?php echo $wp->request == 'paroquias' ? 'bg-[#26245C]' : 'bg-[#83AB1E]'; ?>"></span>
+                            <span class="w-[60px] h-full top-0 xl:right-full absolute hidden lg:block <?php echo $wp->request == 'paroquias' ? 'bg-[#26245C]' : 'bg-[#83AB1E]'; ?>"></span>
 
                             <ul class="h-full grid grid-cols-4">
 

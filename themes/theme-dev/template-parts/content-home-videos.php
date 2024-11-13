@@ -44,7 +44,7 @@
                         while ($videos->have_posts()) : $videos->the_post();
                     ?>
                             <div class="swiper-slide">
-                                <div class="w-full h-[280px] video">
+                                <div class="w-full h-[400px] xl:h-[280px] video">
                                     <?php echo get_field('link_video') ?>
                                 </div>
                             </div>
