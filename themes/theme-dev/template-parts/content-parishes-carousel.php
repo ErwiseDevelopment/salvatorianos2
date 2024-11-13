@@ -13,7 +13,7 @@
                     <?php
                     $parishes_args = array(
                         'posts_per_page' => -1,
-                        'post_type'      => 'paroquia',
+                        'post_type'      => 'comunidade',
                         'order'          => 'DESC'
                     );
 
@@ -76,7 +76,7 @@
                 <?php
                 $parishes_args = array(
                     'posts_per_page' => -1,
-                    'post_type'      => 'paroquia',
+                    'post_type'      => 'comunidade',
                     'order'          => 'DESC'
                 );
 

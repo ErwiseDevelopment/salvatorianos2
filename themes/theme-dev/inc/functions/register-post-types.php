@@ -45,7 +45,7 @@ function scalabrinianos_create_post_type()
         'public'         => true,
         'has_archive'    => true,
         'menu_icon'      => 'dashicons-admin-home',
-        'supports'       => array('title',  'author', 'thumbnail', 'editor')
+        'supports'       => array('title',  'author')
     ));
 
     register_post_type('videos', array(
