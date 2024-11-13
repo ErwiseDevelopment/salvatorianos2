@@ -33,7 +33,7 @@ get_header();
 			<!-- end news -->
 
 			<!-- gallery -->
-			<?php echo get_template_part('template-parts/content', 'general-gallery', get_query_custom('galeria', $editorial_category_name)) ?>
+			<?php echo get_template_part('template-parts/content', 'general-gallery', ['query' => get_query_custom('galeria', $editorial_category_name)]) ?>
 			<!-- end gallery -->
 
 			<!-- videos -->
