@@ -23,7 +23,7 @@ get_header();
 
 			<section class="py-24">
 
-				<div class="container grid grid-cols-1 xl:grid-cols-2 gap-16 xl:px-32">
+				<div class="container grid grid-cols-1 lg:grid-cols-2 gap-16 xl:px-32">
 
 					<?php
 					$args = array(

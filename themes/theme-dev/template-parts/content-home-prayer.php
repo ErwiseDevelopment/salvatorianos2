@@ -38,7 +38,7 @@
             </div>
         </div>
 
-        <div class="w-full xl:w-6/12 xl:-translate-x-10 flex items-end">
+        <div class="w-full lg:w-9/12 xl:w-6/12 xl:-translate-x-10 flex items-end">
             <div class="2xl:w-[850px] 2xl:h-[628px] xl:rounded-tl-[150px] 2xl:rounded-tl-[250px] xl:rounded-tr-[150px] 2xl:rounded-tr-[250px] xl:rounded-br-[150px] 2xl:rounded-br-[250px] flex flex-col justify-center bg-gradient-purple p-8 xl:p-16 2xl:px-36">
                 <p class="text-xl xl:text-3xl 2xl:text-[42px] font-bold font-red-hat-display uppercase text-white" style="line-height:120%">
                     “sê um verdadeiro apóstolo de jesus cristo, e não sossegues até que tenhas levado a palavra de deus a todos os recantos da terra.”

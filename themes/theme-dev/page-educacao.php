@@ -107,7 +107,7 @@ get_header();
 
 			<!-- gallery -->
 			<?php echo get_template_part('template-parts/content', 'general-gallery', get_query_custom('galeria', $editorial_category_name)) ?>
-			<!-- gallery -->
+			<!-- end gallery -->
 
 			<!-- our pedagogue -->
 			<section class="pt-10 xl:py-32">
@@ -120,7 +120,7 @@ get_header();
 						</div>
 					</div>
 
-					<div class="w-full xl:w-7/12 xl:-translate-x-10 relative flex items-end z-10">
+					<div class="w-full lg:w-9/12 xl:w-7/12 xl:-translate-x-10 relative flex items-end z-10">
 						<div class="2xl:w-[1246px] 2xl:h-[1026px] xl:rounded-tl-[250px] 2xl:rounded-tl-[350px] xl:rounded-tr-[250px] 2xl:rounded-tr-[350px] xl:rounded-br-[250px] 2xl:rounded-br-[350px] flex flex-col justify-center items-center bg-gradient-purple py-16 xl:py-24 px-4 xl:px-32">
 							<p class="text-lg xl:text-xl 2xl:text-[38px] font-medium font-red-hat-display text-white" style="line-height:150%">
 								Lorem ipsum dolor sit amet, consectetur
@@ -151,11 +151,11 @@ get_header();
 
 			<!-- blog -->
 			<?php echo get_template_part('template-parts/content', 'general-blog', get_general_blog_setting($editorial_category_slug, 'educacao')) ?>
-			<!-- blog -->
+			<!-- end blog -->
 
 			<!-- free materials -->
 			<?php echo get_template_part('template-parts/content', 'general-free-materials', get_query_custom('materiais', $editorial_category_name, 4)) ?>
-			<!-- free materials -->
+			<!-- end free materials -->
 		<?php endwhile; ?>
 
 	</main><!-- #main -->

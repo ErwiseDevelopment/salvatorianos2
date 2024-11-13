@@ -48,7 +48,7 @@
                     while ($albums->have_posts()): $albums->the_post();
                 ?>
                         <div class="swiper-slide">
-                            <img class="w-full h-[260px] object-cover block" src="<?php echo get_field('capa_galeria') ?>" alt="<?php the_title() ?> - Salvatorianos" />
+                            <img class="w-full h-[260px] lg:h-[400px] object-cover block" src="<?php echo get_field('capa_galeria') ?>" alt="<?php the_title() ?> - Salvatorianos" />
                         </div>
                 <?php
                     endwhile;
