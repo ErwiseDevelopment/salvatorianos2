@@ -26,11 +26,36 @@ get_header();
 				<div class="container grid grid-cols-1 lg:grid-cols-2 gap-16 xl:px-32">
 
 					<?php
-					$args = array(
-						'posts_per_page' => -1,
-						'post_type'      => 'materiais',
-						'order'          => 'DESC'
-					);
+					if (isset($_GET['editoria']) && $_GET['editoria'] != '') {
+						$editorial_category_slug = $_GET['editoria'];
+
+						$editorial_category = get_term_by('slug', $editorial_category_slug, 'editoria');
+
+						$args = array(
+							'posts_per_page' => -1,
+							'post_type'      => 'materiais',
+							'order'          => 'DESC',
+							'tax_query'      => array(
+								array(
+									'taxonomy' => 'editoria',
+									'field'    => 'term_id',
+									'terms'    => $editorial_category->term_id
+								)
+							)
+						);
+					} else {
+						$args = array(
+							'posts_per_page' => -1,
+							'post_type'      => 'materiais',
+							'order'          => 'DESC'
+						);
+					}
+
+					// $args = array(
+					// 	'posts_per_page' => -1,
+					// 	'post_type'      => 'materiais',
+					// 	'order'          => 'DESC'
+					// );
 
 					$materials = new WP_Query($args);
 

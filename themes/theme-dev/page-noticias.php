@@ -50,7 +50,7 @@ get_header();
 										</span>
 
 										<h2 class="text-2xl xl:text-3xl 2xl:text-[46px] font-black font-red-hat-display text-white mt-2">
-											<?php the_title() ?>
+											<?php echo get_limit_words(get_the_title(), 8); ?>
 										</h2>
 
 										<p class="text-base sxl:text-lg 2xl:text-xl font-semibold font-red-hat-display uppercase tracking-widest hover:underline text-[#8DAA32]">
