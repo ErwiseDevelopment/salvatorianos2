@@ -33,7 +33,7 @@
                                 </span>
 
                                 <h2 class="news-item-title 2xl:text-4xl">
-                                    <?php the_title() ?>
+                                    <?php echo get_limit_words(get_the_title(), 8); ?>
                                 </h2>
 
                                 <p class="news-item-read-more text-sm 2xl:text-base text-[#8DAA32]">
@@ -77,7 +77,7 @@
                                 </span>
 
                                 <h2 class="news-item-title text-xl 2xl:text-[26px]">
-                                    <?php the_title() ?>
+                                    <?php echo get_limit_words(get_the_title(), 8); ?>
                                 </h2>
 
                                 <p class="news-item-read-more text-[8px] 2xl:text-xs text-white">
@@ -130,7 +130,7 @@
                                 </span>
 
                                 <h2 class="news-item-title text-base 2xl:text-[17px]">
-                                    <?php the_title() ?>
+                                    <?php echo get_limit_words(get_the_title(), 8); ?>
                                 </h2>
 
                                 <p class="news-item-read-more text-[8px] text-white">
@@ -249,7 +249,7 @@
 
                                 <p class="text-sm 2xl:text-[17px] font-black font-red-hat-display text-[#2D2D2D] mb-2">
                                     <!-- Salvatorianos celebram 127 anos de ação missionária no Brasil -->
-                                    <?php the_title() ?>
+                                    <?php echo get_limit_words(get_the_title(), 8); ?>
                                 </p>
 
                                 <p class="tracking-[2px] text-lg 2xl:text-xl font-semibold font-red-hat-display uppercase text-[#8DAA32]">

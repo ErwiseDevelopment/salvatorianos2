@@ -16,7 +16,7 @@
             </div>
 
             <div class="hidden xl:flex justify-end items-end">
-                <a class="translate-y-2 transition hover:opacity-90 rounded-full relative inline-block text-xl 2xl:text-2xl font-bold font-red-hat-display text-center uppercase text-white bg-[#27225C] py-2 px-8" href="<?php echo get_home_url(null, '/materiais-exclusivos?categoria=' . $wp->request) ?>">
+                <a class="translate-y-2 transition hover:opacity-90 rounded-full relative inline-block text-xl 2xl:text-2xl font-bold font-red-hat-display text-center uppercase text-white bg-[#27225C] py-2 px-8" href="<?php echo get_home_url(null, '/materiais-gratuitos?editoria=' . $wp->request) ?>">
                     Ver tudo
                 </a>
             </div>
@@ -38,7 +38,7 @@
                         </div>
 
                         <h6 class="text-xl 2xl:text-2xl font-black font-red-hat-display text-center text-white mb-2" style="line-height:110%">
-                            <?php the_title() ?>
+                            <?php echo get_limit_words(get_the_title(), 8); ?>
                         </h6>
 
                         <span class="tracking-[2px] inline-block text-sm 2xl:text-base font-medium font-red-hat-display text-center uppercase hover:underline text-[#2C285B]">
