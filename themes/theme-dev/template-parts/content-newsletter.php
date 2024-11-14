@@ -13,7 +13,7 @@
                 mensalmente
             </h6>
 
-            <?php echo do_shortcode('[contact-form-7 id="5642092" title="Newsletter"]') ?>
+            <?php echo do_shortcode('[contact-form-7 id="9238e99" title="Newsletter"]') ?>
 
             <!-- <form>
 
