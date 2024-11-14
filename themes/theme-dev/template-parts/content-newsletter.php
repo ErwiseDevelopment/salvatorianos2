@@ -13,7 +13,9 @@
                 mensalmente
             </h6>
 
-            <form>
+            <?php echo do_shortcode('[contact-form-7 id="5642092" title="Newsletter"]') ?>
+
+            <!-- <form>
 
                 <div class="grid">
 
@@ -29,7 +31,7 @@
                         <input class="btn-submit" type="submit" value="Quero receber!" />
                     </div>
                 </div>
-            </form>
+            </form> -->
         </div>
     </div>
 </section>
