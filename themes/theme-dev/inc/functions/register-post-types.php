@@ -9,12 +9,12 @@ function scalabrinianos_create_post_type()
         'supports'         => array('title', 'editor',  'revisions', 'author', 'thumbnail')
     ));
 
-    register_post_type('locais', array(
-        'labels'         => array('name' => 'Locais', 'singular_name' => 'Locais', 'all_items' => 'Todos'),
+    register_post_type('Escolas', array(
+        'labels'         => array('name' => 'Escolas', 'singular_name' => 'Escolas', 'all_items' => 'Todos'),
         'public'         => true,
         'has_archive'     => true,
         'menu_icon'     => 'dashicons-calendar-alt',
-        'supports'         => array('title', 'editor',  'revisions', 'author', 'thumbnail')
+        'supports'         => array('title', 'editor',  'revisions', 'author')
     ));
 
     register_post_type('materiais', array(
@@ -33,13 +33,6 @@ function scalabrinianos_create_post_type()
         'supports'         => array('title',  'author', 'thumbnail')
     ));
 
-    register_post_type('paroquia', array(
-        'labels'         => array('name' => 'Paróquias', 'singular_name' => 'Paróquia', 'all_items' => 'Todas'),
-        'public'         => true,
-        'has_archive'    => true,
-        'menu_icon'      => 'dashicons-admin-home',
-        'supports'       => array('title',  'author', 'thumbnail', 'editor')
-    ));
     register_post_type('comunidade', array(
         'labels'         => array('name' => 'Comunidades', 'singular_name' => 'Comunidade', 'all_items' => 'Todas'),
         'public'         => true,
@@ -56,8 +49,24 @@ function scalabrinianos_create_post_type()
         'supports'         => array('title',  'author', 'thumbnail')
     ));
 
+    register_post_type('acervo', array(
+        'labels'         => array('name' => 'Acervo', 'singular_name' => 'Acervo', 'all_items' => 'Todos'),
+        'public'         => true,
+        'has_archive'     => true,
+        'menu_icon'     => 'dashicons-book',
+        'supports'         => array('title',  'author', 'thumbnail')
+    ));
+
+
     register_post_type('conselho', array(
         'labels'         => array('name' => 'Conselho', 'singular_name' => 'Conselho', 'all_items' => 'Todos'),
+        'public'         => true,
+        'has_archive'     => true,
+        'menu_icon'     => 'dashicons-book',
+        'supports'         => array('title',  'author', 'thumbnail')
+    ));
+    register_post_type('equipe', array(
+        'labels'         => array('name' => 'Equipes', 'singular_name' => 'Equipes', 'all_items' => 'Todos'),
         'public'         => true,
         'has_archive'     => true,
         'menu_icon'     => 'dashicons-book',
