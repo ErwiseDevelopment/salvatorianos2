@@ -63,6 +63,14 @@
 
                             <ul class="h-full grid grid-cols-4">
 
+                                <?php
+                                if ($post->post_parent != 0) {
+                                    $request_uri = get_post($post->post_parent)->post_name;
+                                } else {
+                                    $request_uri = $wp->request;
+                                }
+                                ?>
+
                                 <li class="col-span-1 flex justify-end">
                                     <a class="w-full lg:w-[90px] xl:w-[80px] h-full transition hover:opacity-90 rounded-tl-[9999px] rounded-bl-[9999px] flex justify-center items-center <?php echo $wp->request == '' ? 'bg-[#27225C]' : 'bg-[#8134F4]'; ?> py-6 xl:py-4 px-8 xl:px-6" href="<?php echo get_home_url(null, '/') ?>">
                                         <img class="w-full h-full" src="<?php echo get_template_directory_uri() ?>/resources/images/icon-home.png" alt="Home - Salvatoriano" />
@@ -70,19 +78,19 @@
                                 </li>
 
                                 <li class="col-span-1">
-                                    <a class="main-nav-link <?php echo $wp->request == 'institucional' ? 'is-active' : ''; ?> bg-[#549D2C]" href="<?php echo get_home_url(null, '/institucional') ?>">
+                                    <a class="main-nav-link <?php echo $request_uri == 'institucional' ? 'is-active' : ''; ?> bg-[#549D2C]" href="<?php echo get_home_url(null, '/institucional') ?>">
                                         Institucional
                                     </a>
                                 </li>
 
                                 <li class="col-span-1">
-                                    <a class="main-nav-link <?php echo $wp->request == 'pe-jordan' ? 'is-active' : ''; ?> bg-[#329532]" href="<?php echo get_home_url(null, '/pe-jordan') ?>">
+                                    <a class="main-nav-link <?php echo $request_uri == 'pe-jordan' ? 'is-active' : ''; ?> bg-[#329532]" href="<?php echo get_home_url(null, '/pe-jordan') ?>">
                                         Pe. Jordan
                                     </a>
                                 </li>
 
                                 <li class="col-span-1">
-                                    <a class="main-nav-link <?php echo $wp->request == 'vocacional' ? 'is-active' : ''; ?> rounded-tr-[9999px] rounded-br-[9999px] bg-[#058E36]" href="<?php echo get_home_url(null, '/vocacional') ?>">
+                                    <a class="main-nav-link <?php echo $request_uri == 'vocacional' ? 'is-active' : ''; ?> rounded-tr-[9999px] rounded-br-[9999px] bg-[#058E36]" href="<?php echo get_home_url(null, '/vocacional') ?>">
                                         Vocacional
                                     </a>
                                 </li>
@@ -91,30 +99,30 @@
 
                         <div class="h-16 relative">
 
-                            <span class="w-[60px] h-full top-0 xl:right-full absolute hidden lg:block <?php echo $wp->request == 'paroquias' ? 'bg-[#26245C]' : 'bg-[#83AB1E]'; ?>"></span>
+                            <span class="w-[60px] h-full top-0 xl:right-full absolute hidden lg:block <?php echo $request_uri == 'paroquias' ? 'bg-[#26245C]' : 'bg-[#83AB1E]'; ?>"></span>
 
                             <ul class="h-full grid grid-cols-4">
 
                                 <li class="col-span-1">
-                                    <a class="main-nav-link <?php echo $wp->request == 'paroquias' ? 'is-active' : ''; ?> rounded-tl-full rounded-bl-full xl:rounded-none bg-[#83AB1E]" href="<?php echo get_home_url(null, '/paroquias') ?>">
+                                    <a class="main-nav-link <?php echo $request_uri == 'paroquias' ? 'is-active' : ''; ?> rounded-tl-full rounded-bl-full xl:rounded-none bg-[#83AB1E]" href="<?php echo get_home_url(null, '/paroquias') ?>">
                                         Paróquias
                                     </a>
                                 </li>
 
                                 <li class="col-span-1">
-                                    <a class="main-nav-link <?php echo $wp->request == 'educacao' ? 'is-active' : ''; ?> bg-[#549D2C]" href="<?php echo get_home_url(null, '/educacao') ?>">
+                                    <a class="main-nav-link <?php echo $request_uri == 'educacao' ? 'is-active' : ''; ?> bg-[#549D2C]" href="<?php echo get_home_url(null, '/educacao') ?>">
                                         Educação
                                     </a>
                                 </li>
 
                                 <li class="col-span-1">
-                                    <a class="main-nav-link <?php echo $wp->request == 'obras-sociais' ? 'is-active' : ''; ?> bg-[#3A9731]" href="<?php echo get_home_url(null, '/obras-sociais') ?>">
+                                    <a class="main-nav-link <?php echo $request_uri == 'obras-sociais' ? 'is-active' : ''; ?> bg-[#3A9731]" href="<?php echo get_home_url(null, '/obras-sociais') ?>">
                                         Obras Sociais
                                     </a>
                                 </li>
 
                                 <li class="col-span-1">
-                                    <a class="main-nav-link <?php echo $wp->request == 'revistas' ? 'is-active' : ''; ?> rounded-tr-[9999px] rounded-br-[9999px] bg-[#058E36]" href="<?php echo get_home_url(null, '/revistas') ?>">
+                                    <a class="main-nav-link <?php echo $request_uri == 'revistas' ? 'is-active' : ''; ?> rounded-tr-[9999px] rounded-br-[9999px] bg-[#058E36]" href="<?php echo get_home_url(null, '/revistas') ?>">
                                         Revista
                                     </a>
                                 </li>
@@ -122,60 +130,19 @@
                         </div>
                     </div>
 
-                    <?php if (isset(get_pages_editorials_settings()[$post->post_name]['menu'])) : ?>
-                        <div class="w-full xl:mt-16">
-                            <nav class="relative">
+                    <?php
+                    if ($post->post_parent != 0) {
+                        $page_parent_name = get_post($post->post_parent)->post_name;
 
-                                <div class="hamburger-wrapper">
-
-                                    <button class="btn-menu" x-on:click="openMenu = true">
-                                        <svg class="w-6 h-6 fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                            <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
-                                        </svg>
-                                    </button>
-                                </div>
-
-                                <?php $menu = get_pages_editorials_settings()[$post->post_name]['menu']; ?>
-
-                                <?php if (isset($menu)) : ?>
-                                    <div class="main-nav-desktop">
-                                        <?php
-                                        wp_nav_menu(array(
-                                            'container_class' => 'menu-secondary',
-                                            'theme_location'  => $menu
-                                        ));
-                                        ?>
-                                    </div>
-
-                                    <div
-                                        class="main-nav-mobile"
-                                        x-show="openMenu"
-                                        x-cloak
-                                        x-transition:enter="transition duration-500"
-                                        x-transition:enter-start="translate-x-full"
-                                        x-transition:enter-end="translate-x-0"
-                                        x-transition:leave="transition duration-500"
-                                        x-transition:leave-start="translate-x-0"
-                                        x-transition:leave-end="translate-x-full">
-
-                                        <button class="btn-menu btn-menu-close" x-on:click="openMenu = false">
-                                            <svg class="w-6 h-6 fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                                <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
-                                            </svg>
-                                        </button>
-
-                                        <?php
-                                        wp_nav_menu(array(
-                                            'container_class' => 'menu-secondary',
-                                            'theme_location'  => $menu
-                                        ));
-
-                                        ?>
-                                    </div>
-                                <?php endif; ?>
-                            </nav>
-                        </div>
-                    <?php endif; ?>
+                        if (isset(get_pages_editorials_settings()[$page_parent_name]['menu'])) {
+                            echo get_template_part('template-parts/content', 'menu-secondary', get_menu_secondary_setting($page_parent_name));
+                        }
+                    } else {
+                        if (isset(get_pages_editorials_settings()[$post->post_name]['menu'])) {
+                            echo get_template_part('template-parts/content', 'menu-secondary', get_menu_secondary_setting($post->post_name));
+                        }
+                    }
+                    ?>
                 </div>
             </header>
 

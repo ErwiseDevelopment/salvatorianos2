@@ -61,6 +61,10 @@ b {
     @apply w-full text-sm 2xl:text-xl font-semibold font-red-hat-display uppercase text-[#2C285B] placeholder:text-[#2C285B] bg-white py-4 px-6;
   }
 
+  .input-field-contact {
+    @apply border border-[#28235C];
+  }
+
   .gallery-item {
     @apply relative;
   }
@@ -164,7 +168,17 @@ b {
   }
 
   .menu-secondary .menu-item a {
-    @apply block text-xl font-medium font-red-hat-display text-white p-2;
+    @apply relative block text-xl font-medium font-red-hat-display text-white p-2;
+  }
+
+  .menu-secondary .menu-item a::before {
+    content: '';
+    @apply w-full h-1 top-full left-1/2 -translate-x-1/2 opacity-0 absolute bg-white;
+  }
+
+  .menu-secondary .menu-item a:hover::before,
+  .menu-secondary .current-menu-item a::before {
+    @apply opacity-100;
   }
 
   .nav-item {
