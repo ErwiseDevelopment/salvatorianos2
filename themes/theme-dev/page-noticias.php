@@ -120,7 +120,7 @@ get_header();
 								<?php foreach (get_categories_setting()['editorials'] as $key => $value) : ?>
 									<?php if ($value['title'] != 'Portal'): ?>
 										<li class="mb-2 last:mb-0">
-											<a class="block text-base xl:text-xl 2xl:text-[26px] font-medium font-red-hat-display text-center text-white py-3" style="background-color: <?php echo $value['color']; ?>" href="<?php echo get_home_url(null, 'noticias?categoria=' . $value['slug']); ?>">
+											<a class="block text-base xl:text-xl 2xl:text-[26px] font-medium font-red-hat-display text-center text-white py-3" style="background-color: <?php echo $value['color']; ?>" href="<?php echo get_home_url(null, 'noticias?editoria=' . $value['slug']); ?>">
 												<?php echo $value['title']; ?>
 											</a>
 										</li>
