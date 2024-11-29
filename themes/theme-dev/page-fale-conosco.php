@@ -26,7 +26,7 @@ get_header();
 				<div class="container grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-4">
 
 					<div>
-						<?php echo do_shortcode('[contact-form-7 id="9238e99" title="Newsletter"]') ?>
+						<?php echo do_shortcode('[contact-form-7 id="a830abc" title="Fale Conosco"]') ?>
 
 						<!-- <form>
 
