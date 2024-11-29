@@ -406,13 +406,17 @@ function get_single_post_category()
         'noticia'
     ];
 
-    foreach ($post_categories as $post_category) {
-        foreach ($categories_main as $category_main) {
-            if ($post_category->slug == $category_main) {
-                return $post_category;
+    if (isset($post_categories)) {
+        foreach ($post_categories as $post_category) {
+            foreach ($categories_main as $category_main) {
+                if ($post_category->slug == $category_main) {
+                    return $post_category;
+                }
             }
         }
     }
+
+    return [];
 }
 
 function get_single_post_categories(): array
@@ -536,18 +540,22 @@ function get_general_news_editorial_setting(string $title, string $category_slug
 
 function get_general_banner_title_setting($post): array
 {
-    if ($post->post_type == 'post') {
-        $title = get_single_post_category()->slug == 'blog' ? 'Blog' : 'Notícia';
-        $classe = 'banner-post';
-    } else {
-        $title = get_the_title();
-        $classe = 'banner-page';
+    if (isset($post)) {
+        if ($post->post_type == 'post' && !empty(get_single_post_category())) {
+            $title = get_single_post_category()->slug == 'blog' ? 'Blog' : 'Notícia';
+            $classe = 'banner-post';
+        } else {
+            $title = get_the_title();
+            $classe = 'banner-page';
+        }
+
+        return [
+            'title' => $title,
+            'class' => $classe
+        ];
     }
 
-    return [
-        'title' => $title,
-        'class' => $classe
-    ];
+    return [];
 }
 
 function get_general_blog_setting(string $editorial_category_slug, string $filter = ''): array
@@ -624,6 +632,27 @@ function get_new_item_setting(bool $show_details = true): array
         'thumbnail'      => $thumbnail,
         'link'           => get_the_permalink()
     ];
+}
+
+function get_no_posts_found(string $post_title)
+{
+    $home_url = get_home_url(null, '/');
+
+    $test = <<<HTML
+        <div class="col-span-full">
+            <h3 class="text-3xl font-bold font-red-hat-display text-center">
+                Nenhum <span class="lowercase">{$post_title}</span> encontrado!
+            </h3>
+
+            <div class='flex justify-center mt-16'>
+                <a class="button-cta" href="{$home_url}">
+                    Voltar para página inicial
+                </a>
+            </div>
+        </div>
+    HTML;
+
+    return $test;
 }
 
 function get_pages_editorials_settings()

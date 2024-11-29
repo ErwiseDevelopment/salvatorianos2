@@ -129,7 +129,6 @@
                             </ul>
                         </div>
                     </div>
-
                     <?php
                     if ($post->post_parent != 0) {
                         $page_parent_name = get_post($post->post_parent)->post_name;
