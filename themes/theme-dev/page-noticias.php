@@ -46,7 +46,7 @@ get_header();
 							$featured_category = get_category_by_slug('destaque');
 
 							$news_featured_args = array(
-								'posts_per_page' => -1,
+								'posts_per_page' => 1,
 								'post_type'      => 'post',
 								'tax_query'      => array(
 									'relation' => 'AND',
@@ -68,8 +68,8 @@ get_header();
 								)
 							);
 						} else {
-							$news_args = array(
-								'posts_per_page' => -1,
+							$news_featured_args = array(
+								'posts_per_page' => 1,
 								'post_type'      => 'post',
 								'category_name'  => $news_category->slug,
 								'order'          => 'DESC'
