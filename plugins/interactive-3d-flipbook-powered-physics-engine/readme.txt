@@ -1,11 +1,11 @@
-=== 3D FlipBook - PDF Flipbook WordPress ===
+=== 3D FlipBook – PDF Embedder, PDF Flipbook Viewer, Flipbook Image Gallery ===
 Contributors: iberezansky
 Donate link: https://3dflipbook.net/download-wp
 Tags: flipbook, flip book, pdf viewer, pdf flipbook, pdf to flip book
 Requires at least: 4.3
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 5.3
-Stable tag: 1.15.7
+Stable tag: 1.16.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -224,6 +224,101 @@ This will open your PDF Flipbook or Image Flipbook at page 10 when it starts.
 17. Tilted unrolling flipping pages & flexible corners
 
 == Changelog ==
+
+<h4>1.16.7</h4>
+<ul>
+  <li>
+    Fixed Notice: Function _load_textdomain_just_in_time was called incorrectly
+  </li>
+</ul>
+
+<h4>1.16.6</h4>
+<ul>
+  <li>
+    Disabled mouse wheel zoom for inline mode
+  </li>
+</ul>
+
+<h4>1.16.5</h4>
+<ul>
+  <li>
+    Updated THREEJS to fix CVE-2020-28496
+  </li>
+</ul>
+
+<h4>1.16.4</h4>
+<ul>
+  <li>
+    Fixed rendering stuck when search hits are displayed
+  </li>
+</ul>
+
+<h4>1.16.3</h4>
+<ul>
+  <li>
+    Support PDFs in format w, 2w, ..., 2w, where w is page width
+  </li>
+  <li>
+    Fix errors like "Cannot read properties of null (reading 'plugin')"
+  </li>
+</ul>
+
+<h4>1.16.2</h4>
+<ul>
+  <li>
+    Single PDFJS initialization
+  </li>
+  <li>
+    Fix css layers position for Safari
+  </li>
+  <li>
+    Stretch / center source images, pdf pages, htmls on book pages
+  </li>
+</ul>
+
+<h4>1.16.1</h4>
+<ul>
+  <li>
+    New Single Page mode - it displays only one page
+  </li>
+  <li>
+    Added PDF search button on the toolbar
+  </li>
+  <li>
+    Added hits highlighting for search results
+  </li>
+  <li>
+    Clear hits when query is empty
+  </li>
+  <li>
+    Center page image instead of stretching
+  </li>
+  <li>
+    Using CSS classes to trigger 3D FlipBook lightbox activation
+  </li>
+  <li>
+    Added function to set all pages interactive
+  </li>
+  <li>
+    Fixed content security policy - 3D FlipBook did not appear in Safari
+  </li>
+  <li>
+    Fixed CSS layers order in RTL mode
+  </li>
+  <li>
+    Added the word "of" indicating the page number in the search status results in POT file
+  </li>
+  <li>
+    Added Goto first page and Goto last page in POT file
+  </li>
+</ul>
+
+<h4>1.15.8</h4>
+<ul>
+  <li>
+    Added stable FDFJS for old browsers
+  </li>
+</ul>
 
 <h4>1.15.7</h4>
 <ul>

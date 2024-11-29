@@ -65,6 +65,8 @@ get_header();
                                 </div>
                         <?php
                             endwhile;
+                        else :
+                            echo get_no_posts_found('Vídeo');
                         endif;
 
                         wp_reset_query();
