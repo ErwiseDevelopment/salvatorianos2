@@ -1,4 +1,4 @@
-<section class="bg-[#f0f0f0] mt-20 py-20">
+<section class="bg-[#f0f0f0] py-20">
 
     <div class="container">
 
