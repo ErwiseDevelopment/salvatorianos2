@@ -15,7 +15,7 @@ get_header();
 	<main id="main" class="site-main">
 
 		<?php
-		if (get_the_terms(get_the_ID(), 'category')[0]->slug = 'sem-categoria') :
+		if (get_the_terms(get_the_ID(), 'category')[0]->slug == 'sem-categoria') :
 			get_template_part('template-parts/content', 'page');
 		else:
 			while (have_posts()) : the_post();
@@ -52,14 +52,23 @@ get_header();
 						</div>
 
 						<div class="w-full xl:w-8/12 pr-8">
-							<div class="flex gap-4">
-								<!-- loop -->
-								<?php foreach (get_single_post_categories() as $single_post_category) : ?>
-									<p class="text-lg 2xl:text-xl font-bold font-red-hat-display uppercase text-center text-white bg-gradient-green py-1 px-8">
-										<?php echo $single_post_category->name; ?>
-									</p>
-								<?php endforeach; ?>
-							</div>
+							<?php
+							if (get_single_post_categories()) : ?>
+								<div class="flex gap-4">
+									<!-- loop -->
+									<?php
+									foreach (get_single_post_categories() as $single_post_category) :
+										if (isset($single_post_category->name)) :
+									?>
+											<p class="text-lg 2xl:text-xl font-bold font-red-hat-display uppercase text-center text-white bg-gradient-green py-1 px-8">
+												<?php echo $single_post_category->name; ?>
+											</p>
+									<?php
+										endif;
+									endforeach;
+									?>
+								</div>
+							<?php endif; ?>
 
 							<span class="post-content">
 								<?php the_content() ?>
@@ -69,12 +78,14 @@ get_header();
 						<div class="w-full xl:w-4/12 mt-8 xl:mt-0">
 							<!-- loop -->
 							<?php
+							$relation = isset(get_single_post_categories()[1]) ? 'AND' : 'OR';
+
 							$other_posts_args = array(
 								'posts_per_page' => 3,
 								'post_type'      => 'post',
 								'post__not_in'   => array(get_the_ID()),
 								'tax_query'      => array(
-									'relation' => 'AND',
+									'relation' => $relation,
 									array(
 										'taxonomy' => 'category',
 										'field'    => 'term_id',
@@ -83,7 +94,7 @@ get_header();
 									array(
 										'taxonomy' => 'category',
 										'field'    => 'term_id',
-										'terms'    => get_single_post_categories()[1]->term_id
+										'terms'    => isset(get_single_post_categories()[1]->term_id) ? get_single_post_categories()[1]->term_id : ''
 									),
 								)
 							);
