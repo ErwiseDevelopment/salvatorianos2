@@ -35,7 +35,7 @@ get_header();
 						while ($directors->have_posts()): $directors->the_post();
 					?>
 							<div>
-								<div class="w-full h-[340px] 2xl:w-[428px] 2xl:h-[428px] flex justify-center items-center">
+								<div class="w-full h-[524px] 2xl:w-[428px] 2xl:h-[626px] flex justify-center items-center">
 									<img class="w-full h-full object-cover" src="<?php echo get_field('imagem_conselho') ?>" alt="<?php the_title() ?> - Salvatorianos" />
 								</div>
 

@@ -52,7 +52,7 @@
 
                     <div class="w-3/12 relative hidden lg:block">
 
-                        <a class="lg:w-[300px] xl:w-[320px] 2xl:w-[450px] lg:h-[300px] xl:h-[320px] 2xl:h-[450px] -translate-y-32 2xl:-translate-y-56 translate-x-12 2xl:translate-x-0 rounded-full absolute flex justify-center items-end bg-[#E9E5DD] pb-16 z-10" href="<?php echo get_home_url(null, '/') ?>">
+                        <a class="lg:w-[300px] xl:w-[280px] 2xl:w-[380px] lg:h-[300px] xl:h-[280px] 2xl:h-[380px] -translate-y-32 2xl:-translate-y-56 translate-x-12 xl:translate-x-28 2xl:translate-x-16 rounded-full absolute flex justify-center items-end bg-[#E9E5DD] pb-16 z-10" href="<?php echo get_home_url(null, '/') ?>">
                             <img class="w-56" src="<?php echo get_template_directory_uri() ?>/resources/images/logo-salvatorianos.png" alt="Salvatorianos" />
                         </a>
                     </div>

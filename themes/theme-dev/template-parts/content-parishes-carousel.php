@@ -27,7 +27,7 @@
                             <div class="swiper-slide js-parishe-item" data-value="<?php echo ++$index; ?>">
 
                                 <div>
-                                    <img class="w-full h-[280px] object-cover" src="<?php echo get_field('imagem_paroquia') ?>" alt="<?php the_title() ?> - Salvatorianos" />
+                                    <img class="w-full h-[280px] object-cover" src="<?php echo get_field('imagem_comunidade') ?>" alt="<?php the_title() ?> - Salvatorianos" />
                                 </div>
 
                                 <h5 class="text-2xl 2xl:text-3xl font-black font-red-hat-display text-center text-[#6D37E8] mt-4">

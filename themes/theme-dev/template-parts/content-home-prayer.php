@@ -32,8 +32,8 @@
 
     <div class="container 2xl:max-w-full flex flex-wrap justify-center">
 
-        <div class="w-5/12 hidden xl:block translate-x-10 2xl:-translate-x-12">
-            <div class="2xl:w-[926px] 2xl:h-[806px]">
+        <div class="w-5/12 hidden xl:block translate-x-16 2xl:-translate-x-12">
+            <div class="w-[420px] 2xl:w-[800px] h-auto">
                 <img class="w-full h-full object-cover" src="<?php echo get_template_directory_uri() ?>/resources/images/pe-jordan.png" alt="Pe. Jordan - Salvatoriano" />
             </div>
         </div>
