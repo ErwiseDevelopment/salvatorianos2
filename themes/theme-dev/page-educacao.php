@@ -115,14 +115,14 @@ get_header();
 				<div class="container 2xl:max-w-full flex flex-wrap justify-center px-4 xl:px-10">
 
 					<div class="w-5/12 translate-x-10 relative hidden xl:flex justify-end items-end z-20">
-						<div class="w-full xl:w-[440px] 2xl:w-[802px] h-[320px] xl:h-[440px] 2xl:h-[814px]">
+						<div class="w-full xl:w-[352px] 2xl:w-[616px] h-[320px] xl:h-[352px] 2xl:h-[616px]">
 							<img class="w-full h-full object-cover" src="<?php echo get_template_directory_uri() ?>/resources/images/ensino-pedagoga.png" alt="Proposta pedagoga - Salvatorianos" />
 						</div>
 					</div>
 
 					<div class="w-full lg:w-9/12 xl:w-7/12 xl:-translate-x-10 relative flex items-end z-10">
-						<div class="2xl:w-[1246px] 2xl:h-[1026px] xl:rounded-tl-[250px] 2xl:rounded-tl-[350px] xl:rounded-tr-[250px] 2xl:rounded-tr-[350px] xl:rounded-br-[250px] 2xl:rounded-br-[350px] flex flex-col justify-center items-center bg-gradient-purple py-16 xl:py-24 px-4 xl:px-32">
-							<p class="text-lg xl:text-xl 2xl:text-[38px] font-medium font-red-hat-display text-white" style="line-height:150%">
+						<div class="2xl:w-[864px] 2xl:h-[750px] xl:rounded-tl-[100px] 2xl:rounded-tl-[150px] xl:rounded-tr-[100px] 2xl:rounded-tr-[150px] xl:rounded-br-[100px] 2xl:rounded-br-[150px] flex flex-col justify-center items-center bg-gradient-purple py-16 xl:py-24 px-4 xl:px-32">
+							<p class="text-lg 2xl:text-3xl font-medium font-red-hat-display text-white" style="line-height:150%">
 								Lorem ipsum dolor sit amet, consectetur
 								adipiscing elit. Pellentesque consectetur
 								commodo ipsum in semper. <br />
@@ -141,7 +141,7 @@ get_header();
 					</div>
 
 					<div class="w-11/12 xl:w-8/12 -translate-y-4 xl:-translate-y-10 relative flex justify-center z-20">
-						<p class="inline-block text-xl xl:text-3xl 2xl:text-[40px] font-bold font-red-hat-display text-center uppercase text-white bg-gradient-green p-4 2xl:py-10 2xl:px-44">
+						<p class="inline-block text-xl xl:text-2xl 2xl:text-4xl font-bold font-red-hat-display text-center uppercase text-white bg-gradient-green p-4 2xl:py-10 2xl:px-44">
 							conheça nossa proposta pedagógica
 						</p>
 					</div>
