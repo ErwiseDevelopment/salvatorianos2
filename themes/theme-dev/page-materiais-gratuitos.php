@@ -23,7 +23,7 @@ get_header();
 
 			<section class="py-24">
 
-				<div class="container grid grid-cols-1 lg:grid-cols-2 gap-16 xl:px-32">
+				<div class="container grid grid-cols-1 lg:grid-cols-3 gap-16 xl:px-32">
 
 					<?php
 					if (isset($_GET['editoria']) && $_GET['editoria'] != '') {
@@ -51,12 +51,6 @@ get_header();
 						);
 					}
 
-					// $args = array(
-					// 	'posts_per_page' => -1,
-					// 	'post_type'      => 'materiais',
-					// 	'order'          => 'DESC'
-					// );
-
 					$materials = new WP_Query($args);
 
 					if ($materials->have_posts()):
@@ -70,7 +64,7 @@ get_header();
 								x-data="{ hoverImage: false }"
 								x-on:mouseover="hoverImage = true"
 								x-on:mouseout="hoverImage = false">
-								<div class="w-[270px] 2xl:w-[470px] h-[270px] 2xl:h-[470px] rounded-full shadow-2xl overflow-hidden">
+								<div class="w-[216px] 2xl:w-[376px] h-[216px] 2xl:h-[376px] rounded-full shadow-2xl overflow-hidden">
 									<img
 										class="w-full h-full transition duration-200 object-cover"
 										x-bind:class="hoverImage == true ? 'scale-[1.1]' : 'scale-[1.0]'"
@@ -78,7 +72,7 @@ get_header();
 										alt="<?php the_title() ?> - Salvatorianos" />
 								</div>
 
-								<h6 class="text-xl xl:text-3xl 2xl:text-[40px] font-black font-red-hat-display text-center text-[#4E8C3F] mt-4">
+								<h6 class="text-xl xl:text-2xl 2xl:text-4xl font-black font-red-hat-display text-center text-[#4E8C3F] mt-4">
 									<?php the_title() ?>
 								</h6>
 

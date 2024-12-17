@@ -86,12 +86,12 @@
                 </li>
 
                 <li class="flex gap-x-2 pt-3">
-                    <a class="w-4 h-4" href="<?php echo get_field('instagram', 'option') ?>" target="_blank" rel="noreferrer noopener">
-                        <img class="w-4 h-4 object-cover" src="<?php echo get_template_directory_uri() ?>/resources/images/icon-instagram.png" alt="Instagram - Salvatoriano" />
+                    <a class="w-5 2xl:w-7 h-5 2xl:h-7" href="<?php echo get_field('instagram', 'option') ?>" target="_blank" rel="noreferrer noopener">
+                        <img class="w-5 2xl:w-7 h-5 2xl:h-7 object-cover" src="<?php echo get_template_directory_uri() ?>/resources/images/icon-instagram.png" alt="Instagram - Salvatoriano" />
                     </a>
 
-                    <a class="w-4 h-4" href="<?php echo get_field('facebook', 'option') ?>" target="_blank" rel="noreferrer noopener">
-                        <img class="w-4 h-4 object-cover" src="<?php echo get_template_directory_uri() ?>/resources/images/icon-facebook.png" alt="Facebook - Salvatoriano" />
+                    <a class="w-5 2xl:w-7 h-5 2xl:h-7" href="<?php echo get_field('facebook', 'option') ?>" target="_blank" rel="noreferrer noopener">
+                        <img class="w-5 2xl:w-7 h-5 2xl:h-7 object-cover" src="<?php echo get_template_directory_uri() ?>/resources/images/icon-facebook.png" alt="Facebook - Salvatoriano" />
                     </a>
                 </li>
             </ul>
@@ -105,6 +105,32 @@
     </div>
 </footer>
 <!-- end footer -->
+
+<section class="bg-gradient-green-200 pb-8">
+    <div class="container flex justify-center">
+
+        <div class="w-11/12 grid grid-cols-1 xl:grid-cols-3 gap-4">
+
+            <div class="order-3 xl:order-1 flex justify-center items-center">
+                <p class="font-bold font-red-hat-display text-center text-white">
+                    © Salvatorianos <?php echo date('Y'); ?> | Todos os direitos reservados
+                </p>
+            </div>
+
+            <div class="order-1 xl:order-2 flex justify-center items-center">
+                <a href="https://erwise.com.br/" target="_blank" rel="noreferrer noopener">
+                    <img class="w-56" src="<?php echo get_template_directory_uri() ?>/resources/images/erwise.png" alt="Erwise Desenvolvimento - Salvatorianos" />
+                </a>
+            </div>
+
+            <div class="order-2 xl:order-3 flex justify-center items-center">
+                <a href="https://dominuscomunicacao.com/" target="_blank" rel="noreferrer noopener">
+                    <img class="w-56" src="<?php echo get_template_directory_uri() ?>/resources/images/dominus.png" alt="Dominus - Salvatorianos" />
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
 <?php wp_footer(); ?>
 

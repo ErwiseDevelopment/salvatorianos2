@@ -21,6 +21,8 @@ get_header();
 
 		<?php while (have_posts()) : the_post(); ?>
 
+			<div class="hidden input-field"></div>
+
 			<section class="py-20">
 
 				<div class="container grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-4">

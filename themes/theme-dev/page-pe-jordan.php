@@ -42,7 +42,8 @@ get_header();
 			<!-- end photos -->
 
 			<!-- prayer -->
-			<?php echo get_template_part('template-parts/content', 'general-jordan-prayer') ?>
+			<!-- <php echo get_template_part('template-parts/content', 'general-jordan-prayer') ?> -->
+			<?php echo get_template_part('template-parts/content', 'general-prayer', get_general_prayer_setting('Enquanto houver um homem no mundo que não conheça a Deus e O ame acima de todas as coisas, você não pode descansar.', 'Bem-aventurado Francisco Jordan', 'conheça nosso fundador')) ?>
 			<!-- end prayer -->
 
 			<div class="mt-10"></div>

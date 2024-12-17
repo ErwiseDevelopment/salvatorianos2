@@ -57,7 +57,7 @@ get_header();
 			<!-- end free materials -->
 
 			<!-- prayer -->
-			<?php echo get_template_part('template-parts/content', 'home-prayer') ?>
+			<?php echo get_template_part('template-parts/content', 'general-prayer', get_general_prayer_setting('sê um verdadeiro apóstolo de jesus cristo, e não sossegues até que tenhas levado a palavra de deus a todos os recantos da terra.', 'Bem-aventurado Francisco Jordan', 'reze pela canonização do pe. jordan')) ?>
 			<!-- end prayer -->
 
 			<!-- candle -->

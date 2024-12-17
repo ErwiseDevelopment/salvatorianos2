@@ -59,7 +59,7 @@ b {
   }
 
   .input-field {
-    @apply w-full text-sm 2xl:text-xl font-semibold font-red-hat-display uppercase text-[#2C285B] placeholder:text-[#2C285B] bg-white py-4 px-6;
+    @apply w-full border border-[#2C285B] text-sm 2xl:text-xl font-semibold font-red-hat-display uppercase text-[#2C285B] placeholder:text-[#2C285B] bg-white py-4 px-6;
   }
 
   .input-field-contact {
@@ -412,4 +412,10 @@ b {
 
 :root {
   --variable-example: #FFF;
+}
+
+.wpcf7-response-output {
+  font-weight: 700;
+  font-family: 'Red Hat Display';
+  color: #FFF;
 }
