@@ -2,7 +2,7 @@
 
     <div class="container">
 
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-4">
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 
             <!-- loop -->
             <?php
