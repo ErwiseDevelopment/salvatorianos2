@@ -1,6 +1,6 @@
 {
-    "/public/js/app.js": "/public/js/app.js?id=241e57244c8f80339d6f1a34bad52b90",
-    "/public/css/app.css": "/public/css/app.css?id=f0db1a7f641eb62fb4825dab4d4b752b",
+    "/public/js/app.js": "/public/js/app.js?id=a9ef09c698367c739d91af632949fc90",
+    "/public/css/app.css": "/public/css/app.css?id=833f5c064b255b14b611a0e1ec8a0358",
     "/public/fonts/fonts.css": "/public/fonts/fonts.css?id=47edcefa856b7193aab8b458525543c1",
     "/public/fonts/RedHatDisplay-Black.woff": "/public/fonts/RedHatDisplay-Black.woff?id=981a2ce7e0f3ded6e4c903a641cc8482",
     "/public/fonts/RedHatDisplay-Black.woff2": "/public/fonts/RedHatDisplay-Black.woff2?id=aafbf3c8e5968bc31cb463103210f703",
@@ -38,7 +38,9 @@
     "/public/images/candle.png": "/public/images/candle.png?id=943712217c6d5dda1475e15f445cf285",
     "/public/images/carisma.png": "/public/images/carisma.png?id=7e498e38b35094303b16a618adb7a11d",
     "/public/images/conselho-01.png": "/public/images/conselho-01.png?id=8865f3003201d4cc30455b11d4a591c5",
+    "/public/images/dominus.png": "/public/images/dominus.png?id=a90b864208451bc3f8cfa855970cde52",
     "/public/images/ensino-pedagoga.png": "/public/images/ensino-pedagoga.png?id=f01957699538ea6881021d882f3c9cfe",
+    "/public/images/erwise.png": "/public/images/erwise.png?id=1e26bc06b5646584cf10a8cc76a39a09",
     "/public/images/gallery-1.png": "/public/images/gallery-1.png?id=e2563c3136420a0159ec9b14012a20eb",
     "/public/images/header-background.png": "/public/images/header-background.png?id=873e51d3a24bb6e24bb064d534317306",
     "/public/images/home-banner-1.png": "/public/images/home-banner-1.png?id=afc70f90abf8b7e821df9d1772f50e87",
@@ -63,7 +65,5 @@
     "/public/images/revista-missao-salvatoriana.png": "/public/images/revista-missao-salvatoriana.png?id=d9d4c09745ce270cd805516b8370abb4",
     "/public/images/salvatorianos-brasileira.png": "/public/images/salvatorianos-brasileira.png?id=46cb697b909c613fc76df4e289988cd6",
     "/public/images/vocacional-news-1.png": "/public/images/vocacional-news-1.png?id=16c1e926eff276f6f496dbc82fd4eb38",
-    "/public/images/vocacoes.png": "/public/images/vocacoes.png?id=874a4310c99643ffbe90c19f020f1c72",
-    "/public/images/dominus.png": "/public/images/dominus.png?id=a90b864208451bc3f8cfa855970cde52",
-    "/public/images/erwise.png": "/public/images/erwise.png?id=1e26bc06b5646584cf10a8cc76a39a09"
+    "/public/images/vocacoes.png": "/public/images/vocacoes.png?id=874a4310c99643ffbe90c19f020f1c72"
 }
