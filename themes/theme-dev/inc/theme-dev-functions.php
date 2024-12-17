@@ -493,7 +493,7 @@ function get_post_thumbnail_empty_custom(): string
 
 function get_post_thumbnail_custom(string $classe = '')
 {
-    if (!empty(get_post_thumbnail_empty_custom())) {
+    if (empty(get_post_thumbnail_empty_custom())) {
         return get_post_thumbnail_empty_custom();
     }
 
@@ -580,6 +580,15 @@ function get_general_blog_setting(string $editorial_category_slug, string $filte
         'blog_category_id'      => $blog_category_id,
         'editorial_category_id' => $editorial_category_id,
         'filter'                => $filter
+    ];
+}
+
+function get_general_prayer_setting(string $content, string $author, string $phrase): array
+{
+    return [
+        'content' => $content,
+        'author'  => $author,
+        'phrase'  => $phrase
     ];
 }
 
