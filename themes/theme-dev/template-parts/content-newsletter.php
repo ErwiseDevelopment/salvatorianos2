@@ -2,7 +2,7 @@
 
     <div class="container flex flex-wrap justify-center">
 
-        <div class="w-11/12 xl:w-6/12">
+        <div class="w-11/12 xl:w-5/12">
             <img class="w-full h-full object-cover" src="<?php echo get_template_directory_uri() ?>/resources/images/newsletter.png" alt="Newsletter - Salvatoriano" />
         </div>
 
