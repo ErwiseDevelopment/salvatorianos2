@@ -80,7 +80,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 xl:grid-cols-2 gap-y-8 gap-x-4 mt-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-8 gap-x-4 mt-8">
 
                 <!-- loop -->
                 <?php
@@ -114,7 +114,7 @@
                             </div>
 
                             <h5 class="text-2xl 2xl:text-[26px] font-black font-red-hat-display text-[#2C285B] my-6">
-                                <?php the_title() ?>
+                                <?php echo get_limit_words(get_the_title(), 8); ?>
                             </h5>
 
                             <p class="transition hover:scale-90 inline-block text-xs font-bold font-red-hat-display text-center uppercase text-white bg-gradient-to-r from-[#91AC31] to-[#4D8C3F] py-2 px-8">

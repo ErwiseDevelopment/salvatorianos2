@@ -1,6 +1,55 @@
-<section class="bg-[#f0f0f0] mt-20 py-20">
+<section class="bg-[#f0f0f0] py-20">
 
     <div class="container">
+
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+
+            <!-- loop -->
+            <?php
+            $school_args = array(
+                'posts_per_page' => -1,
+                'post_type'      => 'comunidade',
+                'order'          => 'DESC'
+            );
+
+            $school = new WP_Query($school_args);
+
+            $index = 0;
+
+            if ($school->have_posts()):
+                while ($school->have_posts()): $school->the_post();
+            ?>
+                    <div class="flex flex-col js-parishe-item" data-value="<?php echo ++$index; ?>">
+
+                        <div>
+                            <img class="w-full h-[280px] object-cover" src="<?php echo get_field('imagem_comunidade') ?>" alt="<?php the_title() ?> - Salvatorianos" />
+                        </div>
+
+                        <h5 class="text-2xl 2xl:text-3xl font-black font-red-hat-display text-center text-[#6D37E8] mt-4">
+                            <?php the_title() ?>
+                        </h5>
+
+                        <p class="2xl:text-xl font-bold text-center uppercase text-[#8FAB31] mt-2">
+                            <?php echo get_field('local') ?>
+                        </p>
+
+                        <div class="flex justify-center mt-4">
+                            <span class="transition hover:scale-90 inline-block text-[10px] 2xl:text-xs font-bold font-red-hat-display text-center uppercase text-white bg-gradient-to-r from-[#91AC31] to-[#4D8C3F] cursor-pointer py-2 px-8">
+                                Conheça
+                            </span>
+                        </div>
+                    </div>
+            <?php
+                endwhile;
+            endif;
+
+            wp_reset_query();
+            ?>
+            <!-- end loop -->
+        </div>
+    </div>
+
+    <div class="container hidden">
 
         <div class="w-full relative">
 
@@ -13,7 +62,7 @@
                     <?php
                     $parishes_args = array(
                         'posts_per_page' => -1,
-                        'post_type'      => 'paroquia',
+                        'post_type'      => 'comunidade',
                         'order'          => 'DESC'
                     );
 
@@ -27,7 +76,7 @@
                             <div class="swiper-slide js-parishe-item" data-value="<?php echo ++$index; ?>">
 
                                 <div>
-                                    <img class="w-full h-[280px] object-cover" src="<?php echo get_field('imagem_paroquia') ?>" alt="<?php the_title() ?> - Salvatorianos" />
+                                    <img class="w-full h-[280px] object-cover" src="<?php echo get_field('imagem_comunidade') ?>" alt="<?php the_title() ?> - Salvatorianos" />
                                 </div>
 
                                 <h5 class="text-2xl 2xl:text-3xl font-black font-red-hat-display text-center text-[#6D37E8] mt-4">
@@ -76,7 +125,7 @@
                 <?php
                 $parishes_args = array(
                     'posts_per_page' => -1,
-                    'post_type'      => 'paroquia',
+                    'post_type'      => 'comunidade',
                     'order'          => 'DESC'
                 );
 

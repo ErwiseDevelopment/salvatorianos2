@@ -25,14 +25,56 @@ get_header();
 
 				<div class="container flex flex-wrap xl:px-24">
 
-					<div class="w-full xl:w-8/12 pr-4">
+					<div class="w-full lg:w-7/12 xl:w-8/12 pr-4">
 						<?php
-						$news_featured_args = array(
-							'posts_per_page' => 1,
-							'post_type'      => 'post',
-							'category_name'  => 'noticia',
-							'order'          => 'DESC'
-						);
+						// $news_featured_args = array(
+						// 	'posts_per_page' => 1,
+						// 	'post_type'      => 'post',
+						// 	'category_name'  => 'noticia',
+						// 	'order'          => 'DESC'
+						// );	
+
+						$news_category_slug = get_categories_setting()['categories']['news']['slug'];
+
+						$news_category = get_category_by_slug($news_category_slug);
+
+						if (isset($_GET['editoria'])) {
+							$editorial_category_slug = get_categories_setting()['editorials'][$_GET['editoria']]['slug'];
+
+							$editorial_category = get_category_by_slug($editorial_category_slug);
+
+							$featured_category = get_category_by_slug('destaque');
+
+							$news_featured_args = array(
+								'posts_per_page' => 1,
+								'post_type'      => 'post',
+								'tax_query'      => array(
+									'relation' => 'AND',
+									array(
+										'taxonomy' => 'category',
+										'field'    => 'term_id',
+										'terms'    => $news_category->term_id
+									),
+									array(
+										'taxonomy' => 'category',
+										'field'    => 'term_id',
+										'terms'    => $editorial_category->term_id
+									),
+									array(
+										'taxonomy' => 'category',
+										'field'    => 'term_id',
+										'terms'    => $featured_category->term_id
+									),
+								)
+							);
+						} else {
+							$news_featured_args = array(
+								'posts_per_page' => 1,
+								'post_type'      => 'post',
+								'category_name'  => $news_category->slug,
+								'order'          => 'DESC'
+							);
+						}
 
 						$news_featured = new WP_Query($news_featured_args);
 
@@ -50,7 +92,7 @@ get_header();
 										</span>
 
 										<h2 class="text-2xl xl:text-3xl 2xl:text-[46px] font-black font-red-hat-display text-white mt-2">
-											<?php the_title() ?>
+											<?php echo get_limit_words(get_the_title(), 8); ?>
 										</h2>
 
 										<p class="text-base sxl:text-lg 2xl:text-xl font-semibold font-red-hat-display uppercase tracking-widest hover:underline text-[#8DAA32]">
@@ -66,7 +108,7 @@ get_header();
 						?>
 					</div>
 
-					<div class="w-full xl:w-4/12">
+					<div class="w-full lg:w-5/12 xl:w-4/12">
 
 						<div class="border border-black bg-[#EDEDED] py-8 px-4">
 							<h3 class="text-2xl xl:text-4xl 2xl:text-[56px] font-black font-red-hat-display text-center text-[#7137F0]">
@@ -78,7 +120,7 @@ get_header();
 								<?php foreach (get_categories_setting()['editorials'] as $key => $value) : ?>
 									<?php if ($value['title'] != 'Portal'): ?>
 										<li class="mb-2 last:mb-0">
-											<a class="block text-base xl:text-xl 2xl:text-[26px] font-medium font-red-hat-display text-center text-white py-3" style="background-color: <?php echo $value['color']; ?>" href="<?php echo get_home_url(null, 'noticias?categoria=' . $value['slug']); ?>">
+											<a class="block text-base xl:text-xl 2xl:text-[26px] font-medium font-red-hat-display text-center text-white py-3" style="background-color: <?php echo $value['color']; ?>" href="<?php echo get_home_url(null, 'noticias?editoria=' . $value['slug']); ?>">
 												<?php echo $value['title']; ?>
 											</a>
 										</li>
@@ -96,14 +138,10 @@ get_header();
 
 				<div class="container grid grid-cols-4 gap-4">
 
-					<div class="col-span-full grid grid-cols-1 xl:grid-cols-4 gap-4">
+					<div class="col-span-full grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4">
 						<?php
-						$news_category_slug = get_categories_setting()['categories']['news']['slug'];
-
-						$news_category = get_category_by_slug($news_category_slug);
-
-						if (isset($_GET['categoria'])) {
-							$editorial_category_slug = get_categories_setting()['editorials'][$_GET['categoria']]['slug'];
+						if (isset($_GET['editoria'])) {
+							$editorial_category_slug = get_categories_setting()['editorials'][$_GET['editoria']]['slug'];
 
 							$editorial_category = get_category_by_slug($editorial_category_slug);
 

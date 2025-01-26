@@ -338,6 +338,21 @@ function get_editorials(): array
     ];
 }
 
+function get_editorial_slug_by_title(string $title)
+{
+    $editorials = [
+        'Institucional' => 'institucional',
+        'Pe. Jordan'    => 'pe-jordan',
+        'Vocacional'    => 'vocacional',
+        'Paróquias'     => 'paroquias',
+        'Educação'      => 'educacao',
+        'Obras Sociais' => 'obras-sociais',
+        'Revistas'      => 'revista'
+    ];
+
+    return $editorials[$title];
+}
+
 function get_format_date(string $date)
 {
     list($day, $month, $year) = explode('/', $date);
@@ -391,13 +406,17 @@ function get_single_post_category()
         'noticia'
     ];
 
-    foreach ($post_categories as $post_category) {
-        foreach ($categories_main as $category_main) {
-            if ($post_category->slug == $category_main) {
-                return $post_category;
+    if (isset($post_categories)) {
+        foreach ($post_categories as $post_category) {
+            foreach ($categories_main as $category_main) {
+                if ($post_category->slug == $category_main) {
+                    return $post_category;
+                }
             }
         }
     }
+
+    return [];
 }
 
 function get_single_post_categories(): array
@@ -474,7 +493,7 @@ function get_post_thumbnail_empty_custom(): string
 
 function get_post_thumbnail_custom(string $classe = '')
 {
-    if (!empty(get_post_thumbnail_empty_custom())) {
+    if (empty(get_post_thumbnail_empty_custom())) {
         return get_post_thumbnail_empty_custom();
     }
 
@@ -521,18 +540,22 @@ function get_general_news_editorial_setting(string $title, string $category_slug
 
 function get_general_banner_title_setting($post): array
 {
-    if ($post->post_type == 'post') {
-        $title = get_single_post_category()->slug == 'blog' ? 'Blog' : 'Notícia';
-        $classe = 'banner-post';
-    } else {
-        $title = get_the_title();
-        $classe = 'banner-page';
+    if (isset($post)) {
+        if ($post->post_type == 'post' && !empty(get_single_post_category())) {
+            $title = get_single_post_category()->slug == 'blog' ? 'Blog' : 'Notícia';
+            $classe = 'banner-post';
+        } else {
+            $title = get_the_title();
+            $classe = 'banner-page';
+        }
+
+        return [
+            'title' => $title,
+            'class' => $classe
+        ];
     }
 
-    return [
-        'title' => $title,
-        'class' => $classe
-    ];
+    return [];
 }
 
 function get_general_blog_setting(string $editorial_category_slug, string $filter = ''): array
@@ -557,6 +580,22 @@ function get_general_blog_setting(string $editorial_category_slug, string $filte
         'blog_category_id'      => $blog_category_id,
         'editorial_category_id' => $editorial_category_id,
         'filter'                => $filter
+    ];
+}
+
+function get_general_prayer_setting(string $content, string $author, string $phrase): array
+{
+    return [
+        'content' => $content,
+        'author'  => $author,
+        'phrase'  => $phrase
+    ];
+}
+
+function get_menu_secondary_setting(string $menu_name): array
+{
+    return [
+        'menu_name' => $menu_name
     ];
 }
 
@@ -602,6 +641,27 @@ function get_new_item_setting(bool $show_details = true): array
         'thumbnail'      => $thumbnail,
         'link'           => get_the_permalink()
     ];
+}
+
+function get_no_posts_found(string $post_title)
+{
+    $home_url = get_home_url(null, '/');
+
+    $test = <<<HTML
+        <div class="col-span-full">
+            <h3 class="text-3xl font-bold font-red-hat-display text-center">
+                Nenhum <span class="lowercase">{$post_title}</span> encontrado!
+            </h3>
+
+            <div class='flex justify-center mt-16'>
+                <a class="button-cta" href="{$home_url}">
+                    Voltar para página inicial
+                </a>
+            </div>
+        </div>
+    HTML;
+
+    return $test;
 }
 
 function get_pages_editorials_settings()
@@ -654,6 +714,120 @@ register_nav_menus(array(
     'menu-obras-sociais' => __('Menu Obras Sociais', 'yourtheme'),
     'menu-revista'       => __('Menu Revista', 'yourtheme'),
 ));
+
+function get_menu_editorial_url_params(string $url, string $editorial_title)
+{
+    $editorial_slug = get_editorial_slug_by_title($editorial_title);
+
+    return $url . '?editoria=' . $editorial_slug;
+}
+
+function get_base_url(): string
+{
+    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? 'https://' : 'http://';
+    $host = $_SERVER['HTTP_HOST'];
+    $uri = $_SERVER['REQUEST_URI'];
+
+    $full_url = $protocol . $host . $uri;
+    $parsed_url = parse_url($full_url);
+
+    $base_url = $protocol . $host . $parsed_url['path'];
+
+    return $base_url;
+}
+
+function render_menu($menu_tree, $parent_id = 0)
+{
+    global $wp;
+
+    if (!isset($menu_tree[$parent_id])) {
+        return;
+    }
+
+    $menu_class = $parent_id == 0 ? 'menu' : 'sub-menu';
+
+    echo '<ul class="' . $menu_class . '">';
+    foreach ($menu_tree[$parent_id] as $item) {
+        if (get_field('editoria', $item->ID) != 'Nenhum') {
+            $url = get_menu_editorial_url_params($item->url, get_field('editoria', $item->ID));
+        } else {
+            $url = $item->url;
+        }
+
+        $item_active_class = get_base_url() == $item->url ? 'current-menu-item' : '';
+
+        echo '<li class="menu-item menu-item-type-custom menu-item-object-custom ' . $item_active_class . '">';
+        echo '<a data-value="' . get_field('editoria', $item->ID) . '" href="' . esc_url($url) . '">' . esc_html($item->title) . '</a>';
+
+        render_menu($menu_tree, $item->ID);
+
+        echo '</li>';
+    }
+    echo '</ul>';
+}
+
+// Retirar logo do Wordpress admin
+function wps_admin_bar()
+{
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('wp-logo');
+    $wp_admin_bar->remove_menu('about');
+    $wp_admin_bar->remove_menu('wporg');
+    $wp_admin_bar->remove_menu('documentation');
+    $wp_admin_bar->remove_menu('support-forums');
+    $wp_admin_bar->remove_menu('feedback');
+    $wp_admin_bar->remove_menu('view-site');
+}
+add_action('wp_before_admin_bar_render', 'wps_admin_bar');
+
+// removendo campo comentarios admin wp
+
+add_action('admin_menu', 'my_remove_admin_menus');
+function my_remove_admin_menus()
+{
+    remove_menu_page('edit-comments.php');
+}
+
+add_action('init', 'remove_comment_support', 100);
+
+function remove_comment_support()
+{
+    remove_post_type_support('post', 'comments');
+    remove_post_type_support('page', 'comments');
+}
+
+function mytheme_admin_bar_render()
+{
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('comments');
+}
+add_action('wp_before_admin_bar_render', 'mytheme_admin_bar_render');
+
+function logoadmin()
+{
+    echo " <style>
+   body.login #login h1 a {
+   background: url('https://erwise.com.br/wp-content/uploads/2022/04/login-wp.jpg') no-repeat scroll center top transparent;
+   height: 90px;
+   width: 250px;
+   }
+   </style>
+   ";
+}
+add_action("login_head", "logoadmin");
+
+// Customizar o Footer do WordPress
+function remove_footer_admin()
+{
+    echo 'Desenvolvimento e Criação Erwise Dev ME © <a href="https://api.whatsapp.com/send?phone=%205511937008521&text=Olá!/">Suporte</a> ';
+}
+add_filter('admin_footer_text', 'remove_footer_admin');
+
+function my_login_logo_url()
+{
+    return 'https://erwise.com.br/';
+}
+add_filter('login_headerurl', 'my_login_logo_url');
 
 /**
  * Enqueue scripts and styles.

@@ -3,7 +3,7 @@
     <!-- gallery desktop -->
     <div class="hidden xl:grid grid-cols-3">
         <?php
-        $albums = new WP_Query($args);
+        $albums = new WP_Query($args['query']);
 
         if ($albums->have_posts()):
             while ($albums->have_posts()): $albums->the_post();
@@ -48,7 +48,7 @@
                     while ($albums->have_posts()): $albums->the_post();
                 ?>
                         <div class="swiper-slide">
-                            <img class="w-full h-[260px] object-cover block" src="<?php echo get_field('capa_galeria') ?>" alt="<?php the_title() ?> - Salvatorianos" />
+                            <img class="w-full h-[260px] lg:h-[400px] object-cover block" src="<?php echo get_field('capa_galeria') ?>" alt="<?php the_title() ?> - Salvatorianos" />
                         </div>
                 <?php
                     endwhile;
@@ -64,8 +64,14 @@
     <!-- end gallery mobile -->
 
     <div class="flex justify-center mt-12">
-        <a class="button-cta" href="<?php echo get_home_url(null, 'albuns') ?>">
-            Ver tudo
-        </a>
+        <?php if (isset($args['button_link'])): ?>
+            <a class="button-cta" href="<?php echo get_home_url(null, 'albuns?editoria=' . $args['button_link']) ?>">
+                Ver tudo
+            </a>
+        <?php else: ?>
+            <a class="button-cta" href="<?php echo get_home_url(null, 'albuns') ?>">
+                Ver tudo
+            </a>
+        <?php endif; ?>
     </div>
 </section>

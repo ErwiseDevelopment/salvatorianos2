@@ -21,12 +21,34 @@ new Swiper(".js-swiper-general-news-editorial", {
     992: {
       slidesPerView: 1,
     },
+
+    1024: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
   },
 });
 
 new Swiper(".js-swiper-values", {
   slidesPerView: 1.5,
   spaceBetween: 16,
+
+  breakpoints: {
+    320: {
+      slidesPerView: 1.5,
+      spaceBetween: 16,
+    },
+
+    992: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
+
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+  },
 });
 
 // new Swiper(".js-swiper-magazine-banner", {

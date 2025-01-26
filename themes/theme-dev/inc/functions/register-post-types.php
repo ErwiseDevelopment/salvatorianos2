@@ -1,44 +1,4 @@
 <?php
-// https://generatewp.com
-function products_init()
-{
-    $args = array(
-        'public'             => true,
-        'label'              => 'Produtos',
-        'publicly_queryable' => true,
-        'show_ui'            => true,
-        'query_var'          => true,
-        'show_in_rest'       => true,
-        'menu_icon'          => 'dashicons-admin-users',
-        'capability_type'    => 'post',
-        'hierarchical'       => false,
-        'supports'           => array('title', 'thumbnail')
-    );
-    register_post_type('product', $args);
-}
-
-add_action('init', 'products_init');
-
-// function create_produtos_taxonomies()
-// {
-
-//     $args = array(
-//         'hierarchical'      => true,
-//         'labels'            => array('name' => 'Marcas'),
-//         'show_ui'           => true,
-//         'show_admin_column' => true,
-//         'query_var'         => true,
-//         'show_in_rest' => true,
-//         'rest_base'          => 'marcas_categories',
-//         'rest_controller_class' => 'WP_REST_Terms_Controller',
-//         'rewrite'           => array('slug' => 'marcas_categories'),
-//         'default_term' => 'gore'
-//     );
-
-//     register_taxonomy('marcas_categories', array('produtos'), $args);
-// }
-// add_action('init', 'create_produtos_taxonomies', 0);
-
 function scalabrinianos_create_post_type()
 {
     register_post_type('agendas', array(
@@ -49,12 +9,12 @@ function scalabrinianos_create_post_type()
         'supports'         => array('title', 'editor',  'revisions', 'author', 'thumbnail')
     ));
 
-    register_post_type('locais', array(
-        'labels'         => array('name' => 'Locais', 'singular_name' => 'Locais', 'all_items' => 'Todos'),
+    register_post_type('Escolas', array(
+        'labels'         => array('name' => 'Escolas', 'singular_name' => 'Escolas', 'all_items' => 'Todos'),
         'public'         => true,
         'has_archive'     => true,
         'menu_icon'     => 'dashicons-calendar-alt',
-        'supports'         => array('title', 'editor',  'revisions', 'author', 'thumbnail')
+        'supports'         => array('title', 'editor',  'revisions', 'author')
     ));
 
     register_post_type('materiais', array(
@@ -73,12 +33,12 @@ function scalabrinianos_create_post_type()
         'supports'         => array('title',  'author', 'thumbnail')
     ));
 
-    register_post_type('paroquia', array(
-        'labels'         => array('name' => 'Paróquias', 'singular_name' => 'Paróquia', 'all_items' => 'Todas'),
+    register_post_type('comunidade', array(
+        'labels'         => array('name' => 'Comunidades', 'singular_name' => 'Comunidade', 'all_items' => 'Todas'),
         'public'         => true,
         'has_archive'    => true,
         'menu_icon'      => 'dashicons-admin-home',
-        'supports'       => array('title',  'author', 'thumbnail')
+        'supports'       => array('title',  'author')
     ));
 
     register_post_type('videos', array(
@@ -89,8 +49,24 @@ function scalabrinianos_create_post_type()
         'supports'         => array('title',  'author', 'thumbnail')
     ));
 
+    register_post_type('acervo', array(
+        'labels'         => array('name' => 'Acervo', 'singular_name' => 'Acervo', 'all_items' => 'Todos'),
+        'public'         => true,
+        'has_archive'     => true,
+        'menu_icon'     => 'dashicons-book',
+        'supports'         => array('title',  'author', 'thumbnail')
+    ));
+
+
     register_post_type('conselho', array(
         'labels'         => array('name' => 'Conselho', 'singular_name' => 'Conselho', 'all_items' => 'Todos'),
+        'public'         => true,
+        'has_archive'     => true,
+        'menu_icon'     => 'dashicons-book',
+        'supports'         => array('title',  'author', 'thumbnail')
+    ));
+    register_post_type('equipe', array(
+        'labels'         => array('name' => 'Equipes', 'singular_name' => 'Equipes', 'all_items' => 'Todos'),
         'public'         => true,
         'has_archive'     => true,
         'menu_icon'     => 'dashicons-book',

@@ -33,15 +33,19 @@ get_header();
 			<?php
 			$editorial_category_slug = get_categories_setting()['editorials']['paroquias']['slug'];
 
-			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Saiba tudo sobre nossas paróquias', $editorial_category_slug, 'Todas as notícias das paróquias', 'noticias?categoria=paroquias')) ?>
+			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Saiba tudo sobre nossas paróquias', $editorial_category_slug, 'Todas as notícias das paróquias', 'noticias?categoria=paroquias'))
+			?>
 			<!-- end posts editorial -->
+
+			<div class="mt-20"></div>
 
 			<!-- parishes carousel -->
 			<?php echo get_template_part('template-parts/content', 'parishes-carousel') ?>
 			<!-- end parishes carousel -->
 
 			<!-- prayer -->
-			<?php echo get_template_part('template-parts/content', 'general-jordan-prayer') ?>
+			<!-- <php echo get_template_part('template-parts/content', 'general-jordan-prayer') ?> -->
+			<?php echo get_template_part('template-parts/content', 'general-prayer', get_general_prayer_setting('Enquanto houver um homem no mundo que não conheça a Deus e O ame acima de todas as coisas, você não pode descansar.', 'Bem-aventurado Francisco Jordan', 'conheça nosso fundador')) ?>
 			<!-- end prayer -->
 
 			<div class="mt-10"></div>

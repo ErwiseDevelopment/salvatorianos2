@@ -48,7 +48,7 @@ get_header();
 						</div>
 					</div>
 
-					<div class="w-full xl:w-7/12 xl:-translate-x-10 flex items-end">
+					<div class="w-full lg:w-9/12 xl:w-7/12 xl:-translate-x-10 flex items-end">
 						<div class="2xl:h-[924px] xl:rounded-tl-[250px] 2xl:xl:rounded-tl-[350px] xl:rounded-tr-[250px] 2xl:rounded-tr-[350px] xl:rounded-br-[250px] 2xl:rounded-br-[350px] bg-gradient-purple py-16 xl:py-24 2xl:pt-48 px-8 xl:px-32 2xl:px-36">
 							<h4 class="text-xl xl:text-3xl 2xl:text-[44px] font-bold font-red-hat-display text-[#AFDF0F]" style="line-height:140%">
 								Os Salvatorianos são o resultado do amor e do sonho do Pe. Francisco Maria da Cruz Jordan.
@@ -74,7 +74,8 @@ get_header();
 			<!-- blog -->
 
 			<!-- jordan prayer -->
-			<?php echo get_template_part('template-parts/content', 'general-jordan-prayer') ?>
+			<!-- <php echo get_template_part('template-parts/content', 'general-jordan-prayer') ?> -->
+			<?php echo get_template_part('template-parts/content', 'general-prayer', get_general_prayer_setting('Enquanto houver um homem no mundo que não conheça a Deus e O ame acima de todas as coisas, você não pode descansar.', 'Bem-aventurado Francisco Jordan', 'conheça nosso fundador')) ?>
 			<!-- jordan prayer -->
 
 			<div class="mt-10"></div>

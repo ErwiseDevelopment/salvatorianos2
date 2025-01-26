@@ -1,6 +1,6 @@
 {
-    "/public/js/app.js": "/public/js/app.js?id=6d11bebda6e9f6fe0837cc81637f3265",
-    "/public/css/app.css": "/public/css/app.css?id=021bc1dca49347cbeece8af498ed270c",
+    "/public/js/app.js": "/public/js/app.js?id=a9ef09c698367c739d91af632949fc90",
+    "/public/css/app.css": "/public/css/app.css?id=ac7fd157ada20a15c5adffc3856581a2",
     "/public/fonts/fonts.css": "/public/fonts/fonts.css?id=47edcefa856b7193aab8b458525543c1",
     "/public/fonts/RedHatDisplay-Black.woff": "/public/fonts/RedHatDisplay-Black.woff?id=981a2ce7e0f3ded6e4c903a641cc8482",
     "/public/fonts/RedHatDisplay-Black.woff2": "/public/fonts/RedHatDisplay-Black.woff2?id=aafbf3c8e5968bc31cb463103210f703",
@@ -38,7 +38,9 @@
     "/public/images/candle.png": "/public/images/candle.png?id=943712217c6d5dda1475e15f445cf285",
     "/public/images/carisma.png": "/public/images/carisma.png?id=7e498e38b35094303b16a618adb7a11d",
     "/public/images/conselho-01.png": "/public/images/conselho-01.png?id=8865f3003201d4cc30455b11d4a591c5",
+    "/public/images/dominus.png": "/public/images/dominus.png?id=a90b864208451bc3f8cfa855970cde52",
     "/public/images/ensino-pedagoga.png": "/public/images/ensino-pedagoga.png?id=f01957699538ea6881021d882f3c9cfe",
+    "/public/images/erwise.png": "/public/images/erwise.png?id=1e26bc06b5646584cf10a8cc76a39a09",
     "/public/images/gallery-1.png": "/public/images/gallery-1.png?id=e2563c3136420a0159ec9b14012a20eb",
     "/public/images/header-background.png": "/public/images/header-background.png?id=873e51d3a24bb6e24bb064d534317306",
     "/public/images/home-banner-1.png": "/public/images/home-banner-1.png?id=afc70f90abf8b7e821df9d1772f50e87",

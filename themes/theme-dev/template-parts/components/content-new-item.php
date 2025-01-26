@@ -26,12 +26,12 @@
                 </p>
 
                 <h3 class="text-lg 2xl:text-xl font-black font-red-hat-display text-[#2C285B] mb-4" style="line-height:100%">
-                    <?php echo $args['title'] ?>
+                    <?php echo get_limit_words($args['title'], 8); ?>
                 </h3>
 
                 <?php if (isset($args['excerpt'])): ?>
                     <p class="text-xs 2xl:text-sm font-normal font-red-hat-display text-[#2E2E2E] mb-4">
-                        <?php echo $args['excerpt'] ?>
+                        <?php echo get_limit_words($args['excerpt'], 20) ?>
                     </p>
                 <?php endif; ?>
             </div>

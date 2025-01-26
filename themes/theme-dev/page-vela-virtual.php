@@ -25,13 +25,13 @@ get_header();
 
 				<div class="w-full top-1/2 left-0 -translate-y-1/2 absolute bg-gradient-to-r from-[#8134f4] to-[#5312b8]" style="height:calc(100% - 8rem)"></div>
 
-				<div class="container relative grid grid-cols-1 xl:grid-cols-2 gap-4">
+				<div class="container relative grid grid-cols-1 xl:grid-cols-2 gap-4 px-32 xl:px-4">
 
-					<div>
-						<img class="w-44 xl:w-full" src="<?php echo get_template_directory_uri() ?>/resources/images/candle.png" alt="Vela Virtual - Salvatorianos" />
+					<div class="col-span-1 flex justify-center">
+						<img class="w-44 lg:w-96 xl:w-full" src="<?php echo get_template_directory_uri() ?>/resources/images/candle.png" alt="Vela Virtual - Salvatorianos" />
 					</div>
 
-					<div class="flex flex-col justify-center xl:px-10">
+					<div class="col-span-1 flex flex-col justify-center xl:px-10">
 						<h4 class="text-2xl xl:text-5xl 2xl:text-[52px] font-black font-red-hat-display text-white mb-6">
 							Acenda sua vela!
 						</h4>

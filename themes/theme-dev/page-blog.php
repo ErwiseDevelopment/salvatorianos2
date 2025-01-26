@@ -25,7 +25,7 @@ get_header();
 
 				<div class="container flex flex-wrap xl:px-24">
 
-					<div class="w-full xl:w-8/12 pr-4">
+					<div class="w-full lg:w-7/12 xl:w-8/12 pr-4">
 						<?php
 						$news_featured_args = array(
 							'posts_per_page' => 1,
@@ -50,7 +50,7 @@ get_header();
 										</span>
 
 										<h2 class="text-2xl xl:text-3xl 2xl:text-[46px] font-black font-red-hat-display text-white mt-2">
-											<?php the_title() ?>
+											<?php echo get_limit_words(get_the_title(), 8); ?>
 										</h2>
 
 										<p class="text-base sxl:text-lg 2xl:text-xl font-semibold font-red-hat-display uppercase tracking-widest hover:underline text-[#8DAA32]">
@@ -66,7 +66,7 @@ get_header();
 						?>
 					</div>
 
-					<div class="w-full xl:w-4/12">
+					<div class="w-full lg:w-5/12 xl:w-4/12">
 
 						<div class="border border-black bg-[#EDEDED] py-8 px-4">
 							<h3 class="text-2xl xl:text-4xl 2xl:text-[56px] font-black font-red-hat-display text-center text-[#7137F0]">
@@ -75,12 +75,14 @@ get_header();
 
 							<ul class="mt-6">
 
-								<?php foreach (get_editorials_categories_setting() as $key => $value) : ?>
-									<li class="mb-2 last:mb-0">
-										<a class="block text-base xl:text-xl 2xl:text-[26px] font-medium font-red-hat-display text-center text-white py-3" style="background-color: <?php echo $value['color']; ?>" href="<?php echo get_home_url(null, 'blog?categoria=' . $key); ?>">
-											<?php echo $value['title']; ?>
-										</a>
-									</li>
+								<?php foreach (get_categories_setting()['editorials'] as $key => $value) : ?>
+									<?php if ($value['title'] != 'Portal'): ?>
+										<li class="mb-2 last:mb-0">
+											<a class="block text-base xl:text-xl 2xl:text-[26px] font-medium font-red-hat-display text-center text-white py-3" style="background-color: <?php echo $value['color']; ?>" href="<?php echo get_home_url(null, 'blog?editoria=' . $key); ?>">
+												<?php echo $value['title']; ?>
+											</a>
+										</li>
+									<?php endif; ?>
 								<?php endforeach; ?>
 							</ul>
 						</div>
@@ -94,14 +96,14 @@ get_header();
 
 				<div class="container grid grid-cols-4 gap-4">
 
-					<div class="col-span-full grid grid-cols-1 xl:grid-cols-4 gap-4">
+					<div class="col-span-full grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4">
 						<?php
 						$news_category_slug = get_categories_setting()['categories']['blog']['slug'];
 
 						$news_category = get_category_by_slug($news_category_slug);
 
-						if (isset($_GET['categoria'])) {
-							$editorial_category = get_category_by_slug($_GET['categoria']);
+						if (isset($_GET['editoria'])) {
+							$editorial_category = get_category_by_slug($_GET['editoria']);
 
 							$news_args = array(
 								'posts_per_page' => -1,
