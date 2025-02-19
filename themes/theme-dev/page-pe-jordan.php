@@ -33,7 +33,7 @@ get_header();
 			<?php
 			$editorial_category_slug = get_categories_setting()['editorials']['pe-jordan']['slug'];
 
-			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Saiba tudo sobre nossas paróquias', $editorial_category_slug, 'Todas as notícias das paróquias', 'https://google.com'))
+			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Saiba tudo sobre Pe. Jordan', $editorial_category_slug, 'Todas as notícias do Pe. Jordan', 'noticias?categoria=pe-jordan'))
 			?>
 			<!-- end posts editorial -->
 

@@ -84,9 +84,10 @@ get_header();
 					</div>
 
 					<div class="w-11/12 xl:w-8/12 -translate-y-4 xl:-translate-y-10 relative flex justify-center 2xl:justify-end z-20">
-						<p class="inline-block text-xl xl:text-3xl 2xl:text-[40px] font-bold font-red-hat-display text-center uppercase text-white bg-gradient-green p-8">
+						<a href= "https://salvatorianos.erwisedev-hml.com.br/institucional/carisma/"
+						   class="inline-block text-xl xl:text-3xl 2xl:text-[40px] font-bold font-red-hat-display text-center uppercase text-white bg-gradient-green p-8">
 							saiba mais sobre nossas vocações
-						</p>
+						</a>
 					</div>
 				</div>
 			</section>

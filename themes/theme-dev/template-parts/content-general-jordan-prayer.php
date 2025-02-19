@@ -21,9 +21,10 @@
         </div>
 
         <div class="w-11/12 xl:w-8/12 -translate-y-4 xl:-translate-y-10 flex justify-center">
-            <p class="inline-block text-xl xl:text-3xl 2xl:text-[40px] font-bold font-red-hat-display text-center uppercase text-white bg-gradient-green p-4 2xl:py-10 2xl:px-48">
+            <a href="https://salvatorianos.erwisedev-hml.com.br/pe-jordan/"
+			   class="inline-block text-xl xl:text-3xl 2xl:text-[40px] font-bold font-red-hat-display text-center uppercase text-white bg-gradient-green p-4 2xl:py-10 2xl:px-48">
                 conheça nosso fundador
-            </p>
+            </a>
         </div>
     </div>
 </section>
