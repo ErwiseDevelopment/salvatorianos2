@@ -232,7 +232,7 @@ b {
   }
 
   .news-item {
-    @apply w-full h-[280px] xl:h-full overflow-hidden relative block;
+    @apply w-full h-[280px] xl:h-[488px] overflow-hidden relative block;
   }
 
   .news-item::before {
