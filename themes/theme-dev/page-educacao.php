@@ -32,7 +32,7 @@ get_header();
 			<?php
 			$editorial_category_slug = get_categories_setting()['editorials']['educacao']['slug'];
 
-			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Saiba tudo sobre nossas escolas', $editorial_category_slug, 'Todas as notícias das escolas', 'noticias?categoria=vocacional')) ?>
+			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Saiba tudo sobre nossas escolas', $editorial_category_slug, 'Todas as notícias das escolas', 'noticias?editoria=educacao')) ?>
 			<!-- end news editorial -->
 
 			<div class="my-5"></div>

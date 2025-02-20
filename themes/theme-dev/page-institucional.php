@@ -33,7 +33,7 @@ get_header();
 			<?php
 			$editorial_category_slug = get_categories_setting()['editorials']['institucional']['slug'];
 
-			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Confira o que está acontecendo em nossa Província', $editorial_category_slug, 'Todas as notícias institucionais', 'noticias?categoria=institucional'))
+			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Confira o que está acontecendo em nossa Província', $editorial_category_slug, 'Todas as notícias institucionais', 'noticias?editoria=institucional'))
 			?>
 			<!-- end news editorial -->
 
@@ -61,8 +61,8 @@ get_header();
 					</div>
 
 					<div class="w-full xl:w-8/12 -translate-y-4 xl:-translate-y-10 relative flex justify-center 2xl:justify-end z-20">
-						<a href = "https://salvatorianos.erwisedev-hml.com.br/institucional/carisma/"
-						   class="inline-block text-xl xl:text-3xl 2xl:text-[42px] font-bold font-red-hat-display text-center uppercase text-white bg-gradient-green p-4 2xl:py-10 2xl:px-48">
+						<a href="https://salvatorianos.erwisedev-hml.com.br/institucional/carisma/"
+							class="inline-block text-xl xl:text-3xl 2xl:text-[42px] font-bold font-red-hat-display text-center uppercase text-white bg-gradient-green p-4 2xl:py-10 2xl:px-48">
 							Conheça nossa carisma
 						</a>
 					</div>
