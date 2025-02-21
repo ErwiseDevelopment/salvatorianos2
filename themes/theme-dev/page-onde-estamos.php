@@ -33,17 +33,84 @@ echo "</pre>";
 
 					<div class="rounded-lg grid grid-cols-1 xl:grid-cols-3 gap-4 bg-[#28235C] mb-6 py-10 px-6">
 
-						<?php for ($i = 0; $i < 3; $i++) : ?>
-							<div class="flex flex-col justify-center items-center gap-2 lg:gap-4">
-								<p class="text-3xl lg:text-5xl font-bold font-red-hat-display text-center text-white">
-									145
-								</p>
+						<div class="flex flex-col justify-center items-center gap-2 lg:gap-4">
+							<p class="text-3xl lg:text-5xl font-bold font-red-hat-display text-center text-white">
+								<?php
+								$args = array(
+									'posts_per_page' => -1,
+									'post_type'      => 'local',
+									'fields'         => 'ids',
+									'tax_query'      => array(
+										array(
+											'taxonomy' => 'localizacao',
+											'field'    => 'slug',
+											'terms'    => array('brasil')
+										)
+									)
+								);
 
-								<p class="text-lg lg:text-2xl font-normal font-red-hat-display text-center uppercase text-white">
-									Obras em todo o Brasil
-								</p>
-							</div>
-						<?php endfor; ?>
+								$query = new WP_Query($args);
+
+								echo $query->post_count;
+								?>
+							</p>
+
+							<p class="text-lg lg:text-2xl font-normal font-red-hat-display text-center uppercase text-white">
+								Obras em todo o Brasil
+							</p>
+						</div>
+
+						<div class="flex flex-col justify-center items-center gap-2 lg:gap-4">
+							<p class="text-3xl lg:text-5xl font-bold font-red-hat-display text-center text-white">
+								<?php
+								$country_id = get_term_by('slug', 'brasil', 'localizacao')->term_id;
+
+								$states = get_terms(array(
+									'taxonomy'   => 'localizacao',
+									'hide_empty' => false,
+									'parent'     => $country_id
+								));
+
+								$states_count = [];
+
+								foreach ($states as $state) {
+									array_push($states_count, $state);
+								}
+
+								echo count($states_count);
+								?>
+							</p>
+
+							<p class="text-lg lg:text-2xl font-normal font-red-hat-display text-center uppercase text-white">
+								Estados presentes
+							</p>
+						</div>
+
+						<div class="flex flex-col justify-center items-center gap-2 lg:gap-4">
+							<p class="text-3xl lg:text-5xl font-bold font-red-hat-display text-center text-white">
+								<?php
+								$deepest_categories = [];
+
+								foreach ($states as $state) {
+									$cities = get_terms([
+										'taxonomy'   => 'localizacao',
+										'parent'     => $state->term_id,
+										'hide_empty' => false,
+									]);
+
+									foreach ($cities as $city) {
+										array_push($deepest_categories, $city);
+									}
+								}
+
+								echo count($deepest_categories);
+								?>
+							</p>
+
+							<p class="text-lg lg:text-2xl font-normal font-red-hat-display text-center uppercase text-white">
+								Cidades
+							</p>
+						</div>
 					</div>
 
 					<div class="rounded-lg bg-[#28235C] py-10 px-6">
