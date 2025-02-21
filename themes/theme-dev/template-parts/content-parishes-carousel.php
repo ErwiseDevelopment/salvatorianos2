@@ -143,7 +143,7 @@
                                 <div class="col-span-full xl:col-span-2">
 
                                     <div class="w-full h-[290px] xl:h-full rounded-xl overflow-hidden">
-                                        <img class="w-full h-full object-cover" src="<?php echo get_field('imagem_paroquia') ?>" alt="<?php the_title() ?> - Salvatorianos" />
+                                        <img class="w-full h-full object-cover" src="<?php echo get_field('imagem_comunidade') ?>" alt="<?php the_title() ?> - Salvatorianos" />
                                     </div>
                                 </div>
 
