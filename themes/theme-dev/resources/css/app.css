@@ -232,12 +232,16 @@ b {
   }
 
   .news-item {
-    @apply w-full h-[280px] xl:h-[488px] overflow-hidden relative block;
+    @apply w-full h-[280px] overflow-hidden relative block;
   }
 
   .news-item::before {
     content: '';
     @apply w-full h-full top-0 left-0 absolute bg-black/30 z-10;
+  }
+
+  .news-item-highlight {
+    @apply xl:h-[560px];
   }
 
   .news-item-thumbnail {

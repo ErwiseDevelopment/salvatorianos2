@@ -88,6 +88,14 @@ function scalabrinianos_create_post_type()
         'menu_icon'     => 'dashicons-book',
         'supports'      => array('title',  'author', 'thumbnail')
     ));
+
+    register_post_type('comunidade-religiosa', array(
+        'labels'        => array('name' => 'Comunidades Religiosas ', 'singular_name' => 'Comunidade Religiosa', 'all_items' => 'Todos'),
+        'public'        => true,
+        'has_archive'   => true,
+        'menu_icon'     => 'dashicons-book',
+        'supports'      => array('title',  'author', 'thumbnail')
+    ));
 }
 add_action('init', 'scalabrinianos_create_post_type');
 
