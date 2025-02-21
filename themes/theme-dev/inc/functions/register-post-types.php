@@ -80,6 +80,14 @@ function scalabrinianos_create_post_type()
         'menu_icon'     => 'dashicons-book',
         'supports'         => array('title',  'author')
     ));
+
+    register_post_type('local', array(
+        'labels'        => array('name' => 'Onde Estamos', 'singular_name' => 'Onde Estamos', 'all_items' => 'Todos'),
+        'public'        => true,
+        'has_archive'   => true,
+        'menu_icon'     => 'dashicons-book',
+        'supports'      => array('title',  'author', 'thumbnail')
+    ));
 }
 add_action('init', 'scalabrinianos_create_post_type');
 
@@ -94,6 +102,15 @@ function scalabrinianos_create_taxonomy()
         'labels'             => array(
             'name'              => 'Editorias',
             'singular_name'     => 'Editorias'
+        ),
+        'hierarchical'       => true,
+        'show_admin_column'  => true,
+    ));
+
+    register_taxonomy('localizacao', 'local', array(
+        'labels'             => array(
+            'name'           => 'Localizações',
+            'singular_name'  => 'Localização'
         ),
         'hierarchical'       => true,
         'show_admin_column'  => true,
