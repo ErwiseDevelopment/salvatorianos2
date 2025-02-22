@@ -129,6 +129,7 @@
                             </ul>
                         </div>
                     </div>
+
                     <?php
                     if ($post->post_parent != 0) {
                         $page_parent_name = get_post($post->post_parent)->post_name;
@@ -139,6 +140,14 @@
                     } else {
                         if (isset(get_pages_editorials_settings()[$post->post_name]['menu'])) {
                             echo get_template_part('template-parts/content', 'menu-secondary', get_menu_secondary_setting($post->post_name));
+                        }
+
+                        if (isset($_GET['editoria'])) {
+                            $editorial = $_GET['editoria'];
+
+                            if (isset(get_pages_editorials_settings()[$editorial]['menu'])) {
+                                echo get_template_part('template-parts/content', 'menu-secondary', get_menu_secondary_setting($editorial));
+                            }
                         }
                     }
                     ?>

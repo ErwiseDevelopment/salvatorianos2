@@ -24,7 +24,7 @@
                     while ($news_main_featured->have_posts()) : $news_main_featured->the_post();
                         array_push($news_hidden, get_the_ID());
                 ?>
-                        <a class="news-item" href="<?php the_permalink() ?>">
+                        <a class="news-item news-item-highlight" href="<?php the_permalink() ?>">
                             <?php echo get_post_thumbnail_custom('news-item-thumbnail') ?>
 
                             <div class="bottom-0 left-0 absolute z-10 p-8">

@@ -32,7 +32,7 @@ get_header();
 			<?php
 			$editorial_category_slug = get_categories_setting()['editorials']['obras-sociais']['slug'];
 
-			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Saiba tudo sobre as obras', $editorial_category_slug, 'Todas as notícias das obras', 'noticias?categoria=obras-sociais')) ?>
+			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Saiba tudo sobre as obras', $editorial_category_slug, 'Todas as notícias das obras', 'noticias?editoria=obras-sociais')) ?>
 			<!-- end news editorial -->
 
 			<div class="my-5"></div>

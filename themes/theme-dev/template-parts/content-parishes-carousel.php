@@ -1,6 +1,6 @@
 <section class="bg-[#f0f0f0] py-20">
 
-    <div class="container">
+    <div class="container hidden">
 
         <div class="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 
@@ -49,7 +49,7 @@
         </div>
     </div>
 
-    <div class="container hidden">
+    <div class="container">
 
         <div class="w-full relative">
 
@@ -143,18 +143,18 @@
                                 <div class="col-span-full xl:col-span-2">
 
                                     <div class="w-full h-[290px] xl:h-full rounded-xl overflow-hidden">
-                                        <img class="w-full h-full object-cover" src="<?php echo get_field('imagem_paroquia') ?>" alt="<?php the_title() ?> - Salvatorianos" />
+                                        <img class="w-full h-full object-cover" src="<?php echo get_field('imagem_comunidade') ?>" alt="<?php the_title() ?> - Salvatorianos" />
                                     </div>
                                 </div>
 
                                 <div class="col-span-full xl:col-span-3 p-4">
 
-                                    <div class="flex justify-between items-center mb-4">
-                                        <h3 class="text-2xl xl:text-4xl 2xl:text-[42px] font-black font-red-hat-display text-[#7137F0]">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <h3 class="flex-1 text-2xl xl:text-4xl 2xl:text-[42px] font-black font-red-hat-display text-[#7137F0]">
                                             <?php the_title() ?>
                                         </h3>
 
-                                        <button class="border border-red-500 rounded-xl hidden xl:inline-block text-sm font-bold font-red-hat-display text-red-500 hover:text-white hover:bg-red-500 py-2 px-4 js-parishes-modal-close">
+                                        <button class="w-24 border border-red-500 rounded-xl hidden xl:inline-block text-sm font-bold font-red-hat-display text-red-500 hover:text-white hover:bg-red-500 ml-2 py-2 px-4 js-parishes-modal-close">
                                             Fechar x
                                         </button>
                                     </div>
@@ -168,15 +168,19 @@
                                     </p>
 
                                     <p class="text-sm font-normal font-red-hat-display text-[#2E2E2E] mb-2">
-                                        <span class="font-bold">Whatsapp: </span> <?php echo get_field('whatsapp_paroquia') ?>
+                                        <span class="font-bold">Whatsapp: </span> <?php echo get_field('whatsapp_comunidade') ?>
                                     </p>
 
                                     <p class="text-sm font-normal font-red-hat-display text-[#2E2E2E] mb-2">
-                                        <span class="font-bold">Telefone: </span> <?php echo get_field('telefone_paroquia') ?>
+                                        <span class="font-bold">Telefone: </span> <?php echo get_field('telefone_comunidade') ?>
+                                    </p>
+
+                                    <p class="text-sm font-normal font-red-hat-display text-[#2E2E2E] mb-2">
+                                        <span class="font-bold">E-mail: </span> <?php echo get_field('e-mail_comunidade') ?>
                                     </p>
 
                                     <p class="text-sm font-normal font-red-hat-display text-[#2E2E2E]">
-                                        <span class="font-bold">E-mail: </span> <?php echo get_field('e-mail_paroquia') ?>
+                                        <span class="font-bold">Site: </span> <?php echo get_field('site_comunidade') ?>
                                     </p>
 
                                     <button class="border border-red-500 rounded-xl xl:hidden text-sm font-bold font-red-hat-display text-red-500 hover:text-white hover:bg-red-500 mt-6 py-2 px-4 js-parishes-modal-close">

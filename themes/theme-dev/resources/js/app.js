@@ -12,4 +12,5 @@ Alpine.start();
   require("./components/swiper");
   require("./components/modal-photo");
   require("./components/modal-parishes");
+  require("./components/filter-locations");
 })();

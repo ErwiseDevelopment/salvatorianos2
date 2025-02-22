@@ -33,7 +33,7 @@ get_header();
 			<?php
 			$editorial_category_slug = get_categories_setting()['editorials']['institucional']['slug'];
 
-			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Confira o que está acontecendo em nossa Província', $editorial_category_slug, 'Todas as notícias institucionais', 'noticias?categoria=institucional'))
+			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Confira o que está acontecendo em nossa Província', $editorial_category_slug, 'Todas as notícias institucionais', 'noticias?editoria=institucional'))
 			?>
 			<!-- end news editorial -->
 
@@ -61,9 +61,10 @@ get_header();
 					</div>
 
 					<div class="w-full xl:w-8/12 -translate-y-4 xl:-translate-y-10 relative flex justify-center 2xl:justify-end z-20">
-						<p class="inline-block text-xl xl:text-3xl 2xl:text-[42px] font-bold font-red-hat-display text-center uppercase text-white bg-gradient-green p-4 2xl:py-10 2xl:px-48">
+						<a href="https://salvatorianos.erwisedev-hml.com.br/institucional/carisma/"
+							class="inline-block text-xl xl:text-3xl 2xl:text-[42px] font-bold font-red-hat-display text-center uppercase text-white bg-gradient-green p-4 2xl:py-10 2xl:px-48">
 							Conheça nossa carisma
-						</p>
+						</a>
 					</div>
 				</div>
 			</section>
@@ -75,7 +76,7 @@ get_header();
 
 			<!-- jordan prayer -->
 			<!-- <php echo get_template_part('template-parts/content', 'general-jordan-prayer') ?> -->
-			<?php echo get_template_part('template-parts/content', 'general-prayer', get_general_prayer_setting('Enquanto houver um homem no mundo que não conheça a Deus e O ame acima de todas as coisas, você não pode descansar.', 'Bem-aventurado Francisco Jordan', 'conheça nosso fundador')) ?>
+			<?php echo get_template_part('template-parts/content', 'general-jordan-prayer', get_general_prayer_setting('Enquanto houver um homem no mundo que não conheça a Deus e O ame acima de todas as coisas, você não pode descansar.', 'Bem-aventurado Francisco Jordan', 'conheça nosso fundador')) ?>
 			<!-- jordan prayer -->
 
 			<div class="mt-10"></div>

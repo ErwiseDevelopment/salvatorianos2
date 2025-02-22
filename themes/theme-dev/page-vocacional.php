@@ -33,7 +33,7 @@ get_header();
 			<?php
 			$editorial_category_slug = get_categories_setting()['editorials']['vocacional']['slug'];
 
-			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Saiba tudo sobre nossas vocações', $editorial_category_slug, 'Todas as notícias vocacionais', 'noticias?categoria=vocacional'))
+			echo get_template_part('template-parts/content', 'general-news-editorial', get_general_news_editorial_setting('Saiba tudo sobre nossas vocações', $editorial_category_slug, 'Todas as notícias vocacionais', 'noticias?editoria=vocacional'))
 			?>
 			<!-- end news editorial -->
 
@@ -84,9 +84,10 @@ get_header();
 					</div>
 
 					<div class="w-11/12 xl:w-8/12 -translate-y-4 xl:-translate-y-10 relative flex justify-center 2xl:justify-end z-20">
-						<p class="inline-block text-xl xl:text-3xl 2xl:text-[40px] font-bold font-red-hat-display text-center uppercase text-white bg-gradient-green p-8">
+						<a href="https://salvatorianos.erwisedev-hml.com.br/institucional/carisma/"
+							class="inline-block text-xl xl:text-3xl 2xl:text-[40px] font-bold font-red-hat-display text-center uppercase text-white bg-gradient-green p-8">
 							saiba mais sobre nossas vocações
-						</p>
+						</a>
 					</div>
 				</div>
 			</section>

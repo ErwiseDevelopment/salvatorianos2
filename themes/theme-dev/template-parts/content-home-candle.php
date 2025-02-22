@@ -10,7 +10,7 @@
                     pedido de oração
                 </p>
 
-                <a class="transition hover:scale-90 block text-xl xl:text-2xl 2xl:text-[42px] font-medium font-red-hat-display uppercase text-center text-white bg-gradient-green cursor-pointer py-2 2xl:py-6" href="<?php echo get_home_url(null, '/vela-virtual') ?>">
+                <a class="transition hover:scale-90 block text-xl xl:text-2xl 2xl:text-[42px] font-medium font-red-hat-display uppercase text-center text-white bg-gradient-green cursor-pointer py-2 2xl:py-6" href="https://velasalvatorianos.erwisedev-hml.com.br/">
                     Clique aqui
                 </a>
             </div>

@@ -52,10 +52,10 @@
         </div>
 
         <div class="w-11/12 xl:w-8/12 -translate-y-4 xl:-translate-y-10 flex justify-center">
-            <p class="inline-block text-xl xl:text-2xl 2xl:text-4xl font-bold font-red-hat-display text-center uppercase text-white bg-gradient-green p-4 2xl:py-10 2xl:px-36">
+            <a href="https://materiais.salvatorianos.org.br/lp-pedido-de-oracao-ao-pe-jordan" class="inline-block text-xl xl:text-2xl 2xl:text-4xl font-bold font-red-hat-display text-center uppercase text-white bg-gradient-green p-4 2xl:py-10 2xl:px-36">
                 <!-- reze pela canonização do pe. jordan -->
                 <?php echo $args['phrase']; ?>
-            </p>
+            </a>
         </div>
     </div>
 </section>
